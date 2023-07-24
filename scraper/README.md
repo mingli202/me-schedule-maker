@@ -17,7 +17,7 @@ Done with the [requests](https://requests.readthedocs.io/en/latest/) library to 
 ### How it was done
 After parsing the entire pdf file, a simple filter function is used to filter out the unique teachers. From there, I made an array of multiple combinations for each teacher of their first and last name (e.g. ```de Koos, David Robert``` would give ```['de Koos, David Robert', 'de David', 'de Robert', 'Koos David', 'Koos Robert', 'de Koos', ' David Robert']```). Since some teachers on ratemyprofessor have only parts of their full name searchable (some even have nicknames, such as `Greg Muclair` instead of `Gregory Muclair`), the array ensured that many variants of their name would be searched to make sure that the teacher isn't on the website rather than a variant of their names being ignored.
 
-After retrieving the HTML content of the page for a teacher, I analyzed it (I just read it lol) and found the ratings and all relevant information in the second last `<script>` tag. I wrote a simple program to read it and to populate the data file.
+After retrieving the HTML content of the page for a teacher, I analyzed it (I just read it lol) and found the ratings and all relevant information in the second last `<script>` tag. I wrote a simple program to read it and populate the data file.
 
 The score for each teacher is calculated as such:
 ```
@@ -29,4 +29,4 @@ e.g. <br/>
 Gregory Muclair has a 5/5 rating but only 2 raters. His score is 75.0 <br/>
 Kazuo Takei, Luiz has a 4.6 rating with 11 raters. His score is 85.5
 
-More raters makes the rating stronger and accurate.
+More raters make the rating stronger and more accurate.

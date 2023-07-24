@@ -120,8 +120,8 @@ for i in professors:
         If there are more raters, the 0/5 will have a lesser impact.
         
         e.g. 
-          Gregory Muclair has 5/5 rating but only 2 raters. His score is 75.0
-          Kazuo Takei, Luiz has 4.6 rating with 11 raters. His score is 85.5
+          Gregory, Muclair has 5/5 rating but only 2 raters. His score is 75.0
+          Kazuo Takei, Luiz has 4.6/5 rating with 11 raters. His score is 85.5
 
         More raters makes the rating stronger and accurate.
         '''
