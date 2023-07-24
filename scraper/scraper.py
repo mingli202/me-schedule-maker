@@ -132,7 +132,7 @@ def writeToOut():
 
             course = text
 
-        # codeheader
+        # codeHeader
         if space == 1:
             if codeHeader2nLine:
                 codeHeader += f"\n{text}"
@@ -220,7 +220,7 @@ def writeToOut():
                 if re.match("^ADDITIONAL", text):
                     more += f"{text}\n"
                 else:
-                    more += text
+                    more += f"{text} "
 
     handleSectionChange(
         section, disc, lecture, lab, more, code, program, course, codeHeader, count
