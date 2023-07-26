@@ -5,7 +5,7 @@ import Error from "./Error";
 import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./components";
+import { Schedule } from "./components";
 
 const router = createBrowserRouter(
   [
@@ -15,9 +15,9 @@ const router = createBrowserRouter(
       errorElement: <Error />,
       children: [
         {
-          path: "/Home",
-          element: <Home />,
-        },
+          path:"/",
+          element: <Schedule />
+        }
       ],
     },
   ]

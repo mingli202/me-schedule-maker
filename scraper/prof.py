@@ -9,10 +9,10 @@ professors = set()
 
 
 for i in arr:
-    professors.add(i["lecture"]["prof"])
+    professors.add(i["lecture"]["prof"].replace("\u00e9", "e").replace("\u00e8", "e"))
 
     if "prof" in i["lab"]:
-        professors.add(i["lab"]["prof"])
+        professors.add(i["lab"]["prof"].replace("\u00e9", "e").replace("\u00e8", "e"))
 
 professors.remove("")
 
@@ -138,6 +138,8 @@ for i in professors:
             "status": status,
         }
     )
+
+    print(score)
 
 
 with open("ratings.json", "w") as file:
