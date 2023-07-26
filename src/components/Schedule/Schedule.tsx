@@ -25,7 +25,7 @@ export default function Schedule() {
         console.log(error);
       }
     }
-    getData<Class[]>("/data/all.json", setClasses);
+    getData<Class[]>("/me-schedule-maker/data/all.json", setClasses);
   }, []);
 
   return (
