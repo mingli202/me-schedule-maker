@@ -7,7 +7,6 @@ import ClassesLoader from "./ClassesLoader";
 
 export default function Schedule() {
   const [classes, setClasses] = useState<Class[]>([]);
-  const [professors, setProfessors] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,13 +26,12 @@ export default function Schedule() {
       }
     }
     getData<Class[]>("/data/all.json", setClasses);
-    getData<string[]>("/data/professors.json", setProfessors);
   }, []);
 
   return (
     <section className="w-full h-full bg-c9 grid grid-cols-12 grid-rows-6 box-border gap-4 p-4 text-c9">
       <Suspense fallback={<ClassesLoader />}>
-        <Search classes={classes} professors={professors} setLoading={setLoading}/>
+        <Search classes={classes} setLoading={setLoading}/>
         {loading && (
           <>
             <View />

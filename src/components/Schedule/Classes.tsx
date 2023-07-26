@@ -6,11 +6,10 @@ import { Dispatch, useState } from "react";
 type ClassesProps = {
   input: string;
   classes: Class[];
-  professors: string[];
   setLoading: Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function Classes({ input, classes, professors, setLoading }: ClassesProps) {
+export default function Classes({ input, classes, setLoading }: ClassesProps) {
   let keywords: string[] = input.split(","); //* Gives an array of keywords
   keywords = keywords.map((keyword) => keyword.trim()); //* removes spaces around keyword
 

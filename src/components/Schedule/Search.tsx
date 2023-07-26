@@ -9,10 +9,9 @@ const Classes = lazy(() => import("./Classes"));
 
 type Props = {
   classes: Class[];
-  professors: string[];
   setLoading: Dispatch<React.SetStateAction<boolean>>;
 };
-export default function Search({ classes, professors, setLoading }: Props) {
+export default function Search({ classes, setLoading }: Props) {
   const [input, setInput] = useState<string>("");
   const deferredInput = useDeferredValue(input);
 
@@ -86,7 +85,6 @@ export default function Search({ classes, professors, setLoading }: Props) {
             <Classes
               input={deferredInput}
               classes={classes}
-              professors={professors}
               setLoading={setLoading}
             />
           ) : (
