@@ -1,6 +1,6 @@
 import { animated, useSpring, useTransition } from "@react-spring/web";
 import { Fragment, ReactElement, useContext, useEffect, useState } from "react";
-import { ClassContext } from "./Schedule";
+import { ClassContext } from "../Schedule";
 import { ViewData } from "../../types";
 
 type Props = {

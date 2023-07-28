@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Class, Rating } from "../../types";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { Dispatch, useContext, useEffect, useState } from "react";
-import { ClassContext } from "./Schedule";
+import { ClassContext } from "../Schedule";
 
 type ClassesProps = {
   input: string;
@@ -20,7 +20,6 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
 
   // * keyword filter
   function condition(keyword: string, searches: Class[]) {
-
     const regexArr = [
       "[0-9]",
       "[0-9]",
@@ -147,7 +146,6 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
   });
 
   function toggleClass(selectedClass: Class) {
-
     if (
       chosenClasses.some(
         (i: Class) =>
@@ -253,8 +251,8 @@ function ScoreInfo({ rating }: { rating: Rating }) {
       {hover && (
         <div className="absolute top-0 left-0 mt-6 bg-[white] rounded-lg p-2 z-10 text-xs flex">
           <p className="w-full">
-            The score is calculated to take into account the number of raters.
-            A high rating with low raters will perform worse in comparison to a
+            The score is calculated to take into account the number of raters. A
+            high rating with low raters will perform worse in comparison to a
             lower rating with many raters.
           </p>
           <ul className="pl-4 shrink-0">

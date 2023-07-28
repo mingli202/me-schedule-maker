@@ -1,10 +1,19 @@
-import View from "./View";
-import ChosenCourses from "./ChosenCourses";
-import { Dispatch, createContext, useEffect, useMemo, useState } from "react";
-import { Class, Time, ViewData } from "../../types";
-import Search from "./Search";
+import { View } from "./View";
+import { ChosenCourses } from "./Saved";
+import {
+  Dispatch,
+  Suspense,
+  createContext,
+  lazy,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { Class, Time, ViewData } from "../types";
+// import Search from "./Search";
+import { ClassesLoader } from "./Search";
 
-// const Search = lazy(() => import("./Search"));
+const Search = lazy(() => import("./Search/Search"));
 
 export const ClassContext = createContext<{
   chosenClasses: Class[];
@@ -170,15 +179,15 @@ export default function Schedule() {
   return (
     <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
       <section className="w-full h-full bg-c9 grid grid-cols-12 grid-rows-6 box-border gap-4 p-4 text-c9">
-        {/* <Suspense fallback={<ClassesLoader />}> */}
-        <Search classes={classes} setLoading={setLoading} />
-        {loading && (
-          <>
-            <View viewData={viewData} />
-            <ChosenCourses viewData={viewData}/>
-          </>
-        )}
-        {/* </Suspense> */}
+        <Suspense fallback={<ClassesLoader />}>
+          <Search classes={classes} setLoading={setLoading} />
+          {loading && (
+            <>
+              <View viewData={viewData} />
+              <ChosenCourses viewData={viewData} />
+            </>
+          )}
+        </Suspense>
       </section>
     </ClassContext.Provider>
   );
