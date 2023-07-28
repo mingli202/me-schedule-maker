@@ -76,9 +76,9 @@ export default function Search({ classes, setLoading }: Props) {
       </label>
       <div
         className="w-full h-full box-border rounded-lg overflow-y-auto p-4"
-        style={{
-          // scrollbarGutter: "stable",
-        }}
+        // style={{
+        //   scrollbarGutter: "stable",
+        // }}
       >
         <Suspense fallback={<ClassesLoader />}>
           {deferredInput === input ? (
