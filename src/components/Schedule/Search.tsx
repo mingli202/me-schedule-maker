@@ -18,8 +18,8 @@ export default function Search({ classes, setLoading }: Props) {
   const [searchInfo, setSearchInfo] = useState(false);
 
   return (
-    <div className="col-span-5 row-span-5 bg-c1 rounded-lg p-4 box-border flex flex-col">
-      <label className="relative">
+    <div className="col-span-5 row-span-5 bg-c1 rounded-lg box-border flex flex-col">
+      <label className="relative m-4">
         <FontAwesomeIcon
           icon={faInfoCircle}
           className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
@@ -75,9 +75,9 @@ export default function Search({ classes, setLoading }: Props) {
         />
       </label>
       <div
-        className="w-full h-full mt-4 rounded-lg overflow-y-auto pr-2"
+        className="w-full h-full box-border rounded-lg overflow-y-auto p-4"
         style={{
-          scrollbarGutter: "stable",
+          // scrollbarGutter: "stable",
         }}
       >
         <Suspense fallback={<ClassesLoader />}>
