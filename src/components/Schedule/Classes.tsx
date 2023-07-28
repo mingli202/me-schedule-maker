@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Class, Rating } from "../../types";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { Dispatch, useState } from "react";
+import { Dispatch, useContext, useEffect, useState } from "react";
+import { ClassContext } from "./Schedule";
 
 type ClassesProps = {
   input: string;
@@ -10,14 +11,15 @@ type ClassesProps = {
 };
 
 export default function Classes({ input, classes, setLoading }: ClassesProps) {
+  useEffect(() => setLoading(true), []);
+
   let keywords: string[] = input.split(","); //* Gives an array of keywords
   keywords = keywords.map((keyword) => keyword.trim()); //* removes spaces around keyword
 
-  console.log(keywords);
+  const { chosenClasses, setChosenClasses } = useContext(ClassContext);
 
   // * keyword filter
   function condition(keyword: string, searches: Class[]) {
-    console.log(keyword.slice(0, 2));
 
     const regexArr = [
       "[0-9]",
@@ -119,8 +121,6 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       return searches.filter((i) => i.course.startsWith(keyword));
     }
 
-    // TODO: search by: class name, day, special keywords
-
     // * check if special keyword
     else if (
       ["honours", "blended"].some((i) => i.startsWith(keyword.toLowerCase()))
@@ -151,15 +151,43 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
   keywords.slice(1).forEach((keyword) => {
     targetClasses = condition(keyword, targetClasses);
   });
-  console.log(targetClasses);
-  setLoading(true)
+
+  function toggleClass(selectedClass: Class) {
+
+    if (
+      chosenClasses.some(
+        (i: Class) =>
+          selectedClass.code === i.code && selectedClass.section === i.section
+      )
+    ) {
+      setChosenClasses(
+        chosenClasses.filter((i) => {
+          if (
+            selectedClass.code === i.code &&
+            selectedClass.section === i.section
+          ) {
+            return false;
+          }
+          return true;
+        })
+      );
+    } else if (
+      chosenClasses.some((i: Class) => selectedClass.code === i.code)
+    ) {
+      alert("You already have a class from this course");
+      return;
+    } else {
+      setChosenClasses([...chosenClasses, selectedClass]);
+    }
+  }
 
   return (
     <>
       {targetClasses.map((i: Class, index: number) => (
         <div
-          className="bg-c2 p-2 box-border mb-3 rounded-lg shadow-lg hover:bg-c3 transition"
+          className="bg-c2 p-2 box-border mb-3 rounded-lg shadow-lg hover:bg-c3 transition cursor-pointer"
           key={i.code + index}
+          onClick={() => toggleClass(i)}
         >
           <p className="font-light">
             {i.program}: {i.course} {i.code}
@@ -167,13 +195,13 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
           <p className="text-xl font-bold">
             {i.section} {i.lecture.title}
           </p>
-          <p className="ml-4 relative">
+          <div className="ml-4 relative">
             {i.lecture.prof}{" "}
             <span className="font-bold">
               {i.lecture.rating.score === 0 ? "N/A" : i.lecture.rating.score}
             </span>{" "}
             {<ScoreInfo rating={i.lecture.rating} />}
-          </p>
+          </div>
           {Object.entries(i.lecture)
             .filter((i) => !["title", "prof", "rating"].includes(i[0]))
             .map((j, index) => {
@@ -185,13 +213,13 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
             })}
           {"prof" in i.lab && (
             <>
-              <p className="ml-4 relative">
+              <div className="ml-4 relative">
                 <u>Lab</u>: {i.lab.prof}{" "}
                 <span className="font-bold">
                   {i.lab.rating.score === 0 ? "N/A" : i.lab.rating.score}
                 </span>{" "}
                 {<ScoreInfo rating={i.lab.rating} />}
-              </p>
+              </div>
               {Object.entries(i.lab)
                 .filter((i) => !["title", "prof", "rating"].includes(i[0]))
                 .map((j, index) => {
@@ -231,15 +259,24 @@ function ScoreInfo({ rating }: { rating: Rating }) {
       {hover && (
         <div className="absolute top-0 left-0 mt-6 bg-[white] rounded-lg p-2 z-10 text-xs flex">
           <p className="w-full">
-            The score is calculated to take into account the numbers of raters.
+            The score is calculated to take into account the number of raters.
             A high rating with low raters will perform worse in comparison to a
             lower rating with many raters.
           </p>
           <ul className="pl-4 shrink-0">
-            <li className="list-disc">Rating: {rating.avg === 0? "N/A" : `${rating.avg}/5`}</li>
-            <li className="list-disc">Raters: {rating.avg === 0? "N/A" : rating.nRating}</li>
-            <li className="list-disc">Take Again: {rating.avg === 0? "N/A" : `${rating.takeAgain.toFixed(1)}%`}</li>
-            <li className="list-disc">Difficulty: {rating.avg === 0? "N/A" : `${rating.difficulty}/5`}</li>
+            <li className="list-disc">
+              Rating: {rating.avg === 0 ? "N/A" : `${rating.avg}/5`}
+            </li>
+            <li className="list-disc">
+              Raters: {rating.avg === 0 ? "N/A" : rating.nRating}
+            </li>
+            <li className="list-disc">
+              Take Again:{" "}
+              {rating.avg === 0 ? "N/A" : `${rating.takeAgain.toFixed(1)}%`}
+            </li>
+            <li className="list-disc">
+              Difficulty: {rating.avg === 0 ? "N/A" : `${rating.difficulty}/5`}
+            </li>
           </ul>
         </div>
       )}
