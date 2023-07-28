@@ -13,3 +13,4 @@ Completed:
 Todo:
 * Maybe some autocomplete features
 * Maybe an account creation feature
+* A tutorial
