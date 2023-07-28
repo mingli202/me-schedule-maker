@@ -6,8 +6,9 @@ Completed:
 * PDF parser
 * Web scraper
 * Course Searching Feature
-
-Todo:
 * Schedule Grid (view)
 * Adding courses
-* Saving schedules into local storage
+
+Todo:
+* Saving schedules into local storage (bottom section)
+* Some autocomplete features
