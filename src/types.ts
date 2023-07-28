@@ -28,3 +28,18 @@ export type Rating = {
   difficulty: number;
   status: string;
 };
+
+export type ViewData = {
+  code: string;
+  section: string;
+  time: Time;
+  color: string;
+};
+
+export type Time = {
+  1?: string | undefined;
+  2?: string | undefined;
+  3?: string | undefined;
+  4?: string | undefined;
+  5?: string | undefined;
+};

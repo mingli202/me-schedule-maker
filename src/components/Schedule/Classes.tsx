@@ -51,15 +51,12 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       switch (keyword[1]) {
         case "=":
           return searches.filter((i) => i.lecture.rating.avg === inputRating);
-          break;
 
         case ">":
           return searches.filter((i) => i.lecture.rating.avg >= inputRating);
-          break;
 
         case "<":
           return searches.filter((i) => i.lecture.rating.avg <= inputRating);
-          break;
       }
     }
 
@@ -78,21 +75,18 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       switch (keyword[1]) {
         case "=":
           return searches.filter((i) => i.lecture.rating.score === inputRating);
-          break;
 
         case ">":
           return searches.filter((i) => i.lecture.rating.score >= inputRating);
-          break;
 
         case "<":
           return searches.filter((i) => i.lecture.rating.score <= inputRating);
-          break;
       }
     }
 
     // * check if it's a professor
     else if (keyword.slice(0, 2) === "p=") {
-      const teacher = keyword.slice(2).toLocaleLowerCase();
+      const teacher = keyword.slice(2).toLowerCase();
       return searches.filter((i) =>
         i.lecture.prof.toLowerCase().includes(teacher)
       );

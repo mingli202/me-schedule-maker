@@ -18,7 +18,7 @@ export default function Search({ classes, setLoading }: Props) {
   const [searchInfo, setSearchInfo] = useState(false);
 
   return (
-    <div className="col-span-5 row-span-5 bg-c1 rounded-lg box-border flex flex-col">
+    <section className="col-span-5 row-span-5 bg-c1 rounded-lg box-border flex flex-col">
       <label className="relative m-4">
         <FontAwesomeIcon
           icon={faInfoCircle}
@@ -92,6 +92,6 @@ export default function Search({ classes, setLoading }: Props) {
           )}
         </Suspense>
       </div>
-    </div>
+    </section>
   );
 }
