@@ -11,6 +11,7 @@ Completed:
 * Saving schedules into local storage (bottom section)
 
 Todo:
-* Maybe some autocomplete features
-* Maybe an account creation feature
+* Some autocomplete features
+* An account creation feature
 * A tutorial
+* A mobile-friendly version

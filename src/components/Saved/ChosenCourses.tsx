@@ -54,8 +54,8 @@ export default function ChosenCourses({ viewData }: Props) {
   }, [savedSchedule]);
 
   return (
-    <section className="row-span-1 col-span-full bg-c1 rounded-xl p-4 box-border flex gap-2">
-      <div className="flex gap-2 overflow-auto">
+    <section className="row-span-1 col-span-full bg-c1 rounded-xl box-border flex">
+      <div className="flex gap-2 overflow-auto p-4">
         {savedSchedule.map((i) => {
           return (
             <SavedBlock
@@ -69,7 +69,7 @@ export default function ChosenCourses({ viewData }: Props) {
       </div>
 
       <div
-        className="h-full bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center p-4 cursor-pointer shrink-0"
+        className="my-4 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center p-4 cursor-pointer shrink-0"
         onClick={() => handleSaved(viewData)}
       >
         <FontAwesomeIcon icon={faPlusCircle} className="text-4xl" />
@@ -137,7 +137,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
 
   return (
     <animated.div
-      className="h-full aspect-[1.61/1] bg-[white] rounded-md grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 relative hover:bg-slate-200"
+      className="h-full aspect-[1.61/1] bg-[white] rounded-md grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 relative hover:bg-slate-200 shadow-lg"
       key={i.id}
       style={springs}
       onClick={handleClick}
