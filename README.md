@@ -8,7 +8,8 @@ Completed:
 * Course Searching Feature
 * Schedule Grid (view)
 * Adding courses
+* Saving schedules into local storage (bottom section)
 
 Todo:
-* Saving schedules into local storage (bottom section)
-* Some autocomplete features
+* Maybe some autocomplete features
+* Maybe an account creation feature
