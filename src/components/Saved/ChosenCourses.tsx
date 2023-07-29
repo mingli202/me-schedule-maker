@@ -55,7 +55,13 @@ export default function ChosenCourses({ viewData }: Props) {
 
   return (
     <section className="row-span-1 col-span-full bg-c1 rounded-xl box-border flex">
-      <div className="flex gap-2 overflow-auto p-4">
+      <div
+        className="m-4 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center p-4 cursor-pointer shrink-0"
+        onClick={() => handleSaved(viewData)}
+      >
+        <FontAwesomeIcon icon={faPlusCircle} className="text-4xl" />
+      </div>
+      <div className="flex gap-2 overflow-auto p-4 basis-full mr-4">
         {savedSchedule.map((i) => {
           return (
             <SavedBlock
@@ -66,13 +72,6 @@ export default function ChosenCourses({ viewData }: Props) {
             />
           );
         })}
-      </div>
-
-      <div
-        className="my-4 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center p-4 cursor-pointer shrink-0"
-        onClick={() => handleSaved(viewData)}
-      >
-        <FontAwesomeIcon icon={faPlusCircle} className="text-4xl" />
       </div>
     </section>
   );
