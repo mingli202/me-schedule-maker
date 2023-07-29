@@ -178,7 +178,7 @@ export default function Schedule() {
 
   return (
     <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
-      <section className="w-full h-full bg-c9 grid grid-cols-12 grid-rows-6 box-border gap-4 p-4 text-c9">
+      <section className="w-full h-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border gap-4 p-4 text-c9 flex flex-col md:text-base text-xs overflow-auto">
         <Suspense fallback={<ClassesLoader />}>
           <Search classes={classes} setLoading={setLoading} />
           {loading && (

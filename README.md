@@ -9,9 +9,9 @@ Completed:
 * Schedule Grid (view)
 * Adding courses
 * Saving schedules into local storage (bottom section)
+* A mobile-friendly version (not recommended on mobile because the website may be slow)
 
 Todo:
 * Some autocomplete features
 * An account creation feature
 * A tutorial
-* A mobile-friendly version

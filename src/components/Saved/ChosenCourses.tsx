@@ -54,14 +54,14 @@ export default function ChosenCourses({ viewData }: Props) {
   }, [savedSchedule]);
 
   return (
-    <section className="row-span-1 col-span-full bg-c1 rounded-xl box-border flex">
+    <section className="md:row-span-1 md:col-span-full bg-c1 rounded-xl box-border flex max-md:order-1">
       <div
         className="m-4 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center p-4 cursor-pointer shrink-0"
         onClick={() => handleSaved(viewData)}
       >
         <FontAwesomeIcon icon={faPlusCircle} className="text-4xl" />
       </div>
-      <div className="flex gap-2 overflow-auto p-4 basis-full mr-4">
+      <div className="flex gap-2 overflow-auto p-4 basis-full mr-4 cursor-pointer">
         {savedSchedule.map((i) => {
           return (
             <SavedBlock
@@ -82,7 +82,7 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
     const t = Object.entries(i.time).flat();
     return (
       <div
-        className={`z-10 border border-[black] box-border cursor-pointer rounded-md`}
+        className={`z-10 border border-[black] box-border rounded-md`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
@@ -146,7 +146,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
       })}
       <FontAwesomeIcon
         icon={faTrash}
-        className="absolute opacity-10 m-1 bottom-0 right-0 hover:opacity-50"
+        className="absolute opacity-10 m-1 bottom-0 right-0 hover:opacity-50 cursor-pointer"
         onClick={handleRemoved}
       />
     </animated.div>

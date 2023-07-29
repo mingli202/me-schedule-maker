@@ -18,7 +18,7 @@ export default function Search({ classes, setLoading }: Props) {
   const [searchInfo, setSearchInfo] = useState(false);
 
   return (
-    <section className="col-span-5 row-span-5 bg-c1 rounded-lg box-border flex flex-col">
+    <section className="md:col-span-5 md:row-span-5 bg-c1 rounded-lg box-border flex flex-col max-md:order-3">
       <label className="relative mx-4 mt-4">
         <FontAwesomeIcon
           icon={faInfoCircle}
@@ -27,7 +27,7 @@ export default function Search({ classes, setLoading }: Props) {
           onMouseOut={() => setSearchInfo(false)}
         />
         {searchInfo && (
-          <div className="absolute z-20 top-0 right-0 translate-x-full bg-[white] p-2 rounded-lg max-w-xs">
+          <div className="absolute z-20 top-0 right-0 md:translate-x-full -translate-x-10 bg-[white] p-2 rounded-lg max-w-xs">
             <p>You can search any keyword for the class you are looking for.</p>
             <br />
             <p>
