@@ -29,7 +29,7 @@ export default function View({ viewData }: Props) {
           return (
             <span
               key={i}
-              className="translate-y-1/2 box-border md:pr-4 text-xs flex items-center justify-end pr-2"
+              className="translate-y-1/2 box-border md:pr-4 md:text-xs text-[0.5rem] flex items-center justify-end pr-2"
             >
               {Math.floor(i / 2) + 8}:{i % 2 === 0 ? "00" : "30"}
             </span>
