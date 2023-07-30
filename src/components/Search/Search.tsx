@@ -42,8 +42,8 @@ export default function Search({ classes, setLoading }: Props) {
                 +4.5/5 rating. Symbol can be {"<"} , {">"} or {"="} )
               </li>
               <li className="list-disc">
-                <span className="font-bold">s{">"}80/100</span> (teachers with
-                +80 score. Symbol can be {"<"} , {">"} or {"="} )
+                <span className="font-bold">s{">"}80</span> (teachers with
+                +80/100 score. Symbol can be {"<"} , {">"} or {"="} )
               </li>
               <li className="list-disc">
                 <span className="font-bold">Linear Al, WF</span> (Linear Algebra
