@@ -27,7 +27,7 @@ export default function Search({ classes, setLoading }: Props) {
           onMouseOut={() => setSearchInfo(false)}
         />
         {searchInfo && (
-          <div className="absolute z-20 top-0 right-0 md:translate-x-full -translate-x-10 bg-[white] p-2 rounded-lg max-w-xs">
+          <div className="absolute z-20 top-0 right-0 md:translate-x-full -translate-x-10 bg-[white] p-2 rounded-lg md:max-w-xs w-[70dvw]">
             <p>You can search any keyword for the class you are looking for.</p>
             <br />
             <p>
