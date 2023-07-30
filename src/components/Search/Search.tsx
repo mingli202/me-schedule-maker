@@ -19,7 +19,7 @@ export default function Search({ classes, setLoading }: Props) {
 
   return (
     <section className="md:col-span-5 md:row-span-5 bg-c1 rounded-lg box-border flex flex-col max-md:order-3">
-      <label className="relative mx-4 mt-4">
+      <label className="relative md:mx-4 mx-2 md:mt-4 mt-2">
         <FontAwesomeIcon
           icon={faInfoCircle}
           className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
@@ -68,14 +68,14 @@ export default function Search({ classes, setLoading }: Props) {
           </div>
         )}
         <input
-          className="bg-c2 w-full p-1 text-lg rounded-lg outline-none shrink-0 focus:bg-c4 transition shadow-lg"
+          className="bg-c2 w-full p-1 md:text-lg rounded-lg outline-none shrink-0 focus:bg-c4 transition md:shadow-lg shadow-md"
           placeholder="COURSE, code, professor, rating, ..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
       </label>
       <div
-        className="w-full h-full box-border rounded-lg overflow-y-auto p-4"
+        className="w-full h-full box-border rounded-lg overflow-y-auto md:p-4 p-2"
         // style={{
         //   scrollbarGutter: "stable",
         // }}

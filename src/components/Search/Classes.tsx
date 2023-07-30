@@ -177,14 +177,14 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
     <>
       {targetClasses.map((i: Class, index: number) => (
         <div
-          className="bg-c2 p-2 box-border mb-3 rounded-lg shadow-lg hover:bg-c3 transition cursor-pointer"
+          className="bg-c2 p-2 box-border md:mb-3 mb-2 rounded-lg md:shadow-lg shadow-md hover:bg-c3 transition cursor-pointer md:text-base text-xs"
           key={i.code + index}
           onClick={() => toggleClass(i)}
         >
           <p className="font-light">
             {i.program}: {i.course} {i.code}
           </p>
-          <p className="text-xl font-bold">
+          <p className="md:text-xl font-bold text-base">
             {i.section} {i.lecture.title}
           </p>
           <div className="ml-4 relative">

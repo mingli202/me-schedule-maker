@@ -22,7 +22,7 @@ export default function View({ viewData }: Props) {
   }, [viewData]);
 
   return (
-    <section className="md:col-span-7 md:row-span-5 max-md:min-h-[60%] col-span-full  bg-c1 rounded-lg p-4 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-2">
+    <section className="md:col-span-7 md:row-span-5 max-md:min-h-[60%] col-span-full bg-c1 rounded-lg md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-2">
       {/* Hours */}
       <div className="col-span-1 row-span-full grid grid-cols-1 grid-rows-[repeat(21,minmax(0,1fr))]">
         {[...Array(21).keys()].map((i) => {
@@ -71,7 +71,7 @@ export default function View({ viewData }: Props) {
           );
         })}
 
-        <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 bg-[white] row-span-full col-span-full row-start-2 rounded-lg shadow-lg">
+        <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 bg-[white] row-span-full col-span-full row-start-2 rounded-lg md:shadow-lg shadow-md">
           {view}
         </div>
       </div>

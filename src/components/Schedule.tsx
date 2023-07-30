@@ -60,25 +60,22 @@ export default function Schedule() {
   }, []);
 
   function handleSetViewData(chosenClasses: Class[]) {
+    const col = ["M", "T", "W", "R", "F"];
+    const row = [...Array(21).keys()].map((i) =>
+      (i % 2 === 0 ? i * 50 + 800 : Math.floor(i / 2) * 2 * 50 + 830).toFixed(0)
+    );
+    const colors = [
+      "hsl(150,97%,85%)",
+      "hsl(230,97%,85%)",
+      "hsl(110,97%,85%)",
+      "hsl(270,97%,85%)",
+      "hsl(70,97%,85%)",
+      "hsl(310,97%,85%)",
+      "hsl(30,97%,85%)",
+      "hsl(350,97%,85%)",
+      "hsl(190,97%,85%)",
+    ];
     const toReturn = chosenClasses.map((classToShow, index) => {
-      const col = ["M", "T", "W", "R", "F"];
-      const row = [...Array(21).keys()].map((i) =>
-        (i % 2 === 0 ? i * 50 + 800 : Math.floor(i / 2) * 2 * 50 + 830).toFixed(
-          0
-        )
-      );
-      const colors = [
-        "hsl(150,97%,85%)",
-        "hsl(230,97%,85%)",
-        "hsl(110,97%,85%)",
-        "hsl(270,97%,85%)",
-        "hsl(70,97%,85%)",
-        "hsl(310,97%,85%)",
-        "hsl(30,97%,85%)",
-        "hsl(350,97%,85%)",
-        "hsl(190,97%,85%)",
-      ];
-
       const lecture = structuredClone(Object.entries(classToShow.lecture));
       const lab = structuredClone(Object.entries(classToShow.lab));
 
@@ -124,7 +121,6 @@ export default function Schedule() {
   }
 
   function checkForOverlap(viewData: ViewData[][]): boolean {
-    console.log("viewData: ", viewData);
 
     const times: Time[] = viewData.flat().map((i) => i.time);
     const monday: string[] = times
@@ -178,7 +174,7 @@ export default function Schedule() {
 
   return (
     <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
-      <section className="w-full h-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border gap-4 p-4 text-c9 flex flex-col md:text-base text-xs overflow-auto">
+      <section className="w-full h-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border md:gap-4 gap-2 md:p-4 p-2 text-c9 flex flex-col md:text-base text-xs overflow-auto">
         <Suspense fallback={<ClassesLoader />}>
           <Search classes={classes} setLoading={setLoading} />
           {loading && (

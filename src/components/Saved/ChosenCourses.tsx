@@ -46,7 +46,9 @@ export default function ChosenCourses({ viewData }: Props) {
       },
     ]);
 
-    count.current += 1;
+    do {
+      count.current += 1;
+    } while (savedSchedule.map((s) => s.id).includes(count.current));
   }
 
   useEffect(() => {
@@ -56,12 +58,12 @@ export default function ChosenCourses({ viewData }: Props) {
   return (
     <section className="md:row-span-1 md:col-span-full bg-c1 rounded-xl box-border flex max-md:order-1">
       <div
-        className="m-4 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center p-4 cursor-pointer shrink-0"
+        className="md:m-4 m-2 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer shrink-0"
         onClick={() => handleSaved(viewData)}
       >
-        <FontAwesomeIcon icon={faPlusCircle} className="text-4xl" />
+        <FontAwesomeIcon icon={faPlusCircle} className="md:text-4xl text-xl" />
       </div>
-      <div className="flex gap-2 overflow-auto p-4 basis-full mr-4 cursor-pointer">
+      <div className="flex gap-2 overflow-auto md:p-4 p-2 basis-full md:mr-4 mr-2">
         {savedSchedule.map((i) => {
           return (
             <SavedBlock
@@ -136,7 +138,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
 
   return (
     <animated.div
-      className="h-full aspect-[1.61/1] bg-[white] rounded-md grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 relative hover:bg-slate-200 shadow-lg"
+      className="h-full aspect-[1.61/1] bg-[white] rounded-md grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 relative hover:bg-slate-200 md:shadow-lg shadow-md cursor-pointer"
       key={i.id}
       style={springs}
       onClick={handleClick}
