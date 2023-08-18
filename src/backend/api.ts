@@ -1,7 +1,7 @@
 import mysql2 from "mysql2";
 
 const HOST = "gcp.connect.psdb.cloud";
-const USERNAME = ""; // removed
+const USERNAME = ""; //removed
 const PASSWORD = ""; // removed
 
 const config = {
@@ -9,14 +9,15 @@ const config = {
   user: USERNAME,
   password: PASSWORD,
 };
-const connection = mysql2.createConnection(config);
 
-connection.connect((err) => {
-  if (err) throw err;
+export function query() {
+  const connection = mysql2.createConnection(config);
 
-  console.log("Connected to PlanetScale");
+  connection.connect((err) => {
+    if (err) throw err;
 
-  // request data from database
-});
+    console.log("Connected to PlanetScale");
+  });
 
-connection.end();
+  connection.end();
+}

@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 
+// import { query } from "../../backend/api";
+
 export default function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +15,7 @@ export default function SignIn() {
 
     console.log(`${username}: ${password}`);
 
-    // access the backend to make connect the database
+    // query();
   }
 
   return (
