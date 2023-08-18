@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Class, Rating } from "../../types";
+import { Class, Rating } from "../../../types";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { Dispatch, useContext, useEffect, useState } from "react";
 import { ClassContext } from "../Schedule";

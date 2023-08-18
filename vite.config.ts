@@ -5,4 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/me-schedule-maker/",
+  // build: {
+  //   modulePreload: {
+  //     polyfill: false
+  //   }
+  // }
 });

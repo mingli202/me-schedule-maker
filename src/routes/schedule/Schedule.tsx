@@ -9,7 +9,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { Class, Time, ViewData } from "../types";
+import { Class, Time, ViewData } from "../../types";
 // import Search from "./Search";
 import { ClassesLoader } from "./Search";
 
@@ -121,7 +121,6 @@ export default function Schedule() {
   }
 
   function checkForOverlap(viewData: ViewData[][]): boolean {
-
     const times: Time[] = viewData.flat().map((i) => i.time);
     const monday: string[] = times
       .filter((i) => i[1])

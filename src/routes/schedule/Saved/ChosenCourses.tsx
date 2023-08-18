@@ -6,7 +6,7 @@ import {
   useContext,
   useEffect,
 } from "react";
-import { Class, ViewData } from "../../types";
+import { Class, ViewData } from "../../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { animated, useSpring } from "@react-spring/web";

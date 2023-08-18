@@ -2,7 +2,7 @@ import { Suspense, useState, lazy, useDeferredValue, Dispatch } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { Class } from "../../types";
+import { Class } from "../../../types";
 import ClassesLoader from "./ClassesLoader";
 
 const Classes = lazy(() => import("./Classes"));
@@ -76,9 +76,9 @@ export default function Search({ classes, setLoading }: Props) {
       </label>
       <div
         className="w-full h-full box-border rounded-lg overflow-y-auto md:p-4 p-2"
-        // style={{
-        //   scrollbarGutter: "stable",
-        // }}
+      // style={{
+      //   scrollbarGutter: "stable",
+      // }}
       >
         <Suspense fallback={<ClassesLoader />}>
           {deferredInput === input ? (

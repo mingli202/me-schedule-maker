@@ -1,7 +1,7 @@
 import { animated, useSpring, useTransition } from "@react-spring/web";
 import { Fragment, ReactElement, useContext, useEffect, useState } from "react";
 import { ClassContext } from "../Schedule";
-import { ViewData } from "../../types";
+import { ViewData } from "../../../types";
 
 type Props = {
   viewData: ViewData[][];
@@ -65,7 +65,10 @@ export default function View({ viewData }: Props) {
           const d = window.innerWidth >= 1100 ? i : i.slice(0, 3);
 
           return (
-            <span className="text-center font-semibold md:text-base text-xs" key={i}>
+            <span
+              className="text-center font-semibold md:text-base text-xs"
+              key={i}
+            >
               {d}
             </span>
           );
