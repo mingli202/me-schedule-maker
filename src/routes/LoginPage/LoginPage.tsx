@@ -14,7 +14,7 @@ export default function LoginPage() {
             </nav>
 
             <img
-              src="/assets/jac-mock-schedule-maker-high-resolution-logo-black-on-transparent-background.png"
+              src="me-schedule-maker/assets/jac-mock-schedule-maker-high-resolution-logo-black-on-transparent-background.png"
               className="w-28 mt-12"
             />
 
