@@ -2,8 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ForgotPage, EmailVerification } from "./routes/LoginPage/components";
 import { Home } from "./routes/home";
 import { lazy } from "react";
+import { Schedule } from "./routes/schedule";
 
-const Schedule = lazy(() => import("./routes/schedule/Schedule"));
 const LoginPage = lazy(() => import("./routes/LoginPage/LoginPage"));
 
 const routes = createBrowserRouter(
