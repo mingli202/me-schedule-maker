@@ -18,7 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 /*
- *Authentication api
+ *Authentication Api
  * */
 const auth = getAuth(app);
 

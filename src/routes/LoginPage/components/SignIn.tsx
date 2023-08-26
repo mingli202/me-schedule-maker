@@ -25,7 +25,7 @@ export default function SignIn() {
       const data: UserType = (await getUserData(
         loginInfo.info.user.uid
       )) as UserType;
-      console.log(data);
+      // console.log(data);
 
       navigate(`users/${data.uid}`);
     } else {

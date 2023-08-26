@@ -42,7 +42,7 @@ export default function LoginPage() {
 
         <div className="basis-7/12 bg-c1 text-xl p-4">
           I'm working on the authentication/authorization feature. You can
-          create an account by for now it's not going to do anything.
+          create an account for now but it's not going to do anything.
         </div>
       </section>
     </>

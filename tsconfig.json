@@ -26,8 +26,7 @@
     "src",
     ".eslintrc.cjs",
     "./tailwind.config.js",
-    "./vite.config.ts",
-    "backend"
+    "./vite.config.ts"
   ],
   "exclude": [
     "src/backend/api-public.ts"
