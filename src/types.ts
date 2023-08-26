@@ -1,3 +1,23 @@
+import { AuthError, UserCredential } from "firebase/auth";
+
+export type AuthType =
+	| {
+		info: UserCredential;
+		status: "success";
+	}
+	| {
+		info: AuthError;
+		status: "error";
+	};
+
+export type UserType = {
+	email: string;
+	uid: string;
+	password: string;
+	name?: string;
+	// schedules?: {};
+};
+
 export type Class = {
 	count: number;
 	program: string;

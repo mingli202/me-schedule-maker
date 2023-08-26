@@ -1,6 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Schedule } from "./routes/schedule";
-import { LoginPage, ForgotPage } from "./routes/LoginPage";
+import { ForgotPage, EmailVerification } from "./routes/LoginPage/components";
+import { Home } from "./routes/home";
+import { lazy } from "react";
+
+const Schedule = lazy(() => import("./routes/schedule/Schedule"));
+const LoginPage = lazy(() => import("./routes/LoginPage/LoginPage"));
 
 const routes = createBrowserRouter(
   [
@@ -15,6 +19,14 @@ const routes = createBrowserRouter(
     {
       path: "/schedule",
       element: <Schedule />,
+    },
+    {
+      path: "/users/:uid",
+      element: <Home />,
+    },
+    {
+      path: "/email-verification-confirmation",
+      element: <EmailVerification />,
     },
   ],
   { basename: "/me-schedule-maker/" }

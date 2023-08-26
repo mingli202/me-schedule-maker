@@ -1,5 +1,4 @@
-import { View } from "./View";
-import { ChosenCourses } from "./Saved";
+import { View, ChosenCourses } from "./components";
 import {
   Dispatch,
   Suspense,
@@ -11,16 +10,16 @@ import {
 } from "react";
 import { Class, Time, ViewData } from "../../types";
 // import Search from "./Search";
-import { ClassesLoader } from "./Search";
+import { ClassesLoader } from "./components/Search";
 
-const Search = lazy(() => import("./Search/Search"));
+const Search = lazy(() => import("./components/Search/Search"));
 
 export const ClassContext = createContext<{
   chosenClasses: Class[];
   setChosenClasses: Dispatch<React.SetStateAction<Class[]>>;
 }>({
   chosenClasses: [],
-  setChosenClasses: () => {},
+  setChosenClasses: () => { },
 });
 
 export default function Schedule() {
@@ -50,7 +49,7 @@ export default function Schedule() {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        const data = await response.json();
+        const data = (await response.json()) as T;
         set(data);
       } catch (error) {
         console.log(error);

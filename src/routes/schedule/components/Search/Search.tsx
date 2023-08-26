@@ -2,7 +2,7 @@ import { Suspense, useState, lazy, useDeferredValue, Dispatch } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { Class } from "../../../types";
+import { Class } from "../../../../types";
 import ClassesLoader from "./ClassesLoader";
 
 const Classes = lazy(() => import("./Classes"));

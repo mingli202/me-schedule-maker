@@ -21,14 +21,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-    // "types": [
-    //   "node"
-    // ],
-    // "typeRoots": [
-    //   "../node_modules/@types"
-    // ],
-    // "allowJs": true,
-    // "checkJs": true
   },
   "include": [
     "src",
@@ -36,6 +28,9 @@
     "./tailwind.config.js",
     "./vite.config.ts",
     "backend"
+  ],
+  "exclude": [
+    "src/backend/api-public.ts"
   ],
   "references": [
     {

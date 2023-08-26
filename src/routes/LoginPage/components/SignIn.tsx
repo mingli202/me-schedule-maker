@@ -1,39 +1,58 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-// import { query } from "../../backend/api";
+import { signIn, getUserData } from "../../../backend/api";
+import { UserType } from "../../../types";
 
 export default function SignIn() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
+  const [denied, setDenied] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const navigate = useNavigate();
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    console.log(`${username}: ${password}`);
+    const loginInfo = await signIn(email, password);
 
-    // query();
+    if (loginInfo.status === "success") {
+      setDenied(false);
+
+      const data: UserType = (await getUserData(
+        loginInfo.info.user.uid
+      )) as UserType;
+      console.log(data);
+
+      navigate(`users/${data.uid}`);
+    } else {
+      setDenied(true);
+    }
   }
 
   return (
-    <form className="basis-full w-full box-border p-4" onSubmit={handleSubmit}>
+    <form
+      className="basis-full w-full box-border p-4 shrink-0"
+      onSubmit={(e) => void handleSubmit(e)}
+    >
       <p className="w-full text-center font-bold mt-2 mb-6 text-2xl">
         Sign in to your account
       </p>
 
       <label>
-        Email or Username
+        Email
         <input
-          name="username"
-          placeholder="Username"
-          className="w-full p-2 text-lg mt-2 mb-6 outline-none rounded-md"
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
+          name="email"
+          placeholder="Email"
+          className={`w-full p-2 text-lg mt-2 mb-6 outline-none rounded-md box-border ${denied ? "border-red-500 border border-solid" : ""
+            }`}
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
           required
-          value={username}
+          value={email}
         />
       </label>
 
@@ -48,7 +67,8 @@ export default function SignIn() {
           <input
             name="password"
             placeholder="Password"
-            className="w-full p-2 text-lg outline-none rounded-md"
+            className={`w-full p-2 text-lg outline-none rounded-md box-border ${denied ? "border-red-500 border border-solid" : ""
+              }`}
             type={`${showPass ? "text" : "password"}`}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -61,6 +81,9 @@ export default function SignIn() {
           />
         </div>
       </label>
+      <p className="mt-2 text-sm text-red-500">
+        {denied ? "Email or password incorrect" : null}
+      </p>
 
       <label>
         <button

@@ -12,13 +12,7 @@ import { getDatabase, ref, set, get } from "firebase/database";
 import { AuthType, UserType } from "../types";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAG8LJPNXNgDKnfopB-c1CVX-Uew4uRyqU",
-  authDomain: "schedule-maker-8675b.firebaseapp.com",
-  projectId: "schedule-maker-8675b",
-  storageBucket: "schedule-maker-8675b.appspot.com",
-  messagingSenderId: "198447247334",
-  appId: "1:198447247334:web:f009e6e7b0b144923cf027",
-  measurementId: "G-2NLFWYGS09",
+  // removed
 };
 
 const app = initializeApp(firebaseConfig);

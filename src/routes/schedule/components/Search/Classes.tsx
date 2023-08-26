@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Class, Rating } from "../../../types";
+import { Class, Rating } from "../../../../types";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { Dispatch, useContext, useEffect, useState } from "react";
-import { ClassContext } from "../Schedule";
+import { ClassContext } from "../../Schedule";
 
 type ClassesProps = {
   input: string;
@@ -178,7 +178,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       {targetClasses.map((i: Class, index: number) => (
         <div
           className="bg-c2 p-2 box-border md:mb-3 mb-2 rounded-lg md:shadow-lg shadow-md hover:bg-c3 transition cursor-pointer md:text-base text-xs"
-          key={i.code + index}
+          key={`i.code + ${index}`}
           onClick={() => toggleClass(i)}
         >
           <p className="font-light">
