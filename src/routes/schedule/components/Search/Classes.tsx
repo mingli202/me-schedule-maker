@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Class, Rating } from "../../../../types";
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import { Dispatch, useContext, useEffect, useState } from "react";
+import { Class } from "../../../../types";
+import { Dispatch, useContext, useEffect } from "react";
 import { ClassContext } from "../../Schedule";
+import { ScoreInfo } from ".";
 
 type ClassesProps = {
   input: string;
@@ -11,7 +10,9 @@ type ClassesProps = {
 };
 
 export default function Classes({ input, classes, setLoading }: ClassesProps) {
-  useEffect(() => setLoading(true), []);
+  useEffect(() => {
+    setLoading(true);
+  }, []);
 
   let keywords: string[] = input.split(","); //* Gives an array of keywords
   keywords = keywords.map((keyword) => keyword.trim()); //* removes spaces around keyword
@@ -40,9 +41,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       ["r>", "r<", "r="].includes(keyword.slice(0, 2)) &&
       keyword.length > 2
     ) {
-      try {
-        Number(keyword.slice(2));
-      } catch {
+      if (!Number(keyword.slice(2))) {
         return [];
       }
       const inputRating = Number(keyword.slice(2));
@@ -64,9 +63,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       ["s>", "s<", "s="].includes(keyword.slice(0, 2)) &&
       keyword.length > 2
     ) {
-      try {
-        Number(keyword.slice(2));
-      } catch {
+      if (!Number(keyword.slice(2))) {
         return [];
       }
       const inputRating = Number(keyword.slice(2));
@@ -231,47 +228,6 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
           )}
         </div>
       ))}
-    </>
-  );
-}
-
-function ScoreInfo({ rating }: { rating: Rating }) {
-  const [hover, setHover] = useState(false);
-
-  return (
-    <>
-      {
-        <FontAwesomeIcon
-          icon={faQuestionCircle}
-          className="cursor-pointer"
-          onMouseOver={() => setHover(true)}
-          onMouseOut={() => setHover(false)}
-        />
-      }
-      {hover && (
-        <div className="absolute top-0 left-0 mt-6 bg-[white] rounded-lg p-2 z-10 text-xs flex">
-          <p className="w-full">
-            The score is calculated to take into account the number of raters. A
-            high rating with low raters will perform worse in comparison to a
-            lower rating with many raters.
-          </p>
-          <ul className="pl-4 shrink-0">
-            <li className="list-disc">
-              Rating: {rating.avg === 0 ? "N/A" : `${rating.avg}/5`}
-            </li>
-            <li className="list-disc">
-              Raters: {rating.avg === 0 ? "N/A" : rating.nRating}
-            </li>
-            <li className="list-disc">
-              Take Again:{" "}
-              {rating.avg === 0 ? "N/A" : `${rating.takeAgain.toFixed(1)}%`}
-            </li>
-            <li className="list-disc">
-              Difficulty: {rating.avg === 0 ? "N/A" : `${rating.difficulty}/5`}
-            </li>
-          </ul>
-        </div>
-      )}
     </>
   );
 }

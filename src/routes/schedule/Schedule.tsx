@@ -1,4 +1,4 @@
-import { View, ChosenCourses } from "./components";
+import { View } from "./components";
 import {
   Dispatch,
   Suspense,
@@ -112,6 +112,8 @@ export default function Schedule() {
               [`${colStart}`]: [rowStart, rowEnd],
             },
             color: colors[index],
+            teacher: classToShow.lecture.prof,
+            title: classToShow.lecture.title,
           };
         });
       });
@@ -172,13 +174,16 @@ export default function Schedule() {
 
   return (
     <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
-      <section className="w-full h-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border md:gap-4 gap-2 md:p-4 p-2 text-c9 flex flex-col md:text-base text-xs overflow-auto">
+      <section className="w-full h-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border gap-2 p-2 text-c9 flex flex-col md:text-base text-xs overflow-auto">
         <Suspense fallback={<ClassesLoader />}>
-          <Search classes={classes} setLoading={setLoading} />
+          <Search
+            classes={classes}
+            setLoading={setLoading}
+            viewData={viewData}
+          />
           {loading && (
             <>
               <View viewData={viewData} />
-              <ChosenCourses viewData={viewData} />
             </>
           )}
         </Suspense>

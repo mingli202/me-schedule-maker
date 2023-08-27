@@ -6,11 +6,11 @@ import {
   useContext,
   useEffect,
 } from "react";
-import { Class, ViewData } from "../../../types";
+import { Class, ViewData } from "../../../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { animated, useSpring } from "@react-spring/web";
-import { ClassContext } from "../Schedule";
+import { ClassContext } from "../../Schedule";
 
 type Props = {
   viewData: ViewData[][];
@@ -28,7 +28,7 @@ export default function ChosenCourses({ viewData }: Props) {
     const keyItem = window.localStorage.getItem(key);
 
     if (keyItem) {
-      return JSON.parse(keyItem);
+      return JSON.parse(keyItem) as Saved[];
     }
     return [];
   });
@@ -56,25 +56,25 @@ export default function ChosenCourses({ viewData }: Props) {
   }, [savedSchedule]);
 
   return (
-    <section className="md:row-span-1 md:col-span-full bg-c1 rounded-xl box-border flex max-md:order-1">
+    <section className="bg-c1 rounded-sm box-border flex w-full flex-wrap gap-2 p-2">
       <div
-        className="md:m-4 m-2 bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer shrink-0"
+        className="bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer h-20"
         onClick={() => handleSaved(viewData)}
       >
         <FontAwesomeIcon icon={faPlusCircle} className="md:text-4xl text-xl" />
       </div>
-      <div className="flex gap-2 overflow-auto md:p-4 p-2 basis-full md:mr-4 mr-2">
-        {savedSchedule.map((i) => {
-          return (
-            <SavedBlock
-              i={i}
-              savedSchedule={savedSchedule}
-              setSavedSchedule={setSavedSchedule}
-              key={i.id}
-            />
-          );
-        })}
-      </div>
+      {/* <div className="flex gap-2 overflow-auto md:p-4 p-2 basis-full md:mr-4 mr-2 flex-wrap w-full"> */}
+      {savedSchedule.map((i) => {
+        return (
+          <SavedBlock
+            i={i}
+            savedSchedule={savedSchedule}
+            setSavedSchedule={setSavedSchedule}
+            key={i.id}
+          />
+        );
+      })}
+      {/* </div> */}
     </section>
   );
 }
@@ -84,7 +84,7 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
     const t = Object.entries(i.time).flat();
     return (
       <div
-        className={`z-10 border border-[black] box-border rounded-md`}
+        className={`z-10 border border-[black] box-border rounded-sm`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
@@ -138,7 +138,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
 
   return (
     <animated.div
-      className="h-full aspect-[1.61/1] bg-[white] rounded-md grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 relative hover:bg-slate-200 md:shadow-lg shadow-md cursor-pointer"
+      className="min-w-[calc(5rem*1.6)] bg-[white] rounded-md grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 relative hover:bg-slate-200 md:shadow-lg shadow-md cursor-pointer h-20 overflow-hidden"
       key={i.id}
       style={springs}
       onClick={handleClick}

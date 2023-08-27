@@ -54,6 +54,8 @@ export type ViewData = {
 	section: string;
 	time: Time;
 	color: string;
+	title: string;
+	teacher: string;
 };
 
 export type Time = {

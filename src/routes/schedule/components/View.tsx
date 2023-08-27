@@ -22,7 +22,7 @@ export default function View({ viewData }: Props) {
   }, [viewData]);
 
   return (
-    <section className="md:col-span-7 md:row-span-5 max-md:min-h-[60%] col-span-full bg-c1 rounded-lg md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-2">
+    <section className="md:col-span-7 md:row-span-6 max-md:min-h-[60%] col-span-full bg-c1 rounded-lg md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-1">
       {/* Hours */}
       <div className="col-span-1 row-span-full grid grid-cols-1 grid-rows-[repeat(21,minmax(0,1fr))]">
         {[...Array(21).keys()].map((i) => {
@@ -105,9 +105,8 @@ function Lines({ n, lineProperty }: LinesProps) {
 
   return (
     <animated.div
-      className={`${
-        lineProperty === "height" ? "w-full py-2" : "h-full px-2"
-      } box-border`}
+      className={`${lineProperty === "height" ? "w-full py-2" : "h-full px-2"
+        } box-border`}
       style={springs}
     >
       <div
@@ -141,7 +140,7 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
 
     return (
       <animated.div
-        className={`lg:text-base sm:text-xs text-[8px] leading-[10px] z-10 p-2 border border-[black] outline outline-1 outline-[black] text-[black] cursor-pointer rounded-xl`}
+        className={`text-[14px] leading-[14px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] cursor-pointer rounded-lg overflow-hidden`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
@@ -154,8 +153,10 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
           setChosenClasses(chosenClasses.filter((c) => c.code !== i.code));
         }}
       >
-        <p className="lg:line-clamp-1">{i.code}</p>
-        <p>{i.section}</p>
+        <p className="line-clamp-2 font-semibold">{i.title}</p>
+        <p className="line-clamp-1 font-light mt-1">{i.code}</p>
+        <p className="font-light">{i.section}</p>
+        <p className="line-clamp-2 mt-1">{i.teacher}</p>
       </animated.div>
     );
   });

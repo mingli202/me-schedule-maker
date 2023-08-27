@@ -28,9 +28,6 @@
     "./tailwind.config.js",
     "./vite.config.ts"
   ],
-  "exclude": [
-    "src/backend/api-public.ts"
-  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
