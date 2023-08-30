@@ -40,15 +40,15 @@ export default function Filter({ setInput, setCurrent }: Props) {
     const ratingMax = Number(getEl("ratingMax").value);
     const ratingMin = Number(getEl("ratingMin").value);
     const rating = [
-      ratingMin ? `r>${Math.min(ratingMin, ratingMax)}` : "",
-      ratingMax ? `r<${Math.max(ratingMax, ratingMin)}` : "",
+      ratingMin ? `r>${ratingMin}` : "",
+      ratingMax ? `r<${ratingMax}` : "",
     ];
 
     const scoreMax = Number(getEl("scoreMax").value);
     const scoreMin = Number(getEl("scoreMin").value);
     const score = [
-      scoreMin ? `s>${Math.min(scoreMin, scoreMax)}` : "",
-      scoreMax ? `s<${Math.max(scoreMax, scoreMin)}` : "",
+      scoreMin ? `s>${scoreMin}` : "",
+      scoreMax ? `s<${scoreMax}` : "",
     ];
 
     const checkbox = [
@@ -120,7 +120,7 @@ export default function Filter({ setInput, setCurrent }: Props) {
               <div className="basis-full">
                 <input
                   className="outline-none focus:bg-c2 w-full rounded-lg p-1"
-                  placeholder="4"
+                  placeholder="0"
                   name="ratingMin"
                 />
               </div>
@@ -160,7 +160,7 @@ export default function Filter({ setInput, setCurrent }: Props) {
               <div className="basis-full">
                 <input
                   className="outline-none focus:bg-c2 w-full rounded-lg p-1"
-                  placeholder="80"
+                  placeholder="0"
                   name="scoreMin"
                 />
               </div>
