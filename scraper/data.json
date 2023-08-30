@@ -1182,7 +1182,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "M\u0000": "1030-1230\u0000",
+            "M": "1030-1230",
             "prof": "Sollazzo, Rhoda",
             "TR": "1000-1130"
           },
@@ -1193,7 +1193,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MT\u0000": "1430-1600\u0000",
+            "MT": "1430-1600",
             "prof": "Herlin, Antoine",
             "R": "1230-1430"
           },
@@ -1204,9 +1204,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "M\u0000": "1300-1430\u0000",
+            "M": "1300-1430",
             "prof": "Herlin, Antoine",
-            "R\u0000": "1430-1600\u0000",
+            "R": "1430-1600",
             "F": "1030-1230"
           },
           "lab": {},
@@ -1216,7 +1216,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "1300-1430\u0000",
+            "TF": "1300-1430",
             "prof": "Karouma, Abdulrahman",
             "W": "0830-1030"
           },
@@ -1227,7 +1227,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "1430-1600\u0000",
+            "TF": "1430-1600",
             "prof": "Karouma, Abdulrahman",
             "W": "1230-1430"
           },
@@ -1238,7 +1238,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "1300-1430\u0000",
+            "TF": "1300-1430",
             "prof": "Connor, Cameron James",
             "R": "1430-1630"
           },
@@ -1249,7 +1249,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "1000-1130\u0000",
+            "TF": "1000-1130",
             "prof": "Connor, Cameron James",
             "R": "1030-1230"
           },
@@ -1260,7 +1260,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MR\u0000": "1430-1600\u0000",
+            "MR": "1430-1600",
             "prof": "Gatien, Daniel",
             "T": "1430-1630"
           },
@@ -1271,7 +1271,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "0830-1000\u0000",
+            "TF": "0830-1000",
             "prof": "Mombourquette, Ethan",
             "W": "0830-1030"
           },
@@ -1282,7 +1282,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MF\u0000": "1300-1430\u0000",
+            "MF": "1300-1430",
             "prof": "Lo Vasco, Frank",
             "R": "0830-1030"
           },
@@ -1293,7 +1293,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MW\u0000": "0830-1000\u0000",
+            "MW": "0830-1000",
             "prof": "Lo Vasco, Frank",
             "F": "0830-1030"
           },
@@ -1304,7 +1304,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MT\u0000": "0830-1000\u0000",
+            "MT": "0830-1000",
             "prof": "Pendev, Ivo",
             "R": "0830-1030"
           },
@@ -1315,7 +1315,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MF\u0000": "0830-1000\u0000",
+            "MF": "0830-1000",
             "prof": "Lucier, Jason",
             "R": "0830-1030"
           },
@@ -1326,7 +1326,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MF\u0000": "1430-1600\u0000",
+            "MF": "1430-1600",
             "prof": "Flood, Kevin",
             "W": "1230-1430"
           },
@@ -1337,7 +1337,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MR\u0000": "1600-1730\u0000",
+            "MR": "1600-1730",
             "prof": "Flood, Kevin",
             "W": "1430-1630"
           },
@@ -1348,7 +1348,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "1130-1300\u0000",
+            "TF": "1130-1300",
             "prof": "Gerber, Kenneth",
             "R": "1030-1230"
           },
@@ -1359,7 +1359,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MF\u0000": "1430-1600\u0000",
+            "MF": "1430-1600",
             "prof": "Bardestani, Mohammad",
             "T": "1030-1230"
           },
@@ -1370,9 +1370,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "M\u0000": "1600-1730\u0000",
+            "M": "1600-1730",
             "prof": "Bardestani, Mohammad",
-            "W\u0000": "1030-1230\u0000",
+            "W": "1030-1230",
             "F": "1130-1300"
           },
           "lab": {},
@@ -1382,7 +1382,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MR\u0000": "1300-1430\u0000",
+            "MR": "1300-1430",
             "prof": "Guindi, Moushira",
             "T": "1030-1230"
           },
@@ -1393,7 +1393,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MR\u0000": "1300-1430\u0000",
+            "MR": "1300-1430",
             "prof": "Sollazzo, Rhoda",
             "W": "1030-1230"
           },
@@ -1404,7 +1404,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MW\u0000": "1300-1430\u0000",
+            "MW": "1300-1430",
             "prof": "Boshuck, William",
             "R": "1230-1430"
           },
@@ -1415,7 +1415,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "TF\u0000": "0830-1000\u0000",
+            "TF": "0830-1000",
             "prof": "Klochko, Yuliya",
             "W": "0830-1030"
           },
@@ -1426,9 +1426,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "M\u0000": "1130-1300\u0000",
+            "M": "1130-1300",
             "prof": "Zhao, Yu",
-            "W\u0000": "1030-1230\u0000",
+            "W": "1030-1230",
             "F": "0830-1000"
           },
           "lab": {},
@@ -1438,7 +1438,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus I",
-            "MF\u0000": "1430-1600\u0000",
+            "MF": "1430-1600",
             "prof": "Zhao, Yu",
             "W": "1430-1630"
           },
@@ -1451,7 +1451,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "MF\u0000": "1430-1600\u0000",
+            "MF": "1430-1600",
             "prof": "Morris, Christophe",
             "W": "1430-1630"
           },
@@ -1462,7 +1462,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "MT\u0000": "1130-1300\u0000",
+            "MT": "1130-1300",
             "prof": "Morris, Christophe",
             "R": "1430-1630"
           },
@@ -1473,9 +1473,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "M\u0000": "1430-1600\u0000",
+            "M": "1430-1600",
             "prof": "Dale Hill, Jordan",
-            "W\u0000": "1130-1300\u0000",
+            "W": "1130-1300",
             "R": "1230-1430"
           },
           "lab": {},
@@ -1485,7 +1485,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "MW\u0000": "1000-1130\u0000",
+            "MW": "1000-1130",
             "prof": "Masters, Richard",
             "R": "1430-1630"
           },
@@ -1496,7 +1496,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "MF\u0000": "1000-1130\u0000",
+            "MF": "1000-1130",
             "prof": "Squire, Richard",
             "W": "1030-1230"
           },
@@ -1507,9 +1507,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "T\u0000": "1000-1130\u0000",
+            "T": "1000-1130",
             "prof": "Squire, Richard",
-            "R\u0000": "1030-1230\u0000",
+            "R": "1030-1230",
             "F": "1300-1430"
           },
           "lab": {},
@@ -1519,9 +1519,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "M\u0000": "1600-1730\u0000",
+            "M": "1600-1730",
             "prof": "Zhao, Yu",
-            "T\u0000": "1230-1430\u0000",
+            "T": "1230-1430",
             "F": "1000-1130"
           },
           "lab": {},
@@ -1533,9 +1533,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "M\u0000": "1600-1730\u0000",
+            "M": "1600-1730",
             "prof": "Morris, Christophe",
-            "T\u0000": "1430-1630\u0000",
+            "T": "1430-1630",
             "F": "1300-1430"
           },
           "lab": {},
@@ -1545,7 +1545,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "T\u0000": "0830-1030\u0000",
+            "T": "0830-1030",
             "prof": "Mokhtarian, Faranak",
             "WF": "1130-1300"
           },
@@ -1556,9 +1556,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "M\u0000": "1130-1300\u0000",
+            "M": "1130-1300",
             "prof": "Mokhtarian, Faranak",
-            "T\u0000": "1030-1230\u0000",
+            "T": "1030-1230",
             "F": "1300-1430"
           },
           "lab": {},
@@ -1568,7 +1568,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MT\u0000": "1000-1130\u0000",
+            "MT": "1000-1130",
             "prof": "Pendev, Ivo",
             "F": "0830-1030"
           },
@@ -1579,9 +1579,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "M\u0000": "1300-1430\u0000",
+            "M": "1300-1430",
             "prof": "Pendev, Ivo",
-            "R\u0000": "1030-1230\u0000",
+            "R": "1030-1230",
             "F": "1130-1300"
           },
           "lab": {},
@@ -1591,9 +1591,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "T\u0000": "1130-1300\u0000",
+            "T": "1130-1300",
             "prof": "Dale Hill, Jordan",
-            "W\u0000": "1430-1630\u0000",
+            "W": "1430-1630",
             "F": "1430-1600"
           },
           "lab": {},
@@ -1603,7 +1603,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MF\u0000": "1130-1300\u0000",
+            "MF": "1130-1300",
             "prof": "Dale Hill, Jordan",
             "T": "1430-1630"
           },
@@ -1614,7 +1614,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MF\u0000": "1000-1130\u0000",
+            "MF": "1000-1130",
             "prof": "Lucier, Jason",
             "T": "0830-1030"
           },
@@ -1625,7 +1625,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MR\u0000": "1300-1430\u0000",
+            "MR": "1300-1430",
             "prof": "Lucier, Jason",
             "T": "1230-1430"
           },
@@ -1636,7 +1636,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "TF\u0000": "0830-1000\u0000",
+            "TF": "0830-1000",
             "prof": "Gerber, Kenneth",
             "W": "0830-1030"
           },
@@ -1647,7 +1647,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "TF\u0000": "1300-1430\u0000",
+            "TF": "1300-1430",
             "prof": "Gerber, Kenneth",
             "W": "1230-1430"
           },
@@ -1658,7 +1658,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MR\u0000": "1600-1730\u0000",
+            "MR": "1600-1730",
             "prof": "Kazuo Takei, Luiz",
             "W": "1430-1630"
           },
@@ -1669,7 +1669,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MR\u0000": "1130-1300\u0000",
+            "MR": "1130-1300",
             "prof": "Kazuo Takei, Luiz",
             "W": "1030-1230"
           },
@@ -1680,7 +1680,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MF\u0000": "1430-1600\u0000",
+            "MF": "1430-1600",
             "prof": "Chaput, Philippe",
             "R": "1430-1630"
           },
@@ -1691,7 +1691,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MF\u0000": "1000-1130\u0000",
+            "MF": "1000-1130",
             "prof": "Chaput, Philippe",
             "W": "1430-1630"
           },
@@ -1702,7 +1702,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MW\u0000": "0830-1000\u0000",
+            "MW": "0830-1000",
             "prof": "Delage, Philippe",
             "R": "1030-1230"
           },
@@ -1713,9 +1713,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "M\u0000": "1230-1430\u0000",
+            "M": "1230-1430",
             "prof": "Delage, Philippe",
-            "W\u0000": "1300-1430\u0000",
+            "W": "1300-1430",
             "R": "0830-1000"
           },
           "lab": {},
@@ -1725,9 +1725,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "M\u0000": "0830-1000\u0000",
+            "M": "0830-1000",
             "prof": "Boshuck, William",
-            "R\u0000": "0830-1030\u0000",
+            "R": "0830-1030",
             "F": "1130-1300"
           },
           "lab": {},
@@ -1737,7 +1737,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra I",
-            "MF\u0000": "1000-1130\u0000",
+            "MF": "1000-1130",
             "prof": "Boshuck, William",
             "W": "0830-1030"
           },
@@ -1750,7 +1750,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus III",
-            "MF\u0000": "1130-1300\u0000",
+            "MF": "1130-1300",
             "prof": "Lo Vasco, Frank",
             "W": "1030-1230"
           },
@@ -1763,7 +1763,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Statistics",
-            "MR\u0000": "1430-1600\u0000",
+            "MR": "1430-1600",
             "prof": "Kazuo Takei, Luiz",
             "T": "1230-1430"
           },
@@ -1774,7 +1774,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Statistics",
-            "MF\u0000": "1130-1300\u0000",
+            "MF": "1130-1300",
             "prof": "Chaput, Philippe",
             "W": "1030-1230"
           },
@@ -3649,7 +3649,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "M\u0000": "0830-1030\u0000",
+            "M": "0830-1030",
             "prof": "Panassenko, Alexandre",
             "WF": "0830-1000"
           },
@@ -3660,7 +3660,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "M\u0000": "1030-1230\u0000",
+            "M": "1030-1230",
             "prof": "Panassenko, Alexandre",
             "TF": "1130-1300"
           },
@@ -3671,7 +3671,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MR\u0000": "1130-1300\u0000",
+            "MR": "1130-1300",
             "prof": "Baker, Audrey Elaine",
             "T": "1430-1630"
           },
@@ -3682,7 +3682,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MR\u0000": "1000-1130\u0000",
+            "MR": "1000-1130",
             "prof": "Herlin, Antoine",
             "T": "1030-1230"
           },
@@ -3693,9 +3693,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "T\u0000": "1300-1430\u0000",
+            "T": "1300-1430",
             "prof": "Spencer, Andrea Marie",
-            "W\u0000": "1230-1430\u0000",
+            "W": "1230-1430",
             "F": "0830-1000"
           },
           "lab": {},
@@ -3705,7 +3705,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "TF\u0000": "1000-1130\u0000",
+            "TF": "1000-1130",
             "prof": "Herta, Gabriel",
             "W": "1230-1430"
           },
@@ -3716,7 +3716,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "TF\u0000": "1300-1430\u0000",
+            "TF": "1300-1430",
             "prof": "Herta, Gabriel",
             "R": "1030-1230"
           },
@@ -3727,7 +3727,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MR\u0000": "1130-1300\u0000",
+            "MR": "1130-1300",
             "prof": "Chiappetta, Giulia",
             "W": "1030-1230"
           },
@@ -3738,7 +3738,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MR\u0000": "1300-1430\u0000",
+            "MR": "1300-1430",
             "prof": "Chiappetta, Giulia",
             "T": "1230-1430"
           },
@@ -3749,9 +3749,9 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "T\u0000": "1600-1730\u0000",
+            "T": "1600-1730",
             "prof": "Felisberto-Valente, Gustavo",
-            "W\u0000": "1230-1430\u0000",
+            "W": "1230-1430",
             "F": "1000-1130"
           },
           "lab": {},
@@ -3761,7 +3761,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MR\u0000": "1000-1130\u0000",
+            "MR": "1000-1130",
             "prof": "Guindi, Moushira",
             "W": "1030-1230"
           },
@@ -3772,7 +3772,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MF\u0000": "0830-1000\u0000",
+            "MF": "0830-1000",
             "prof": "Dubois, Olivier",
             "R": "0830-1030"
           },
@@ -3783,7 +3783,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MF\u0000": "1300-1430\u0000",
+            "MF": "1300-1430",
             "prof": "Dubois, Olivier",
             "W": "1230-1430"
           },
@@ -3794,7 +3794,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "TF\u0000": "1000-1130\u0000",
+            "TF": "1000-1130",
             "prof": "Fratarcangeli, Sergio",
             "W": "1230-1430"
           },
@@ -3805,7 +3805,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "TF\u0000": "1300-1430\u0000",
+            "TF": "1300-1430",
             "prof": "Fratarcangeli, Sergio",
             "R": "1230-1430"
           },
@@ -3816,7 +3816,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus 1 for Social Science",
-            "MT\u0000": "0830-1000\u0000",
+            "MT": "0830-1000",
             "prof": "Mikhail, Shery Halim Yakoub",
             "R": "1230-1430"
           },
@@ -3861,7 +3861,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "TR\u0000": "0830-1000\u0000",
+            "TR": "0830-1000",
             "prof": "Spencer, Andrea Marie",
             "F": "1230-1430"
           },
@@ -3872,7 +3872,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "M\u0000": "1430-1630\u0000",
+            "M": "1430-1630",
             "prof": "Masters, Richard",
             "WF": "1300-1430"
           },
@@ -3883,7 +3883,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "T\u0000": "1430-1630\u0000",
+            "T": "1430-1630",
             "prof": "Masters, Richard",
             "WF": "1430-1600"
           },
@@ -3894,7 +3894,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Calculus II",
-            "T\u0000": "1030-1230\u0000",
+            "T": "1030-1230",
             "prof": "Klochko, Yuliya",
             "WF": "1130-1300"
           },
@@ -3907,7 +3907,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "M\u0000": "0830-1030\u0000",
+            "M": "0830-1030",
             "prof": "Chung, Derrick",
             "TR": "0830-1000"
           },
@@ -3918,7 +3918,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MR\u0000": "1430-1600\u0000",
+            "MR": "1430-1600",
             "prof": "Baker, Audrey Elaine",
             "W": "1230-1430"
           },
@@ -3929,7 +3929,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MR\u0000": "1600-1730\u0000",
+            "MR": "1600-1730",
             "prof": "Baker, Audrey Elaine",
             "W": "1430-1630"
           },
@@ -3940,7 +3940,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MR\u0000": "1430-1600\u0000",
+            "MR": "1430-1600",
             "prof": "McLeod, Alice",
             "T": "1430-1630"
           },
@@ -3951,7 +3951,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MR\u0000": "1300-1430\u0000",
+            "MR": "1300-1430",
             "prof": "McLeod, Alice",
             "T": "1230-1430"
           },
@@ -3962,7 +3962,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "TF\u0000": "1430-1600\u0000",
+            "TF": "1430-1600",
             "prof": "Connor, Cameron James",
             "W": "1230-1430"
           },
@@ -3973,7 +3973,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "T\u0000": "1230-1430\u0000",
+            "T": "1230-1430",
             "prof": "Lefebvre, Caroline",
             "RF": "1000-1130"
           },
@@ -3984,7 +3984,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MF\u0000": "0830-1000\u0000",
+            "MF": "0830-1000",
             "prof": "Solsten, Karen",
             "T": "0830-1030"
           },
@@ -3995,7 +3995,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MF\u0000": "1300-1430\u0000",
+            "MF": "1300-1430",
             "prof": "Solsten, Karen",
             "R": "0830-1030"
           },
@@ -4006,7 +4006,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Linear Algebra",
-            "MR\u0000": "1000-1130\u0000",
+            "MR": "1000-1130",
             "prof": "Mikhail, Shery Halim Yakoub",
             "T": "1030-1230"
           },
@@ -6111,7 +6111,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Differential Calculus Enhanced",
-            "M\u0000": "1230-1430\u0000",
+            "M": "1230-1430",
             "prof": "Gatien, Daniel",
             "TR": "1300-1430"
           },
@@ -6124,7 +6124,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Statistics",
-            "MW\u0000": "1000-1130\u0000",
+            "MW": "1000-1130",
             "prof": "Dubois, Olivier",
             "F": "1000-1100"
           },
@@ -6223,7 +6223,7 @@
           "disc": "MULT",
           "lecture": {
             "title": "Principles of mathematics and logic",
-            "MW\u0000": "1000-1130\u0000",
+            "MW": "1000-1130",
             "prof": "Delage, Philippe",
             "F": "1030-1230"
           },
@@ -6660,9 +6660,8 @@
           "disc": "FILM",
           "lecture": {
             "title": "Film studies: World Cinema",
-            "W\u0000": "1130-1200\u0000",
-            "prof": "Notar, Clea",
-            "W": "1200-1430"
+            "W": "1200-1430",
+            "prof": "Notar, Clea"
           },
           "lab": {},
           "more": ""
@@ -7105,7 +7104,7 @@
           "disc": "CHEM",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Environmental Science",
-            "M\u0000": "1300-1400\u0000",
+            "M": "1300-1400",
             "TR": "1300-1430",
             "prof": "Babich-Morin, Nicole"
           },
@@ -7120,7 +7119,7 @@
           "disc": "CHEM",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Environmental Science",
-            "M\u0000": "1300-1400\u0000",
+            "M": "1300-1400",
             "TR": "1300-1430",
             "prof": "Babich-Morin, Nicole"
           },
@@ -7169,7 +7168,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-            "TR\u0000": "1000-1130\u0000",
+            "TR": "1000-1130",
             "F": "1230-1430",
             "prof": "McLeod, Alice"
           },
@@ -7180,7 +7179,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-            "T\u0000": "0830-1030\u0000",
+            "T": "0830-1030",
             "RF": "0830-1000",
             "prof": "Lefebvre, Caroline"
           },
@@ -7191,7 +7190,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-            "MR\u0000": "1000-1130\u0000",
+            "MR": "1000-1130",
             "T": "0830-1030",
             "prof": "Balogh, Ferenc"
           },
@@ -7202,7 +7201,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-            "MR\u0000": "1430-1600\u0000",
+            "MR": "1430-1600",
             "W": "0830-1030",
             "prof": "Balogh, Ferenc"
           },
@@ -7213,7 +7212,7 @@
           "disc": "MATH",
           "lecture": {
             "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-            "MF\u0000": "1130-1300\u0000",
+            "MF": "1130-1300",
             "R": "1230-1430",
             "prof": "Flood, Kevin"
           },
@@ -10540,9 +10539,8 @@
           "disc": "PHYE",
           "lecture": {
             "title": "Walking and Fitness",
-            "T\u0000": "1330-1430\u0000",
-            "prof": "Matthew, Valerie Anne",
-            "T": "1430-1530"
+            "T": "1430-1530",
+            "prof": "Matthew, Valerie Anne"
           },
           "lab": {},
           "more": ""
@@ -11255,9 +11253,8 @@
           "disc": "PHYE",
           "lecture": {
             "title": "Golf",
-            "W\u0000": "1500-1600\u0000",
-            "prof": "Fitleberg, Joel",
-            "W": "1600-1700"
+            "W": "1600-1700",
+            "prof": "Fitleberg, Joel"
           },
           "lab": {},
           "more": ""
@@ -11270,7 +11267,7 @@
             "prof": "Ghinani, Sasan"
           },
           "lab": {},
-          "more": "ADDITIONAL FEE:       $225.00\nIntensive course: includes one day on campus Aug 11, then a trip to Riviere du Diable, Mont Tremblant\u0000\u0000 Aug 15-18. Must be comfortable in deep water and able to swim 50 meters (with or without a\u0000\u0000 lifejacket). Students must provide appropriate outdoor clothing and camping gear "
+          "more": "ADDITIONAL FEE:       $225.00\nIntensive course: includes one day on campus Aug 11, then a trip to Riviere du Diable, Mont Tremblant Aug 15-18. Must be comfortable in deep water and able to swim 50 meters (with or without a lifejacket). Students must provide appropriate outdoor clothing and camping gear "
         },
         "00005": {
           "disc": "PHYE",
@@ -11356,9 +11353,8 @@
           "disc": "PHYE",
           "lecture": {
             "title": "Yoga Retreat",
-            "F\u0000": "1300-1400\u0000",
-            "prof": "Homsy, Celine",
-            "F": "1400-1600"
+            "F": "1400-1600",
+            "prof": "Homsy, Celine"
           },
           "lab": {},
           "more": "ADDITIONAL FEE:       $40.00\nIntensive class with weekend workshop Sept 23 24, Base de Plein Air St. Lazare "
@@ -11577,7 +11573,7 @@
             "prof": "Simandl, Jana"
           },
           "lab": {},
-          "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities.\u0000\u0000 Not for Science students. "
+          "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities. Not for Science students. "
         },
         "00002": {
           "disc": "CHEM",
@@ -11637,7 +11633,7 @@
             "prof": "Ali, Manijeh"
           },
           "lab": {},
-          "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities.\u0000\u0000 For all programs. "
+          "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities. For all programs. "
         },
         "00002": {
           "disc": "NUTR",
@@ -11647,7 +11643,7 @@
             "prof": "Ali, Manijeh"
           },
           "lab": {},
-          "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities.\u0000\u0000 For all programs. "
+          "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities. For all programs. "
         }
       },
       "101-DAB-03": {

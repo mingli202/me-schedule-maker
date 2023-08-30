@@ -15,7 +15,7 @@ export type UserType = {
 	uid: string;
 	password: string;
 	name?: string;
-	// schedules?: {};
+	schedules?: Saved[];
 };
 
 export type Class = {
@@ -64,4 +64,10 @@ export type Time = {
 	3?: string | undefined;
 	4?: string | undefined;
 	5?: string | undefined;
+};
+
+export type Saved = {
+	id: number;
+	vData: ViewData[][];
+	data: Class[];
 };

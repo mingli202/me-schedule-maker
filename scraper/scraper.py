@@ -46,11 +46,8 @@ def writeToOut():
 
     codeHeader2nLine = False
 
-    codeFormat = (
-        "[0-9][0-9][0-9]-[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]-[0-9a-zA-Z][0-9a-zA-Z]"
-    )
     sectionFormat = "[0-9][0-9][0-9][0-9][0-9]"
-    dayFormat = "^[A-Z][A-Z]?[A-Z]?"
+
     timeFormat = "[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"
 
     def handleSectionChange(
@@ -77,9 +74,8 @@ def writeToOut():
         # print(index)
 
         space = len(i) - len(i.lstrip())
-        text = i.strip()
+        text = i.strip().replace("\u0000", "")
         a = list(filter(lambda i: i != "", i.split(" ")))
-
 
         # program
         if space >= 30 and not any([re.match(timeFormat, j) for j in a]):
@@ -188,7 +184,8 @@ def writeToOut():
                 count += 1
 
             section, disc, code, *title, day, time = a
-            lecture = {"title": " ".join(title), day: time}
+            lecture = {"title": " ".join(title), day.replace(
+                "\u0000", ""): time.replace("\u0000", "")}
 
         # lect line
         elif re.match("^Lecture", text):
@@ -198,14 +195,14 @@ def writeToOut():
             else:
                 l, *prof = a
 
-            lecture.update({"prof": " ".join(prof), day: time})
+            lecture.update({"prof": " ".join(prof), day.replace(
+                "\u0000", ""): time.replace("\u0000", "")})
 
-
-            
         # lab line
         elif space == 13:
             disc, code, *title, day, time = a
-            lab = {"title": " ".join(title), day: time}
+            lab = {"title": " ".join(title), day.replace(
+                "\u0000", ""): time.replace("\u0000", "")}
 
         # lab
         elif re.match("^Laboratory", text):
@@ -215,7 +212,7 @@ def writeToOut():
         else:
             if any([re.match(timeFormat, j) for j in a]):
                 *l, day, time = a
-                lecture.update({day: time})
+                lecture.update({day.replace("\u0000", "")                               : time.replace("\u0000", "")})
             elif space in [25, 26]:
                 if re.match("^ADDITIONAL", text):
                     more += f"{text}\n"

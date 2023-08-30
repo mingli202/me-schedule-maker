@@ -7,9 +7,18 @@ import {
   User,
   sendEmailVerification,
   Auth,
+  signOut,
 } from "firebase/auth";
-import { getDatabase, ref, set, get } from "firebase/database";
-import { AuthType, UserType } from "../types";
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+  onValue,
+  DataSnapshot,
+  off,
+} from "firebase/database";
+import { AuthType, Saved, UserType } from "../types";
 
 const firebaseConfig = {
   // removed
@@ -61,7 +70,11 @@ export async function signIn(
 }
 
 export function $getAuth(): Auth {
-  return auth;
+  return getAuth(app);
+}
+
+export async function $signOut() {
+  return signOut(auth);
 }
 
 /*
@@ -76,13 +89,33 @@ export async function createUser(user: UserType) {
   });
 }
 
-export async function getUserData(uid: string) {
-  const snapshot = await get(ref(db, "/users" + uid));
+export async function getUserData<T>(uid: string, child?: string) {
+  const path = `/users${uid}${child ? "/" + child : ""}`;
+  const snapshot = await get(ref(db, path));
   if (snapshot.exists()) {
-    return snapshot.val() as UserType;
+    return snapshot.val() as T;
   } else {
     return null;
   }
+}
+
+export async function updateSaved(uid: string, saved: Saved[]) {
+  const dbRef = ref(db, "/users" + uid + "/schedules");
+  await set(dbRef, saved);
+}
+
+export function listenForChange(
+  uid: string,
+  callback: (snapshot: DataSnapshot) => unknown,
+  child?: string
+) {
+  const path = `/users${uid}${child ? "/" + child : ""}`;
+  onValue(ref(db, path), callback);
+}
+
+export function detach(uid: string, child?: string) {
+  const path = `/users${uid}${child ? "/" + child : ""}`;
+  off(ref(db, path));
 }
 
 /*

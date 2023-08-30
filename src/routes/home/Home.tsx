@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
-import { $getAuth } from "../../backend/api";
+import { Link, useNavigate } from "react-router-dom";
+import { $getAuth, detach } from "../../backend/api";
 import { useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -8,12 +9,21 @@ export default function Home() {
   const auth = $getAuth();
 
   useEffect(() => {
-    if (!auth.currentUser) {
-      navigate("/");
-    }
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        navigate("/");
+      } else {
+        detach(user.uid, "schedules");
+      }
+    });
   }, []);
 
-  console.log(auth);
-
-  return <p>Home page</p>;
+  return (
+    <>
+      <p>Home page</p>
+      <Link to="schedule" className="text-c5">
+        Schedule
+      </Link>
+    </>
+  );
 }

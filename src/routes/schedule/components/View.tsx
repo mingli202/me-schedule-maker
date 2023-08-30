@@ -140,7 +140,7 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
 
     return (
       <animated.div
-        className={`text-[14px] leading-[14px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] cursor-pointer rounded-lg overflow-hidden`}
+        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] cursor-pointer rounded-lg overflow-hidden`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],

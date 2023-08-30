@@ -2,9 +2,21 @@ import { useEffect, useState } from "react";
 import { SignIn, SignUp } from "./components";
 
 import { animated, useSpring } from "@react-spring/web";
+import { onAuthStateChanged } from "firebase/auth";
+import { $getAuth } from "../../backend/api";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [active, setActive] = useState<"Login" | "Sign Up">("Login");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged($getAuth(), (user) => {
+      if (user) {
+        navigate(`/users/${user.uid}`);
+      }
+    });
+  }, []);
 
   function handleClick(meth: string) {
     if (meth === "Login") {
@@ -41,8 +53,8 @@ export default function LoginPage() {
         </div>
 
         <div className="basis-7/12 bg-c1 text-xl p-4">
-          I'm working on the authentication/authorization feature. You can
-          create an account for now but it's not going to do anything.
+          The account creation feature is done! You can now create an account an
+          access it anywhere. The home page is still begin build.
         </div>
       </section>
     </>

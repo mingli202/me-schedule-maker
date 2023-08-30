@@ -6,37 +6,46 @@ import {
   useContext,
   useEffect,
 } from "react";
-import { Class, ViewData } from "../../../../types";
+import { Saved, ViewData } from "../../../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { animated, useSpring } from "@react-spring/web";
 import { ClassContext } from "../../Schedule";
+import { updateSaved } from "../../../../backend/api";
 
 type Props = {
   viewData: ViewData[][];
+  userData: { uid: string; schedules: Saved[] } | null;
 };
 
-type Saved = {
-  id: number;
-  vData: ViewData[][];
-  data: Class[];
-};
-
-export default function ChosenCourses({ viewData }: Props) {
+export default function ChosenCourses({ viewData, userData }: Props) {
+  // for local storage if they don't sign in
   const key = "jac-mock-schedule-maker";
-  const [savedSchedule, setSavedSchedule] = useState<Saved[]>(() => {
-    const keyItem = window.localStorage.getItem(key);
 
-    if (keyItem) {
-      return JSON.parse(keyItem) as Saved[];
+  const [savedSchedule, setSavedSchedule] = useState<Saved[]>(() => {
+    if (userData) {
+      return userData.schedules;
+    } else {
+      const keyItem = window.localStorage.getItem(key);
+
+      if (keyItem) {
+        return JSON.parse(keyItem) as Saved[];
+      }
+      return [];
     }
-    return [];
   });
+
+  // keep track of the id b counting so there can never be two same id
   const count = useRef(savedSchedule.length);
 
   const { chosenClasses } = useContext(ClassContext);
 
   function handleSaved(viewData: ViewData[][]) {
+    // to ensure that the count does not repeat (no same id)
+    do {
+      count.current += 1;
+    } while (savedSchedule.map((s) => s.id).includes(count.current));
+
     setSavedSchedule([
       ...savedSchedule,
       {
@@ -45,25 +54,24 @@ export default function ChosenCourses({ viewData }: Props) {
         data: chosenClasses,
       },
     ]);
-
-    do {
-      count.current += 1;
-    } while (savedSchedule.map((s) => s.id).includes(count.current));
   }
 
   useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(savedSchedule));
+    if (userData) {
+      updateSaved(userData.uid, savedSchedule).catch((err) => console.log(err));
+    } else {
+      window.localStorage.setItem(key, JSON.stringify(savedSchedule));
+    }
   }, [savedSchedule]);
 
   return (
-    <section className="bg-c1 rounded-sm box-border flex w-full flex-wrap gap-2 p-2">
+    <section className="bg-c1 rounded-lg box-border flex w-full flex-wrap gap-2 p-2">
       <div
         className="bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer h-20"
         onClick={() => handleSaved(viewData)}
       >
         <FontAwesomeIcon icon={faPlusCircle} className="md:text-4xl text-xl" />
       </div>
-      {/* <div className="flex gap-2 overflow-auto md:p-4 p-2 basis-full md:mr-4 mr-2 flex-wrap w-full"> */}
       {savedSchedule.map((i) => {
         return (
           <SavedBlock
@@ -74,7 +82,6 @@ export default function ChosenCourses({ viewData }: Props) {
           />
         );
       })}
-      {/* </div> */}
     </section>
   );
 }
@@ -106,6 +113,12 @@ type SavedBlockProps = {
 function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
   const { setChosenClasses } = useContext(ClassContext);
 
+  // firebase doesn't register empty arrays
+  // clone it to make sure no changes to the original array
+  const block = structuredClone(i);
+  if (!block.data) block.data = [];
+  if (!block.vData) block.vData = [];
+
   const [springs, api] = useSpring(
     () => ({
       from: {
@@ -133,7 +146,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
   }
 
   function handleClick() {
-    setChosenClasses(i.data);
+    setChosenClasses(block.data);
   }
 
   return (
@@ -143,7 +156,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
       style={springs}
       onClick={handleClick}
     >
-      {i.vData.map((j, index) => {
+      {block.vData.map((j, index) => {
         return <ClassBlocks blocksToShow={j} key={index} />;
       })}
       <FontAwesomeIcon

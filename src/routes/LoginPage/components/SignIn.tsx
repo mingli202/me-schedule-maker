@@ -1,18 +1,15 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { signIn, getUserData } from "../../../backend/api";
-import { UserType } from "../../../types";
+import { signIn } from "../../../backend/api";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
   const [denied, setDenied] = useState(false);
-
-  const navigate = useNavigate();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,13 +18,6 @@ export default function SignIn() {
 
     if (loginInfo.status === "success") {
       setDenied(false);
-
-      const data: UserType = (await getUserData(
-        loginInfo.info.user.uid
-      )) as UserType;
-      // console.log(data);
-
-      navigate(`users/${data.uid}`);
     } else {
       setDenied(true);
     }

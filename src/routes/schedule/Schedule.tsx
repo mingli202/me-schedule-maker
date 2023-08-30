@@ -1,18 +1,13 @@
 import { View } from "./components";
-import {
-  Dispatch,
-  Suspense,
-  createContext,
-  lazy,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import { Class, Time, ViewData } from "../../types";
-// import Search from "./Search";
-import { ClassesLoader } from "./components/Search";
+import { Dispatch, createContext, useEffect, useMemo, useState } from "react";
+import { Class, Saved, Time, ViewData } from "../../types";
+import { Search } from "./components/Search";
 
-const Search = lazy(() => import("./components/Search/Search"));
+import { $getAuth, $signOut, listenForChange } from "../../backend/api";
+import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 export const ClassContext = createContext<{
   chosenClasses: Class[];
@@ -22,15 +17,26 @@ export const ClassContext = createContext<{
   setChosenClasses: () => { },
 });
 
-export default function Schedule() {
+type Props = {
+  user?: boolean;
+};
+export default function Schedule({ user }: Props) {
+  const navigate = useNavigate();
+
   const [classes, setClasses] = useState<Class[]>([]);
   const [loading, setLoading] = useState(false);
   const [chosenClasses, setChosenClasses] = useState<Class[]>([]);
+  const [userData, setUserData] = useState<{
+    uid: string;
+    schedules: Saved[];
+  } | null>(null);
 
   const viewData = useMemo<ViewData[][]>(
     () => handleSetViewData(chosenClasses),
     [chosenClasses]
   );
+
+  console.log(loading);
 
   useEffect(() => {
     if (checkForOverlap(viewData)) {
@@ -40,6 +46,26 @@ export default function Schedule() {
   }, [viewData]);
 
   useEffect(() => {
+    // check if user is signed in
+    if (user) {
+      onAuthStateChanged($getAuth(), (currentUser) => {
+        if (!currentUser) {
+          navigate("/");
+        } else {
+          listenForChange(
+            currentUser.uid,
+            (snapshot) => {
+              setUserData({
+                uid: currentUser.uid,
+                schedules: snapshot.val() as Saved[],
+              });
+            },
+            "schedules"
+          );
+        }
+      });
+    }
+
     async function getData<T>(
       url: string,
       set: Dispatch<React.SetStateAction<T>>
@@ -55,12 +81,16 @@ export default function Schedule() {
         console.log(error);
       }
     }
-    getData<Class[]>("/me-schedule-maker/data/all.json", setClasses);
+
+    getData<Class[]>("/me-schedule-maker/data/all.json", setClasses).catch(
+      (err) => console.log(err)
+    );
   }, []);
 
   function handleSetViewData(chosenClasses: Class[]) {
     const col = ["M", "T", "W", "R", "F"];
     const row = [...Array(21).keys()].map((i) =>
+      // [0, 1, 2, 3, ..., 20]
       (i % 2 === 0 ? i * 50 + 800 : Math.floor(i / 2) * 2 * 50 + 830).toFixed(0)
     );
     const colors = [
@@ -75,35 +105,42 @@ export default function Schedule() {
       "hsl(190,97%,85%)",
     ];
     const toReturn = chosenClasses.map((classToShow, index) => {
+      // to make sure the origial object doesn't change
       const lecture = structuredClone(Object.entries(classToShow.lecture));
-      const lab = structuredClone(Object.entries(classToShow.lab));
+      const lab = structuredClone(
+        Object.entries(classToShow.lab ? classToShow.lab : {})
+      );
 
+      // get all the days for a class
+      // removes all non-day entries
       const days = lecture
         .filter((i) => !["title", "prof", "rating"].includes(i[0]))
         .concat(lab.filter((i) => !["title", "prof", "rating"].includes(i[0])));
 
+      // iterate through all the different times
       return days.flatMap((i) => {
-        const d = i[0]
-          .split("")
-          .filter((q) => q !== "\x00")
-          .filter((q) => {
-            if (q === "S") {
-              alert("There is class on Saturday as well");
-              return false;
-            }
-            return true;
-          });
+        // i: [day, time] e.g. ["MW", "1230-1430"]
 
-        const t = i[1] as string;
-        const start = t.split("-")[0].replace("\x00", "");
-        const end = t.split("-")[1].replace("\x00", "");
+        // day is an array of the days for a given time. e.g. ["M", "W"]
+        const day = i[0].split("").filter((q) => {
+          // the schedule doesn't hsow saterday classes
+          if (q === "S") {
+            alert("There is class on Saturday as well");
+            return false;
+          }
+          return true;
+        });
 
-        return d.flatMap((j) => {
+        const time = i[1] as string;
+        const start = time.split("-")[0];
+        const end = time.split("-")[1];
+
+        // for each day, add an object to viewData containing the info to display the block
+        return day.flatMap((j) => {
           const rowStart =
             row.findIndex((r) => Number(r) === Number(start)) + 1;
           const rowEnd = row.findIndex((r) => Number(r) === Number(end)) + 1;
-          const colStart =
-            col.findIndex((c) => c === j.replace("\x00", "")) + 1;
+          const colStart = col.findIndex((c) => c === j) + 1;
 
           return {
             code: classToShow.code,
@@ -122,7 +159,9 @@ export default function Schedule() {
   }
 
   function checkForOverlap(viewData: ViewData[][]): boolean {
+    // get all the times for all the classes
     const times: Time[] = viewData.flat().map((i) => i.time);
+
     const monday: string[] = times
       .filter((i) => i[1])
       .flatMap((k) => Object.values(k));
@@ -140,21 +179,30 @@ export default function Schedule() {
       .flatMap((k) => Object.values(k));
 
     if (
+      // for each day, check how many classes there are
+      // if 0 or 1, there can not be any overlap
+      // if more, check if at least on one day 2 classes overlop
       [monday, tuesday, wednesday, thursday, friday].some((day) => {
         if (day.length <= 1) {
           return false;
         }
 
+        // when selecting a new class, it could overlap with another
+        // hence we compare the last entry to the rest of the classes
         const last = day.at(-1) as string;
 
         if (
+          // check for all classes in 1 day, t:day
           day.slice(0, -1).some((t) => {
+            // if target class starts before added class, then target class must finish added target class
             if (Number(t[0]) > Number(last[0])) {
               return Number(last[1]) > Number(t[0]);
             }
+            // if target class starts later added class, then added class must finish before target class
             if (Number(t[0]) < Number(last[0])) {
               return Number(last[0]) < Number(t[1]);
             }
+            // if they start at the same time, it can't
             if (Number(t[0]) === Number(last[0])) {
               return true;
             }
@@ -172,21 +220,38 @@ export default function Schedule() {
     return false;
   }
 
+  async function handleOnClick() {
+    await $signOut();
+  }
+
   return (
     <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
-      <section className="w-full h-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border gap-2 p-2 text-c9 flex flex-col md:text-base text-xs overflow-auto">
-        <Suspense fallback={<ClassesLoader />}>
-          <Search
-            classes={classes}
-            setLoading={setLoading}
-            viewData={viewData}
-          />
-          {loading && (
-            <>
-              <View viewData={viewData} />
-            </>
-          )}
-        </Suspense>
+      <nav className="text-base w-full bg-c9 text-c1 shrink-0 flex justify-between items-center">
+        <FontAwesomeIcon
+          icon={faHome}
+          className="ml-2 cursor-pointer transition hover:text-c4"
+          onClick={() => navigate("/")}
+        />
+        <p>Fall 2023 JAC Mock Schedule Maker</p>
+        <p
+          onClick={() => void handleOnClick()}
+          className="mr-2 cursor-pointer transition hover:text-c4"
+        >
+          {userData ? "Sign Out" : ""}
+        </p>
+      </nav>
+      <section className="w-full basis-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border gap-2 px-2 pb-2 text-c9 flex flex-col md:text-base text-xs overflow-auto">
+        <Search
+          classes={classes}
+          setLoading={setLoading}
+          viewData={viewData}
+          userData={userData}
+        />
+        {loading && classes.length !== 0 && (
+          <>
+            <View viewData={viewData} />
+          </>
+        )}
       </section>
     </ClassContext.Provider>
   );
