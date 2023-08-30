@@ -47,8 +47,8 @@ export default function Filter({ setInput, setCurrent }: Props) {
     const scoreMax = Number(getEl("scoreMax").value);
     const scoreMin = Number(getEl("scoreMin").value);
     const score = [
-      scoreMin ? `r>${Math.min(scoreMin, scoreMax)}` : "",
-      scoreMax ? `r<${Math.max(scoreMax, scoreMin)}` : "",
+      scoreMin ? `s>${Math.min(scoreMin, scoreMax)}` : "",
+      scoreMax ? `s<${Math.max(scoreMax, scoreMin)}` : "",
     ];
 
     const checkbox = [
