@@ -2768,7 +2768,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDM-05",
-    "codeHeader": "205-DDM-05  \u0000\u0000\nPrerequisite: Chemistry 202-NYB AND Physics 203-NYA",
+    "codeHeader": "205-DDM-05  \nPrerequisite: Chemistry 202-NYB AND Physics 203-NYA",
     "section": "00001",
     "disc": "GEOL",
     "lecture": {
@@ -2806,7 +2806,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDM-05",
-    "codeHeader": "205-DDM-05  \u0000\u0000\nPrerequisite: Chemistry 202-NYB AND Physics 203-NYA",
+    "codeHeader": "205-DDM-05  \nPrerequisite: Chemistry 202-NYB AND Physics 203-NYA",
     "section": "00002",
     "disc": "GEOL",
     "lecture": {
@@ -2844,7 +2844,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDP-AB",
-    "codeHeader": "205-DDP-AB   \u0000\u0000\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
+    "codeHeader": "205-DDP-AB   \nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
     "section": "00001",
     "disc": "GEOL",
     "lecture": {
@@ -2882,7 +2882,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDP-AB",
-    "codeHeader": "205-DDP-AB   \u0000\u0000\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
+    "codeHeader": "205-DDP-AB   \nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
     "section": "00002",
     "disc": "GEOL",
     "lecture": {
@@ -2920,7 +2920,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDP-AB",
-    "codeHeader": "205-DDP-AB   \u0000\u0000\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
+    "codeHeader": "205-DDP-AB   \nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
     "section": "00003",
     "disc": "GEOL",
     "lecture": {
@@ -2958,7 +2958,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDP-AB",
-    "codeHeader": "205-DDP-AB   \u0000\u0000\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
+    "codeHeader": "205-DDP-AB   \nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
     "section": "00004",
     "disc": "GEOL",
     "lecture": {
@@ -2996,7 +2996,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDC-AB",
-    "codeHeader": "205-DDC-AB\u0000\u0000\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
+    "codeHeader": "205-DDC-AB\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
     "section": "00001",
     "disc": "GEOL",
     "lecture": {
@@ -3034,7 +3034,7 @@
     "program": "Science Courses",
     "course": "GEOLOGY",
     "code": "205-DDC-AB",
-    "codeHeader": "205-DDC-AB\u0000\u0000\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
+    "codeHeader": "205-DDC-AB\nPrerequisite: Chemistry 202-NYB-05 AND Physics 203-NYA-05",
     "section": "00002",
     "disc": "GEOL",
     "lecture": {
@@ -3077,7 +3077,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "M\u0000": "1030-1230\u0000",
+      "M": "1030-1230",
       "prof": "Sollazzo, Rhoda",
       "TR": "1000-1130",
       "rating": {
@@ -3103,7 +3103,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MT\u0000": "1430-1600\u0000",
+      "MT": "1430-1600",
       "prof": "Herlin, Antoine",
       "R": "1230-1430",
       "rating": {
@@ -3129,9 +3129,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "M\u0000": "1300-1430\u0000",
+      "M": "1300-1430",
       "prof": "Herlin, Antoine",
-      "R\u0000": "1430-1600\u0000",
+      "R": "1430-1600",
       "F": "1030-1230",
       "rating": {
         "prof": "Herlin, Antoine",
@@ -3156,7 +3156,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "1300-1430\u0000",
+      "TF": "1300-1430",
       "prof": "Karouma, Abdulrahman",
       "W": "0830-1030",
       "rating": {
@@ -3182,7 +3182,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "1430-1600\u0000",
+      "TF": "1430-1600",
       "prof": "Karouma, Abdulrahman",
       "W": "1230-1430",
       "rating": {
@@ -3208,7 +3208,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "1300-1430\u0000",
+      "TF": "1300-1430",
       "prof": "Connor, Cameron James",
       "R": "1430-1630",
       "rating": {
@@ -3234,7 +3234,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "1000-1130\u0000",
+      "TF": "1000-1130",
       "prof": "Connor, Cameron James",
       "R": "1030-1230",
       "rating": {
@@ -3260,7 +3260,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MR\u0000": "1430-1600\u0000",
+      "MR": "1430-1600",
       "prof": "Gatien, Daniel",
       "T": "1430-1630",
       "rating": {
@@ -3286,7 +3286,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "0830-1000\u0000",
+      "TF": "0830-1000",
       "prof": "Mombourquette, Ethan",
       "W": "0830-1030",
       "rating": {
@@ -3312,7 +3312,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MF\u0000": "1300-1430\u0000",
+      "MF": "1300-1430",
       "prof": "Lo Vasco, Frank",
       "R": "0830-1030",
       "rating": {
@@ -3338,7 +3338,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MW\u0000": "0830-1000\u0000",
+      "MW": "0830-1000",
       "prof": "Lo Vasco, Frank",
       "F": "0830-1030",
       "rating": {
@@ -3364,7 +3364,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MT\u0000": "0830-1000\u0000",
+      "MT": "0830-1000",
       "prof": "Pendev, Ivo",
       "R": "0830-1030",
       "rating": {
@@ -3390,7 +3390,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MF\u0000": "0830-1000\u0000",
+      "MF": "0830-1000",
       "prof": "Lucier, Jason",
       "R": "0830-1030",
       "rating": {
@@ -3416,7 +3416,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MF\u0000": "1430-1600\u0000",
+      "MF": "1430-1600",
       "prof": "Flood, Kevin",
       "W": "1230-1430",
       "rating": {
@@ -3442,7 +3442,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MR\u0000": "1600-1730\u0000",
+      "MR": "1600-1730",
       "prof": "Flood, Kevin",
       "W": "1430-1630",
       "rating": {
@@ -3468,7 +3468,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "1130-1300\u0000",
+      "TF": "1130-1300",
       "prof": "Gerber, Kenneth",
       "R": "1030-1230",
       "rating": {
@@ -3494,7 +3494,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MF\u0000": "1430-1600\u0000",
+      "MF": "1430-1600",
       "prof": "Bardestani, Mohammad",
       "T": "1030-1230",
       "rating": {
@@ -3520,9 +3520,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "M\u0000": "1600-1730\u0000",
+      "M": "1600-1730",
       "prof": "Bardestani, Mohammad",
-      "W\u0000": "1030-1230\u0000",
+      "W": "1030-1230",
       "F": "1130-1300",
       "rating": {
         "prof": "Bardestani, Mohammad",
@@ -3547,7 +3547,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MR\u0000": "1300-1430\u0000",
+      "MR": "1300-1430",
       "prof": "Guindi, Moushira",
       "T": "1030-1230",
       "rating": {
@@ -3573,7 +3573,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MR\u0000": "1300-1430\u0000",
+      "MR": "1300-1430",
       "prof": "Sollazzo, Rhoda",
       "W": "1030-1230",
       "rating": {
@@ -3599,7 +3599,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MW\u0000": "1300-1430\u0000",
+      "MW": "1300-1430",
       "prof": "Boshuck, William",
       "R": "1230-1430",
       "rating": {
@@ -3625,7 +3625,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "TF\u0000": "0830-1000\u0000",
+      "TF": "0830-1000",
       "prof": "Klochko, Yuliya",
       "W": "0830-1030",
       "rating": {
@@ -3651,9 +3651,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "M\u0000": "1130-1300\u0000",
+      "M": "1130-1300",
       "prof": "Zhao, Yu",
-      "W\u0000": "1030-1230\u0000",
+      "W": "1030-1230",
       "F": "0830-1000",
       "rating": {
         "prof": "Zhao, Yu",
@@ -3678,7 +3678,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus I",
-      "MF\u0000": "1430-1600\u0000",
+      "MF": "1430-1600",
       "prof": "Zhao, Yu",
       "W": "1430-1630",
       "rating": {
@@ -3704,7 +3704,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "MF\u0000": "1430-1600\u0000",
+      "MF": "1430-1600",
       "prof": "Morris, Christophe",
       "W": "1430-1630",
       "rating": {
@@ -3730,7 +3730,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "MT\u0000": "1130-1300\u0000",
+      "MT": "1130-1300",
       "prof": "Morris, Christophe",
       "R": "1430-1630",
       "rating": {
@@ -3756,9 +3756,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "M\u0000": "1430-1600\u0000",
+      "M": "1430-1600",
       "prof": "Dale Hill, Jordan",
-      "W\u0000": "1130-1300\u0000",
+      "W": "1130-1300",
       "R": "1230-1430",
       "rating": {
         "prof": "Dale Hill, Jordan",
@@ -3783,7 +3783,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "MW\u0000": "1000-1130\u0000",
+      "MW": "1000-1130",
       "prof": "Masters, Richard",
       "R": "1430-1630",
       "rating": {
@@ -3809,7 +3809,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "MF\u0000": "1000-1130\u0000",
+      "MF": "1000-1130",
       "prof": "Squire, Richard",
       "W": "1030-1230",
       "rating": {
@@ -3835,9 +3835,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "T\u0000": "1000-1130\u0000",
+      "T": "1000-1130",
       "prof": "Squire, Richard",
-      "R\u0000": "1030-1230\u0000",
+      "R": "1030-1230",
       "F": "1300-1430",
       "rating": {
         "prof": "Squire, Richard",
@@ -3862,9 +3862,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "M\u0000": "1600-1730\u0000",
+      "M": "1600-1730",
       "prof": "Zhao, Yu",
-      "T\u0000": "1230-1430\u0000",
+      "T": "1230-1430",
       "F": "1000-1130",
       "rating": {
         "prof": "Zhao, Yu",
@@ -3889,9 +3889,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "M\u0000": "1600-1730\u0000",
+      "M": "1600-1730",
       "prof": "Morris, Christophe",
-      "T\u0000": "1430-1630\u0000",
+      "T": "1430-1630",
       "F": "1300-1430",
       "rating": {
         "prof": "Morris, Christophe",
@@ -3916,7 +3916,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "T\u0000": "0830-1030\u0000",
+      "T": "0830-1030",
       "prof": "Mokhtarian, Faranak",
       "WF": "1130-1300",
       "rating": {
@@ -3942,9 +3942,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "M\u0000": "1130-1300\u0000",
+      "M": "1130-1300",
       "prof": "Mokhtarian, Faranak",
-      "T\u0000": "1030-1230\u0000",
+      "T": "1030-1230",
       "F": "1300-1430",
       "rating": {
         "prof": "Mokhtarian, Faranak",
@@ -3969,7 +3969,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MT\u0000": "1000-1130\u0000",
+      "MT": "1000-1130",
       "prof": "Pendev, Ivo",
       "F": "0830-1030",
       "rating": {
@@ -3995,9 +3995,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "M\u0000": "1300-1430\u0000",
+      "M": "1300-1430",
       "prof": "Pendev, Ivo",
-      "R\u0000": "1030-1230\u0000",
+      "R": "1030-1230",
       "F": "1130-1300",
       "rating": {
         "prof": "Pendev, Ivo",
@@ -4022,9 +4022,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "T\u0000": "1130-1300\u0000",
+      "T": "1130-1300",
       "prof": "Dale Hill, Jordan",
-      "W\u0000": "1430-1630\u0000",
+      "W": "1430-1630",
       "F": "1430-1600",
       "rating": {
         "prof": "Dale Hill, Jordan",
@@ -4049,7 +4049,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MF\u0000": "1130-1300\u0000",
+      "MF": "1130-1300",
       "prof": "Dale Hill, Jordan",
       "T": "1430-1630",
       "rating": {
@@ -4075,7 +4075,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MF\u0000": "1000-1130\u0000",
+      "MF": "1000-1130",
       "prof": "Lucier, Jason",
       "T": "0830-1030",
       "rating": {
@@ -4101,7 +4101,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MR\u0000": "1300-1430\u0000",
+      "MR": "1300-1430",
       "prof": "Lucier, Jason",
       "T": "1230-1430",
       "rating": {
@@ -4127,7 +4127,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "TF\u0000": "0830-1000\u0000",
+      "TF": "0830-1000",
       "prof": "Gerber, Kenneth",
       "W": "0830-1030",
       "rating": {
@@ -4153,7 +4153,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "TF\u0000": "1300-1430\u0000",
+      "TF": "1300-1430",
       "prof": "Gerber, Kenneth",
       "W": "1230-1430",
       "rating": {
@@ -4179,7 +4179,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MR\u0000": "1600-1730\u0000",
+      "MR": "1600-1730",
       "prof": "Kazuo Takei, Luiz",
       "W": "1430-1630",
       "rating": {
@@ -4205,7 +4205,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MR\u0000": "1130-1300\u0000",
+      "MR": "1130-1300",
       "prof": "Kazuo Takei, Luiz",
       "W": "1030-1230",
       "rating": {
@@ -4231,7 +4231,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MF\u0000": "1430-1600\u0000",
+      "MF": "1430-1600",
       "prof": "Chaput, Philippe",
       "R": "1430-1630",
       "rating": {
@@ -4257,7 +4257,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MF\u0000": "1000-1130\u0000",
+      "MF": "1000-1130",
       "prof": "Chaput, Philippe",
       "W": "1430-1630",
       "rating": {
@@ -4283,7 +4283,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MW\u0000": "0830-1000\u0000",
+      "MW": "0830-1000",
       "prof": "Delage, Philippe",
       "R": "1030-1230",
       "rating": {
@@ -4309,9 +4309,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "M\u0000": "1230-1430\u0000",
+      "M": "1230-1430",
       "prof": "Delage, Philippe",
-      "W\u0000": "1300-1430\u0000",
+      "W": "1300-1430",
       "R": "0830-1000",
       "rating": {
         "prof": "Delage, Philippe",
@@ -4336,9 +4336,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "M\u0000": "0830-1000\u0000",
+      "M": "0830-1000",
       "prof": "Boshuck, William",
-      "R\u0000": "0830-1030\u0000",
+      "R": "0830-1030",
       "F": "1130-1300",
       "rating": {
         "prof": "Boshuck, William",
@@ -4363,7 +4363,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra I",
-      "MF\u0000": "1000-1130\u0000",
+      "MF": "1000-1130",
       "prof": "Boshuck, William",
       "W": "0830-1030",
       "rating": {
@@ -4389,7 +4389,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus III",
-      "MF\u0000": "1130-1300\u0000",
+      "MF": "1130-1300",
       "prof": "Lo Vasco, Frank",
       "W": "1030-1230",
       "rating": {
@@ -4415,7 +4415,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Statistics",
-      "MR\u0000": "1430-1600\u0000",
+      "MR": "1430-1600",
       "prof": "Kazuo Takei, Luiz",
       "T": "1230-1430",
       "rating": {
@@ -4441,7 +4441,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Statistics",
-      "MF\u0000": "1130-1300\u0000",
+      "MF": "1130-1300",
       "prof": "Chaput, Philippe",
       "W": "1030-1230",
       "rating": {
@@ -8329,7 +8329,7 @@
     "program": "Social Science / Commerce Courses",
     "course": "GEOGRAPHY",
     "code": "320-260-AB",
-    "codeHeader": "320-260-AB: Prerequisite 320-100-AB\u0000\u0000\nNote: Students who have passed 320-250-AB are not eligible to take this course.",
+    "codeHeader": "320-260-AB: Prerequisite 320-100-AB\nNote: Students who have passed 320-250-AB are not eligible to take this course.",
     "section": "00001",
     "disc": "GEOG",
     "lecture": {
@@ -9109,7 +9109,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "M\u0000": "0830-1030\u0000",
+      "M": "0830-1030",
       "prof": "Panassenko, Alexandre",
       "WF": "0830-1000",
       "rating": {
@@ -9135,7 +9135,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "M\u0000": "1030-1230\u0000",
+      "M": "1030-1230",
       "prof": "Panassenko, Alexandre",
       "TF": "1130-1300",
       "rating": {
@@ -9161,7 +9161,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MR\u0000": "1130-1300\u0000",
+      "MR": "1130-1300",
       "prof": "Baker, Audrey Elaine",
       "T": "1430-1630",
       "rating": {
@@ -9187,7 +9187,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MR\u0000": "1000-1130\u0000",
+      "MR": "1000-1130",
       "prof": "Herlin, Antoine",
       "T": "1030-1230",
       "rating": {
@@ -9213,9 +9213,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "T\u0000": "1300-1430\u0000",
+      "T": "1300-1430",
       "prof": "Spencer, Andrea Marie",
-      "W\u0000": "1230-1430\u0000",
+      "W": "1230-1430",
       "F": "0830-1000",
       "rating": {
         "prof": "Spencer, Andrea Marie",
@@ -9240,7 +9240,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "TF\u0000": "1000-1130\u0000",
+      "TF": "1000-1130",
       "prof": "Herta, Gabriel",
       "W": "1230-1430",
       "rating": {
@@ -9266,7 +9266,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "TF\u0000": "1300-1430\u0000",
+      "TF": "1300-1430",
       "prof": "Herta, Gabriel",
       "R": "1030-1230",
       "rating": {
@@ -9292,7 +9292,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MR\u0000": "1130-1300\u0000",
+      "MR": "1130-1300",
       "prof": "Chiappetta, Giulia",
       "W": "1030-1230",
       "rating": {
@@ -9318,7 +9318,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MR\u0000": "1300-1430\u0000",
+      "MR": "1300-1430",
       "prof": "Chiappetta, Giulia",
       "T": "1230-1430",
       "rating": {
@@ -9344,9 +9344,9 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "T\u0000": "1600-1730\u0000",
+      "T": "1600-1730",
       "prof": "Felisberto-Valente, Gustavo",
-      "W\u0000": "1230-1430\u0000",
+      "W": "1230-1430",
       "F": "1000-1130",
       "rating": {
         "prof": "Felisberto-Valente, Gustavo",
@@ -9371,7 +9371,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MR\u0000": "1000-1130\u0000",
+      "MR": "1000-1130",
       "prof": "Guindi, Moushira",
       "W": "1030-1230",
       "rating": {
@@ -9397,7 +9397,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MF\u0000": "0830-1000\u0000",
+      "MF": "0830-1000",
       "prof": "Dubois, Olivier",
       "R": "0830-1030",
       "rating": {
@@ -9423,7 +9423,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MF\u0000": "1300-1430\u0000",
+      "MF": "1300-1430",
       "prof": "Dubois, Olivier",
       "W": "1230-1430",
       "rating": {
@@ -9449,7 +9449,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "TF\u0000": "1000-1130\u0000",
+      "TF": "1000-1130",
       "prof": "Fratarcangeli, Sergio",
       "W": "1230-1430",
       "rating": {
@@ -9475,7 +9475,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "TF\u0000": "1300-1430\u0000",
+      "TF": "1300-1430",
       "prof": "Fratarcangeli, Sergio",
       "R": "1230-1430",
       "rating": {
@@ -9501,7 +9501,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus 1 for Social Science",
-      "MT\u0000": "0830-1000\u0000",
+      "MT": "0830-1000",
       "prof": "Mikhail, Shery Halim Yakoub",
       "R": "1230-1430",
       "rating": {
@@ -9602,7 +9602,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "TR\u0000": "0830-1000\u0000",
+      "TR": "0830-1000",
       "prof": "Spencer, Andrea Marie",
       "F": "1230-1430",
       "rating": {
@@ -9628,7 +9628,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "M\u0000": "1430-1630\u0000",
+      "M": "1430-1630",
       "prof": "Masters, Richard",
       "WF": "1300-1430",
       "rating": {
@@ -9654,7 +9654,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "T\u0000": "1430-1630\u0000",
+      "T": "1430-1630",
       "prof": "Masters, Richard",
       "WF": "1430-1600",
       "rating": {
@@ -9680,7 +9680,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Calculus II",
-      "T\u0000": "1030-1230\u0000",
+      "T": "1030-1230",
       "prof": "Klochko, Yuliya",
       "WF": "1130-1300",
       "rating": {
@@ -9706,7 +9706,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "M\u0000": "0830-1030\u0000",
+      "M": "0830-1030",
       "prof": "Chung, Derrick",
       "TR": "0830-1000",
       "rating": {
@@ -9732,7 +9732,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MR\u0000": "1430-1600\u0000",
+      "MR": "1430-1600",
       "prof": "Baker, Audrey Elaine",
       "W": "1230-1430",
       "rating": {
@@ -9758,7 +9758,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MR\u0000": "1600-1730\u0000",
+      "MR": "1600-1730",
       "prof": "Baker, Audrey Elaine",
       "W": "1430-1630",
       "rating": {
@@ -9784,7 +9784,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MR\u0000": "1430-1600\u0000",
+      "MR": "1430-1600",
       "prof": "McLeod, Alice",
       "T": "1430-1630",
       "rating": {
@@ -9810,7 +9810,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MR\u0000": "1300-1430\u0000",
+      "MR": "1300-1430",
       "prof": "McLeod, Alice",
       "T": "1230-1430",
       "rating": {
@@ -9836,7 +9836,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "TF\u0000": "1430-1600\u0000",
+      "TF": "1430-1600",
       "prof": "Connor, Cameron James",
       "W": "1230-1430",
       "rating": {
@@ -9862,7 +9862,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "T\u0000": "1230-1430\u0000",
+      "T": "1230-1430",
       "prof": "Lefebvre, Caroline",
       "RF": "1000-1130",
       "rating": {
@@ -9888,7 +9888,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MF\u0000": "0830-1000\u0000",
+      "MF": "0830-1000",
       "prof": "Solsten, Karen",
       "T": "0830-1030",
       "rating": {
@@ -9914,7 +9914,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MF\u0000": "1300-1430\u0000",
+      "MF": "1300-1430",
       "prof": "Solsten, Karen",
       "R": "0830-1030",
       "rating": {
@@ -9940,7 +9940,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Linear Algebra",
-      "MR\u0000": "1000-1130\u0000",
+      "MR": "1000-1130",
       "prof": "Mikhail, Shery Halim Yakoub",
       "T": "1030-1230",
       "rating": {
@@ -15017,7 +15017,7 @@
     "program": "Arts & Science",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00028",
     "disc": "ENGL",
     "lecture": {
@@ -15072,7 +15072,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Differential Calculus Enhanced",
-      "M\u0000": "1230-1430\u0000",
+      "M": "1230-1430",
       "prof": "Gatien, Daniel",
       "TR": "1300-1430",
       "rating": {
@@ -15098,7 +15098,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Statistics",
-      "MW\u0000": "1000-1130\u0000",
+      "MW": "1000-1130",
       "prof": "Dubois, Olivier",
       "F": "1000-1100",
       "rating": {
@@ -15274,7 +15274,7 @@
     "disc": "MULT",
     "lecture": {
       "title": "Principles of mathematics and logic",
-      "MW\u0000": "1000-1130\u0000",
+      "MW": "1000-1130",
       "prof": "Delage, Philippe",
       "F": "1030-1230",
       "rating": {
@@ -15320,7 +15320,7 @@
     "program": "Liberal Arts Courses",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00016",
     "disc": "ENGL",
     "lecture": {
@@ -15345,7 +15345,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00001",
     "disc": "ALC",
     "lecture": {
@@ -15370,7 +15370,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00002",
     "disc": "ALC",
     "lecture": {
@@ -15395,7 +15395,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00003",
     "disc": "ALC",
     "lecture": {
@@ -15420,7 +15420,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00004",
     "disc": "ALC",
     "lecture": {
@@ -15445,7 +15445,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00005",
     "disc": "ALC",
     "lecture": {
@@ -15470,7 +15470,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00006",
     "disc": "ALC",
     "lecture": {
@@ -15495,7 +15495,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNA-AB",
-    "codeHeader": "Universe of the Arts 1\u0000\u0000\nStudents MUST register for Universe of the Arts I in their first semester.",
+    "codeHeader": "Universe of the Arts 1\nStudents MUST register for Universe of the Arts I in their first semester.",
     "section": "00007",
     "disc": "ALC",
     "lecture": {
@@ -15562,7 +15562,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNC-AB",
-    "codeHeader": "Universe of the Arts 3\u0000\u0000\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
+    "codeHeader": "Universe of the Arts 3\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
     "section": "00001",
     "disc": "ALC",
     "lecture": {
@@ -15587,7 +15587,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNC-AB",
-    "codeHeader": "Universe of the Arts 3\u0000\u0000\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
+    "codeHeader": "Universe of the Arts 3\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
     "section": "00002",
     "disc": "ALC",
     "lecture": {
@@ -15612,7 +15612,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNC-AB",
-    "codeHeader": "Universe of the Arts 3\u0000\u0000\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
+    "codeHeader": "Universe of the Arts 3\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
     "section": "00003",
     "disc": "ALC",
     "lecture": {
@@ -15637,7 +15637,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "502-UNC-AB",
-    "codeHeader": "Universe of the Arts 3\u0000\u0000\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
+    "codeHeader": "Universe of the Arts 3\nPrerequisite: 502-UNA-AB and 502-UNB-AB",
     "section": "00004",
     "disc": "ALC",
     "lecture": {
@@ -15896,7 +15896,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "530-DG2-AB",
-    "codeHeader": "Digital Media 2\u0000\u0000\nPrerequisite: 530-DG1-AB Digital Media I",
+    "codeHeader": "Digital Media 2\nPrerequisite: 530-DG1-AB Digital Media I",
     "section": "00001",
     "disc": "FILM",
     "lecture": {
@@ -15971,7 +15971,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "585-DPB-AB",
-    "codeHeader": "Digital Photography 2\u0000\u0000\nPrerequisite:  585-DPA-AB Digital Photography 1",
+    "codeHeader": "Digital Photography 2\nPrerequisite:  585-DPA-AB Digital Photography 1",
     "section": "00001",
     "disc": "MEDI",
     "lecture": {
@@ -16226,9 +16226,8 @@
     "disc": "FILM",
     "lecture": {
       "title": "Film studies: World Cinema",
-      "W\u0000": "1130-1200\u0000",
-      "prof": "Notar, Clea",
       "W": "1200-1430",
+      "prof": "Notar, Clea",
       "rating": {
         "prof": "Notar, Clea",
         "score": 71.6,
@@ -16772,7 +16771,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "607-SH2-AB",
-    "codeHeader": "Language Courses - SPANISH 2\u0000\u0000\nPrerequisite 607-SH1-AB Spanish 1",
+    "codeHeader": "Language Courses - SPANISH 2\nPrerequisite 607-SH1-AB Spanish 1",
     "section": "00001",
     "disc": "SPAN",
     "lecture": {
@@ -16797,7 +16796,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "607-SH3-AB",
-    "codeHeader": "Language Courses - SPANISH 3\u0000\u0000\nPrerequisite 607-SH2-AB Spanish 2",
+    "codeHeader": "Language Courses - SPANISH 3\nPrerequisite 607-SH2-AB Spanish 2",
     "section": "00001",
     "disc": "SPAN",
     "lecture": {
@@ -17089,7 +17088,7 @@
     "program": "Arts, Literature & Communication",
     "course": "",
     "code": "585-VR2-AB",
-    "codeHeader": "Video Production 2\u0000\u0000\nPrerequisite: 585-VR1-AB Video Production I",
+    "codeHeader": "Video Production 2\nPrerequisite: 585-VR1-AB Video Production I",
     "section": "00001",
     "disc": "MEDI",
     "lecture": {
@@ -17219,7 +17218,7 @@
     "disc": "CHEM",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Environmental Science",
-      "M\u0000": "1300-1400\u0000",
+      "M": "1300-1400",
       "TR": "1300-1430",
       "prof": "Babich-Morin, Nicole",
       "rating": {
@@ -17258,7 +17257,7 @@
     "disc": "CHEM",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Environmental Science",
-      "M\u0000": "1300-1400\u0000",
+      "M": "1300-1400",
       "TR": "1300-1430",
       "prof": "Babich-Morin, Nicole",
       "rating": {
@@ -17373,7 +17372,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-      "TR\u0000": "1000-1130\u0000",
+      "TR": "1000-1130",
       "F": "1230-1430",
       "prof": "McLeod, Alice",
       "rating": {
@@ -17399,7 +17398,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-      "T\u0000": "0830-1030\u0000",
+      "T": "0830-1030",
       "RF": "0830-1000",
       "prof": "Lefebvre, Caroline",
       "rating": {
@@ -17425,7 +17424,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-      "MR\u0000": "1000-1130\u0000",
+      "MR": "1000-1130",
       "T": "0830-1030",
       "prof": "Balogh, Ferenc",
       "rating": {
@@ -17451,7 +17450,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-      "MR\u0000": "1430-1600\u0000",
+      "MR": "1430-1600",
       "W": "0830-1030",
       "prof": "Balogh, Ferenc",
       "rating": {
@@ -17477,7 +17476,7 @@
     "disc": "MATH",
     "lecture": {
       "title": "Remedial Activities for Secondary IV Mathematics: Technical",
-      "MF\u0000": "1130-1300\u0000",
+      "MF": "1130-1300",
       "R": "1230-1430",
       "prof": "Flood, Kevin",
       "rating": {
@@ -19233,7 +19232,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00001",
     "disc": "ENGL",
     "lecture": {
@@ -19258,7 +19257,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00002",
     "disc": "ENGL",
     "lecture": {
@@ -19283,7 +19282,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00003",
     "disc": "ENGL",
     "lecture": {
@@ -19308,7 +19307,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00004",
     "disc": "ENGL",
     "lecture": {
@@ -19333,7 +19332,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00005",
     "disc": "ENGL",
     "lecture": {
@@ -19358,7 +19357,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00006",
     "disc": "ENGL",
     "lecture": {
@@ -19383,7 +19382,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00007",
     "disc": "ENGL",
     "lecture": {
@@ -19408,7 +19407,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00008",
     "disc": "ENGL",
     "lecture": {
@@ -19433,7 +19432,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00009",
     "disc": "ENGL",
     "lecture": {
@@ -19458,7 +19457,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00010",
     "disc": "ENGL",
     "lecture": {
@@ -19483,7 +19482,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00011",
     "disc": "ENGL",
     "lecture": {
@@ -19508,7 +19507,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00012",
     "disc": "ENGL",
     "lecture": {
@@ -19533,7 +19532,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00013",
     "disc": "ENGL",
     "lecture": {
@@ -19558,7 +19557,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00014",
     "disc": "ENGL",
     "lecture": {
@@ -19583,7 +19582,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00015",
     "disc": "ENGL",
     "lecture": {
@@ -19608,7 +19607,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00016",
     "disc": "ENGL",
     "lecture": {
@@ -19633,7 +19632,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00017",
     "disc": "ENGL",
     "lecture": {
@@ -19658,7 +19657,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00060",
     "disc": "ENGL",
     "lecture": {
@@ -19683,7 +19682,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-102-MQ",
-    "codeHeader": "603-102-MQ   Literary Genres\u0000\u0000\nPre-requisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-102-MQ   Literary Genres\nPre-requisite: 603-101-MQ or 601-101-04",
     "section": "00061",
     "disc": "ENGL",
     "lecture": {
@@ -19708,7 +19707,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00001",
     "disc": "ENGL",
     "lecture": {
@@ -19733,7 +19732,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00002",
     "disc": "ENGL",
     "lecture": {
@@ -19758,7 +19757,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00003",
     "disc": "ENGL",
     "lecture": {
@@ -19783,7 +19782,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00004",
     "disc": "ENGL",
     "lecture": {
@@ -19808,7 +19807,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00005",
     "disc": "ENGL",
     "lecture": {
@@ -19833,7 +19832,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00006",
     "disc": "ENGL",
     "lecture": {
@@ -19858,7 +19857,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00007",
     "disc": "ENGL",
     "lecture": {
@@ -19883,7 +19882,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00008",
     "disc": "ENGL",
     "lecture": {
@@ -19908,7 +19907,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00009",
     "disc": "ENGL",
     "lecture": {
@@ -19933,7 +19932,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00010",
     "disc": "ENGL",
     "lecture": {
@@ -19958,7 +19957,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00011",
     "disc": "ENGL",
     "lecture": {
@@ -19983,7 +19982,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00012",
     "disc": "ENGL",
     "lecture": {
@@ -20008,7 +20007,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00013",
     "disc": "ENGL",
     "lecture": {
@@ -20033,7 +20032,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00014",
     "disc": "ENGL",
     "lecture": {
@@ -20058,7 +20057,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00015",
     "disc": "ENGL",
     "lecture": {
@@ -20083,7 +20082,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00017",
     "disc": "ENGL",
     "lecture": {
@@ -20108,7 +20107,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00018",
     "disc": "ENGL",
     "lecture": {
@@ -20133,7 +20132,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00019",
     "disc": "ENGL",
     "lecture": {
@@ -20158,7 +20157,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00020",
     "disc": "ENGL",
     "lecture": {
@@ -20183,7 +20182,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00021",
     "disc": "ENGL",
     "lecture": {
@@ -20208,7 +20207,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00022",
     "disc": "ENGL",
     "lecture": {
@@ -20233,7 +20232,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00023",
     "disc": "ENGL",
     "lecture": {
@@ -20258,7 +20257,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00024",
     "disc": "ENGL",
     "lecture": {
@@ -20283,7 +20282,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00025",
     "disc": "ENGL",
     "lecture": {
@@ -20308,7 +20307,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00026",
     "disc": "ENGL",
     "lecture": {
@@ -20333,7 +20332,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00027",
     "disc": "ENGL",
     "lecture": {
@@ -20358,7 +20357,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00050",
     "disc": "ENGL",
     "lecture": {
@@ -20383,7 +20382,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00051",
     "disc": "ENGL",
     "lecture": {
@@ -20408,7 +20407,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00060",
     "disc": "ENGL",
     "lecture": {
@@ -20433,7 +20432,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00061",
     "disc": "ENGL",
     "lecture": {
@@ -20458,7 +20457,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-103-MQ",
-    "codeHeader": "603-103-MQ  Literary Themes\u0000\u0000\nPrerequisite: 603-101-MQ or 601-101-04",
+    "codeHeader": "603-103-MQ  Literary Themes\nPrerequisite: 603-101-MQ or 601-101-04",
     "section": "00029",
     "disc": "ENGL",
     "lecture": {
@@ -20475,7 +20474,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00001",
     "disc": "ENGL",
     "lecture": {
@@ -20500,7 +20499,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00002",
     "disc": "ENGL",
     "lecture": {
@@ -20525,7 +20524,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00003",
     "disc": "ENGL",
     "lecture": {
@@ -20550,7 +20549,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00004",
     "disc": "ENGL",
     "lecture": {
@@ -20575,7 +20574,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00005",
     "disc": "ENGL",
     "lecture": {
@@ -20600,7 +20599,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00006",
     "disc": "ENGL",
     "lecture": {
@@ -20625,7 +20624,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00007",
     "disc": "ENGL",
     "lecture": {
@@ -20650,7 +20649,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00008",
     "disc": "ENGL",
     "lecture": {
@@ -20675,7 +20674,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00009",
     "disc": "ENGL",
     "lecture": {
@@ -20700,7 +20699,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00010",
     "disc": "ENGL",
     "lecture": {
@@ -20725,7 +20724,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00011",
     "disc": "ENGL",
     "lecture": {
@@ -20750,7 +20749,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00012",
     "disc": "ENGL",
     "lecture": {
@@ -20775,7 +20774,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00013",
     "disc": "ENGL",
     "lecture": {
@@ -20800,7 +20799,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00014",
     "disc": "ENGL",
     "lecture": {
@@ -20825,7 +20824,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00015",
     "disc": "ENGL",
     "lecture": {
@@ -20850,7 +20849,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00060",
     "disc": "ENGL",
     "lecture": {
@@ -20875,7 +20874,7 @@
     "program": "English",
     "course": "ENGLISH",
     "code": "603-200-AB",
-    "codeHeader": "603-200-AB    Forms of Discourse\u0000\u0000\nPrerequisite:   603-101-MQ",
+    "codeHeader": "603-200-AB    Forms of Discourse\nPrerequisite:   603-101-MQ",
     "section": "00061",
     "disc": "ENGL",
     "lecture": {
@@ -24367,7 +24366,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-210-AB",
-    "codeHeader": "345-210-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-210-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00001",
     "disc": "HUMA",
     "lecture": {
@@ -24392,7 +24391,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-210-AB",
-    "codeHeader": "345-210-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-210-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00002",
     "disc": "HUMA",
     "lecture": {
@@ -24417,7 +24416,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-212-AB",
-    "codeHeader": "345-212-AB\u0000\u0000\nPrerequisites:  345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-212-AB\nPrerequisites:  345-101-MQ & 345-102-MQ",
     "section": "00001",
     "disc": "HUMA",
     "lecture": {
@@ -24442,7 +24441,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-212-AB",
-    "codeHeader": "345-212-AB\u0000\u0000\nPrerequisites:  345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-212-AB\nPrerequisites:  345-101-MQ & 345-102-MQ",
     "section": "00002",
     "disc": "HUMA",
     "lecture": {
@@ -24467,7 +24466,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-212-AB",
-    "codeHeader": "345-212-AB\u0000\u0000\nPrerequisites:  345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-212-AB\nPrerequisites:  345-101-MQ & 345-102-MQ",
     "section": "00003",
     "disc": "HUMA",
     "lecture": {
@@ -24492,7 +24491,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-212-AB",
-    "codeHeader": "345-212-AB\u0000\u0000\nPrerequisites:  345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-212-AB\nPrerequisites:  345-101-MQ & 345-102-MQ",
     "section": "00004",
     "disc": "HUMA",
     "lecture": {
@@ -24517,7 +24516,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00001",
     "disc": "HUMA",
     "lecture": {
@@ -24542,7 +24541,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00002",
     "disc": "HUMA",
     "lecture": {
@@ -24567,7 +24566,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00003",
     "disc": "HUMA",
     "lecture": {
@@ -24592,7 +24591,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00004",
     "disc": "HUMA",
     "lecture": {
@@ -24617,7 +24616,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00005",
     "disc": "HUMA",
     "lecture": {
@@ -24642,7 +24641,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00006",
     "disc": "HUMA",
     "lecture": {
@@ -24667,7 +24666,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00007",
     "disc": "HUMA",
     "lecture": {
@@ -24692,7 +24691,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00008",
     "disc": "HUMA",
     "lecture": {
@@ -24717,7 +24716,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-213-AB",
-    "codeHeader": "345-213-AB \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-213-AB \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00009",
     "disc": "HUMA",
     "lecture": {
@@ -24742,7 +24741,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00001",
     "disc": "HUMA",
     "lecture": {
@@ -24767,7 +24766,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00002",
     "disc": "HUMA",
     "lecture": {
@@ -24792,7 +24791,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00003",
     "disc": "HUMA",
     "lecture": {
@@ -24817,7 +24816,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00004",
     "disc": "HUMA",
     "lecture": {
@@ -24842,7 +24841,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00005",
     "disc": "HUMA",
     "lecture": {
@@ -24867,7 +24866,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00006",
     "disc": "HUMA",
     "lecture": {
@@ -24892,7 +24891,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00007",
     "disc": "HUMA",
     "lecture": {
@@ -24917,7 +24916,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00008",
     "disc": "HUMA",
     "lecture": {
@@ -24942,7 +24941,7 @@
     "program": "Humanities",
     "course": "HUMANITIES",
     "code": "345-214-AB",
-    "codeHeader": "345-214-AB  \u0000\u0000\nPrerequisites: 345-101-MQ & 345-102-MQ",
+    "codeHeader": "345-214-AB  \nPrerequisites: 345-101-MQ & 345-102-MQ",
     "section": "00009",
     "disc": "HUMA",
     "lecture": {
@@ -25547,9 +25546,8 @@
     "disc": "PHYE",
     "lecture": {
       "title": "Walking and Fitness",
-      "T\u0000": "1330-1430\u0000",
-      "prof": "Matthew, Valerie Anne",
       "T": "1430-1530",
+      "prof": "Matthew, Valerie Anne",
       "rating": {
         "prof": "Matthew, Valerie Anne",
         "score": 91.7,
@@ -27268,7 +27266,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00001",
     "disc": "PHYE",
     "lecture": {
@@ -27293,7 +27291,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00002",
     "disc": "PHYE",
     "lecture": {
@@ -27318,14 +27316,13 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00003",
     "disc": "PHYE",
     "lecture": {
       "title": "Golf",
-      "W\u0000": "1500-1600\u0000",
-      "prof": "Fitleberg, Joel",
       "W": "1600-1700",
+      "prof": "Fitleberg, Joel",
       "rating": {
         "prof": "Fitleberg, Joel",
         "score": 75.0,
@@ -27344,7 +27341,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00004",
     "disc": "PHYE",
     "lecture": {
@@ -27362,14 +27359,14 @@
       }
     },
     "lab": {},
-    "more": "ADDITIONAL FEE:       $225.00\nIntensive course: includes one day on campus Aug 11, then a trip to Riviere du Diable, Mont Tremblant\u0000\u0000 Aug 15-18. Must be comfortable in deep water and able to swim 50 meters (with or without a\u0000\u0000 lifejacket). Students must provide appropriate outdoor clothing and camping gear "
+    "more": "ADDITIONAL FEE:       $225.00\nIntensive course: includes one day on campus Aug 11, then a trip to Riviere du Diable, Mont Tremblant Aug 15-18. Must be comfortable in deep water and able to swim 50 meters (with or without a lifejacket). Students must provide appropriate outdoor clothing and camping gear "
   },
   {
     "count": 1202,
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00005",
     "disc": "PHYE",
     "lecture": {
@@ -27394,7 +27391,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00006",
     "disc": "PHYE",
     "lecture": {
@@ -27419,7 +27416,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00007",
     "disc": "PHYE",
     "lecture": {
@@ -27444,7 +27441,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00008",
     "disc": "PHYE",
     "lecture": {
@@ -27469,7 +27466,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00009",
     "disc": "PHYE",
     "lecture": {
@@ -27494,7 +27491,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00010",
     "disc": "PHYE",
     "lecture": {
@@ -27519,7 +27516,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00011",
     "disc": "PHYE",
     "lecture": {
@@ -27544,7 +27541,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00012",
     "disc": "PHYE",
     "lecture": {
@@ -27569,14 +27566,13 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00013",
     "disc": "PHYE",
     "lecture": {
       "title": "Yoga Retreat",
-      "F\u0000": "1300-1400\u0000",
-      "prof": "Homsy, Celine",
       "F": "1400-1600",
+      "prof": "Homsy, Celine",
       "rating": {
         "prof": "Homsy, Celine",
         "score": 87.6,
@@ -27595,7 +27591,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00014",
     "disc": "PHYE",
     "lecture": {
@@ -27620,7 +27616,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00015",
     "disc": "PHYE",
     "lecture": {
@@ -27645,7 +27641,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00016",
     "disc": "PHYE",
     "lecture": {
@@ -27670,7 +27666,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00017",
     "disc": "PHYE",
     "lecture": {
@@ -27695,7 +27691,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00018",
     "disc": "PHYE",
     "lecture": {
@@ -27720,7 +27716,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00019",
     "disc": "PHYE",
     "lecture": {
@@ -27745,7 +27741,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00020",
     "disc": "PHYE",
     "lecture": {
@@ -27770,7 +27766,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00021",
     "disc": "PHYE",
     "lecture": {
@@ -27795,7 +27791,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00022",
     "disc": "PHYE",
     "lecture": {
@@ -27820,7 +27816,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00023",
     "disc": "PHYE",
     "lecture": {
@@ -27845,7 +27841,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00024",
     "disc": "PHYE",
     "lecture": {
@@ -27870,7 +27866,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00025",
     "disc": "PHYE",
     "lecture": {
@@ -27895,7 +27891,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00026",
     "disc": "PHYE",
     "lecture": {
@@ -27920,7 +27916,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00027",
     "disc": "PHYE",
     "lecture": {
@@ -27945,7 +27941,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00028",
     "disc": "PHYE",
     "lecture": {
@@ -27970,7 +27966,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00029",
     "disc": "PHYE",
     "lecture": {
@@ -27995,7 +27991,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00030",
     "disc": "PHYE",
     "lecture": {
@@ -28020,7 +28016,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00031",
     "disc": "PHYE",
     "lecture": {
@@ -28045,7 +28041,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00032",
     "disc": "PHYE",
     "lecture": {
@@ -28070,7 +28066,7 @@
     "program": "Physical Education",
     "course": "PHYSICAL EDUCATION  - PHYSICAL EDUCATION & NUTRITION",
     "code": "109-103-MQ",
-    "codeHeader": "109-103-MQ:  ACTIVE LIVING\u0000\u0000\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
+    "codeHeader": "109-103-MQ:  ACTIVE LIVING\nPrerequisites:  109-103-02 or 109-101-MQ AND 109-104-02 or 109-102-MQ",
     "section": "00060",
     "disc": "PHYE",
     "lecture": {
@@ -28095,7 +28091,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "202-DBF-AB",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 02",
     "section": "00001",
     "disc": "CHEM",
     "lecture": {
@@ -28113,14 +28109,14 @@
       }
     },
     "lab": {},
-    "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities.\u0000\u0000 Not for Science students. "
+    "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities. Not for Science students. "
   },
   {
     "count": 1235,
     "program": "Complementary Courses",
     "course": "",
     "code": "202-DBF-AB",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 02",
     "section": "00002",
     "disc": "CHEM",
     "lecture": {
@@ -28145,7 +28141,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "101-DBB-03",
-    "codeHeader": "DOMAIN: 01      SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 01      SCIENCE AND TECHNOLOGY\nENSEMBLE: 02",
     "section": "00001",
     "disc": "BIOL",
     "lecture": {
@@ -28170,7 +28166,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "244-DBB-AB",
-    "codeHeader": "DOMAIN: 01      SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 01      SCIENCE AND TECHNOLOGY\nENSEMBLE: 02",
     "section": "00001",
     "disc": "ENGINEERING",
     "lecture": {
@@ -28199,7 +28195,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "244-DBB-AB",
-    "codeHeader": "DOMAIN: 01      SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 01      SCIENCE AND TECHNOLOGY\nENSEMBLE: 02",
     "section": "00002",
     "disc": "ENGINEERING",
     "lecture": {
@@ -28224,7 +28220,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "120-DAD-AB",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 01",
     "section": "00001",
     "disc": "NUTR",
     "lecture": {
@@ -28242,14 +28238,14 @@
       }
     },
     "lab": {},
-    "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities.\u0000\u0000 For all programs. "
+    "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities. For all programs. "
   },
   {
     "count": 1242,
     "program": "Complementary Courses",
     "course": "",
     "code": "120-DAD-AB",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 01",
     "section": "00002",
     "disc": "NUTR",
     "lecture": {
@@ -28267,14 +28263,14 @@
       }
     },
     "lab": {},
-    "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities.\u0000\u0000 For all programs. "
+    "more": "BLENDED LEARNING. This course will be delivered in blended learning format, involving a percentage of technology-mediated asynchronous lectures, labs and/or other activities and a percentage in person on campus lectures. A computer, reliable internet connection, webcam, and microphone are required to complete your asynchronous activities. For all programs. "
   },
   {
     "count": 1243,
     "program": "Complementary Courses",
     "course": "",
     "code": "101-DAB-03",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 01",
     "section": "00001",
     "disc": "BIOL",
     "lecture": {
@@ -28299,7 +28295,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "120-DAB-AB",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 01",
     "section": "00001",
     "disc": "NUTR",
     "lecture": {
@@ -28324,7 +28320,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "120-DAB-AB",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 01",
     "section": "00002",
     "disc": "NUTR",
     "lecture": {
@@ -28349,7 +28345,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "203-DAB-03",
-    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 01     SCIENCE AND TECHNOLOGY\nENSEMBLE: 01",
     "section": "00001",
     "disc": "PHYS",
     "lecture": {
@@ -28374,7 +28370,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "330-DAB-AB",
-    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \nENSEMBLE: 01",
     "section": "00001",
     "disc": "HIST",
     "lecture": {
@@ -28399,7 +28395,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "385-DAC-AB",
-    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \nENSEMBLE: 01",
     "section": "00001",
     "disc": "POLS",
     "lecture": {
@@ -28424,7 +28420,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "350-DAA-03",
-    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \nENSEMBLE: 01",
     "section": "00001",
     "disc": "PSYC",
     "lecture": {
@@ -28449,7 +28445,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "350-DBC-AB",
-    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \nENSEMBLE: 01",
     "section": "00001",
     "disc": "PSYC",
     "lecture": {
@@ -28474,7 +28470,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "401-DAA-03",
-    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 03      SOCIAL SCIENCE \nENSEMBLE: 01",
     "section": "00001",
     "disc": "BUSI",
     "lecture": {
@@ -28499,7 +28495,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "401-DBB-AB",
-    "codeHeader": "DOMAIN: 03     SOCIAL SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 03     SOCIAL SCIENCE\nENSEMBLE: 02",
     "section": "00001",
     "disc": "BUSI",
     "lecture": {
@@ -28524,7 +28520,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "381-DBE-AB",
-    "codeHeader": "DOMAIN: 03     SOCIAL SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 03     SOCIAL SCIENCE\nENSEMBLE: 02",
     "section": "00001",
     "disc": "ANTH",
     "lecture": {
@@ -28549,7 +28545,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "420-DAB-AB",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 01",
     "section": "00001",
     "disc": "COMP",
     "lecture": {
@@ -28574,7 +28570,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "420-DAB-AB",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 01",
     "section": "00002",
     "disc": "COMP",
     "lecture": {
@@ -28599,7 +28595,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "201-DAC-AB",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 02",
     "section": "00001",
     "disc": "MATH",
     "lecture": {
@@ -28624,7 +28620,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "420-DBF-03",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 02",
     "section": "00001",
     "disc": "COMP",
     "lecture": {
@@ -28649,7 +28645,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "420-DBF-03",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 02",
     "section": "00002",
     "disc": "COMP",
     "lecture": {
@@ -28674,7 +28670,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "412-DBC-AB",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 02",
     "section": "00001",
     "disc": "GWD",
     "lecture": {
@@ -28699,7 +28695,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "420-DBA-03",
-    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 04    MATHEMATICS LITERACY AND COMPUTER SCIENCE\nENSEMBLE: 02",
     "section": "00001",
     "disc": "COMP",
     "lecture": {
@@ -28799,7 +28795,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "530-DAD-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 01",
     "section": "00001",
     "disc": "FILM",
     "lecture": {
@@ -28824,7 +28820,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "530-DBC-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 01",
     "section": "00001",
     "disc": "FILM",
     "lecture": {
@@ -28849,7 +28845,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "530-DA0-AB",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00001",
     "disc": "FILM",
     "lecture": {
@@ -28874,7 +28870,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "511-DBA-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00001",
     "disc": "VISUAL",
     "lecture": {
@@ -28899,7 +28895,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "511-DBB-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00001",
     "disc": "VISUAL",
     "lecture": {
@@ -28924,7 +28920,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "570-DBA-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00001",
     "disc": "CERA",
     "lecture": {
@@ -28949,7 +28945,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "570-DBA-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00002",
     "disc": "CERA",
     "lecture": {
@@ -28974,7 +28970,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "570-DBB-03",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00001",
     "disc": "CERA",
     "lecture": {
@@ -28999,7 +28995,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "585-DBA-AB",
-    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\u0000\u0000\nENSEMBLE: 02",
+    "codeHeader": "DOMAIN: 05      ARTS AND AESTHETICS\nENSEMBLE: 02",
     "section": "00001",
     "disc": "MEDI",
     "lecture": {
@@ -29024,7 +29020,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
     "section": "00001",
     "disc": "SPAN",
     "lecture": {
@@ -29049,7 +29045,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
     "section": "00002",
     "disc": "SPAN",
     "lecture": {
@@ -29074,7 +29070,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
     "section": "00003",
     "disc": "SPAN",
     "lecture": {
@@ -29099,7 +29095,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
     "section": "00004",
     "disc": "SPAN",
     "lecture": {
@@ -29124,7 +29120,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
     "section": "00005",
     "disc": "SPAN",
     "lecture": {
@@ -29149,7 +29145,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \n(Prerequisite:  Students who have taken Spanish in Sec IV or V and received a grade of 70% or higher are not eligible to\ntake this course.  They must register for Spanish II 607-DBA-03).",
     "section": "00006",
     "disc": "SPAN",
     "lecture": {
@@ -29174,7 +29170,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 02\u0000\u0000\nPrerequisite: 607-DAA-03 or 607-SH1-AB or 607-SP1-AB or  have taken Spanish in Sec IV or V and received a grade of\n70% or higher.",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 02\nPrerequisite: 607-DAA-03 or 607-SH1-AB or 607-SP1-AB or  have taken Spanish in Sec IV or V and received a grade of\n70% or higher.",
     "section": "00007",
     "disc": "SPAN",
     "lecture": {
@@ -29199,7 +29195,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DBA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 \u0000\u0000\nPrerequisite: 607-DBA-03 or 607-SH2-AB or 607-SP2-AB or departmental waiver.",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 \nPrerequisite: 607-DBA-03 or 607-SH2-AB or 607-SP2-AB or departmental waiver.",
     "section": "00001",
     "disc": "SPAN",
     "lecture": {
@@ -29224,7 +29220,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "607-DAB-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Italian",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Italian",
     "section": "00001",
     "disc": "SPAN",
     "lecture": {
@@ -29249,7 +29245,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "608-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Italian",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Italian",
     "section": "00001",
     "disc": "ITAL",
     "lecture": {
@@ -29274,7 +29270,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "608-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Italian",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Italian",
     "section": "00002",
     "disc": "ITAL",
     "lecture": {
@@ -29299,7 +29295,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "608-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Italian",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Italian",
     "section": "00003",
     "disc": "ITAL",
     "lecture": {
@@ -29324,7 +29320,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "608-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Italian",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Italian",
     "section": "00004",
     "disc": "ITAL",
     "lecture": {
@@ -29349,7 +29345,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "608-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - German",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - German",
     "section": "00005",
     "disc": "ITAL",
     "lecture": {
@@ -29374,7 +29370,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "609-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - German",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - German",
     "section": "00001",
     "disc": "GERM",
     "lecture": {
@@ -29399,7 +29395,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "609-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - German",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - German",
     "section": "00002",
     "disc": "GERM",
     "lecture": {
@@ -29424,7 +29420,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "609-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - German",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - German",
     "section": "00003",
     "disc": "GERM",
     "lecture": {
@@ -29449,7 +29445,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "609-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - German",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - German",
     "section": "00004",
     "disc": "GERM",
     "lecture": {
@@ -29474,7 +29470,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "609-DAA-03",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Mandarin Chinese",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Mandarin Chinese",
     "section": "00005",
     "disc": "GERM",
     "lecture": {
@@ -29499,7 +29495,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "613-DAA-AB",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Mandarin Chinese",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Mandarin Chinese",
     "section": "00001",
     "disc": "MAND",
     "lecture": {
@@ -29524,7 +29520,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "613-DAA-AB",
-    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\u0000\u0000\nENSEMBLE: 01 - Mandarin Chinese",
+    "codeHeader": "DOMAIN: 06     MODERN LANGUAGES\nENSEMBLE: 01 - Mandarin Chinese",
     "section": "00002",
     "disc": "MAND",
     "lecture": {
@@ -29549,7 +29545,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "365-CSP-AB",
-    "codeHeader": "DOMAIN: 07      CONTEMPORARY ISSUES\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 07      CONTEMPORARY ISSUES\nENSEMBLE: 01",
     "section": "00001",
     "disc": "TRANSDISCIPLINARY",
     "lecture": {
@@ -29574,7 +29570,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "365-CSP-AB",
-    "codeHeader": "DOMAIN: 07      CONTEMPORARY ISSUES\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 07      CONTEMPORARY ISSUES\nENSEMBLE: 01",
     "section": "00002",
     "disc": "TRANSDISCIPLINARY",
     "lecture": {
@@ -29599,7 +29595,7 @@
     "program": "Complementary Courses",
     "course": "",
     "code": "365-TSC-AB",
-    "codeHeader": "DOMAIN: 07      CONTEMPORARY ISSUES\u0000\u0000\nENSEMBLE: 01",
+    "codeHeader": "DOMAIN: 07      CONTEMPORARY ISSUES\nENSEMBLE: 01",
     "section": "00001",
     "disc": "PHYS",
     "lecture": {
