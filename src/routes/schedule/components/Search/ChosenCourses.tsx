@@ -40,7 +40,7 @@ export default function ChosenCourses({ viewData, userData }: Props) {
   });
 
   // keep track of the id b counting so there can never be two same id
-  const count = useRef(savedSchedule ? savedSchedule.length : 0);
+  const count = useRef(savedSchedule.length);
 
   const { chosenClasses } = useContext(ClassContext);
 
