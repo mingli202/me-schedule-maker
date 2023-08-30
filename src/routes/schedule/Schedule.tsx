@@ -36,8 +36,6 @@ export default function Schedule({ user }: Props) {
     [chosenClasses]
   );
 
-  console.log(loading);
-
   useEffect(() => {
     if (checkForOverlap(viewData)) {
       setChosenClasses(chosenClasses.slice(0, -1));

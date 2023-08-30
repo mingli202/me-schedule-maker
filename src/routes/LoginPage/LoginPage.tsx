@@ -53,8 +53,8 @@ export default function LoginPage() {
         </div>
 
         <div className="basis-7/12 bg-c1 text-xl p-4">
-          The account creation feature is done! You can now create an account an
-          access it anywhere. The home page is still begin build.
+          The account creation feature is done! You can now create an account
+          and access it anywhere. The home page is still being build.
         </div>
       </section>
     </>
