@@ -29,7 +29,7 @@ export default function LoginPage() {
   return (
     <>
       <section className="w-[100dvw] h-[100dvh] bg-white flex">
-        <div className="basis-5/12 bg-white flex flex-col items-center justify-center box-border p-6">
+        <div className="md:basis-5/12 w-full bg-white flex flex-col items-center justify-center box-border p-6">
           {/* Login form */}
           <div className="bg-c1 w-full h-full flex flex-col items-center rounded-lg overflow-hidden">
             <nav className="flex w-full shrink-0">
@@ -52,7 +52,7 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="basis-7/12 bg-c1 text-xl p-4">
+        <div className="basis-7/12 bg-c1 text-xl p-4 md:block hidden">
           The account creation feature is done! You can now create an account
           and access it anywhere. The home page is still being build.
         </div>

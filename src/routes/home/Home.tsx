@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { $getAuth, detach } from "../../backend/api";
+import { $getAuth, $signOut, detach } from "../../backend/api";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -18,12 +18,19 @@ export default function Home() {
     });
   }, []);
 
+  async function handleSignOut() {
+    await $signOut();
+  }
+
   return (
     <>
       <p>Home page</p>
       <Link to="schedule" className="text-c5">
         Schedule
       </Link>
+      <p onClick={() => void handleSignOut()} className="cursor-pointer">
+        Sign Out
+      </p>
     </>
   );
 }

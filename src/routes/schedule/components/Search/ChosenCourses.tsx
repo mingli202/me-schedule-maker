@@ -24,7 +24,11 @@ export default function ChosenCourses({ viewData, userData }: Props) {
 
   const [savedSchedule, setSavedSchedule] = useState<Saved[]>(() => {
     if (userData) {
-      return userData.schedules;
+      if (userData.schedules) {
+        return userData.schedules;
+      } else {
+        return [];
+      }
     } else {
       const keyItem = window.localStorage.getItem(key);
 
@@ -36,7 +40,7 @@ export default function ChosenCourses({ viewData, userData }: Props) {
   });
 
   // keep track of the id b counting so there can never be two same id
-  const count = useRef(savedSchedule.length);
+  const count = useRef(savedSchedule ? savedSchedule.length : 0);
 
   const { chosenClasses } = useContext(ClassContext);
 

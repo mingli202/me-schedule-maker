@@ -51,10 +51,10 @@ export default function SignUp() {
 
   return (
     <form
-      className="basis-full w-full box-border p-4 shrink-0"
+      className="basis-full w-full box-border p-4 shrink-0 text-sm md:text-base"
       onSubmit={(e) => void handleSubmit(e)}
     >
-      <p className="w-full text-center font-bold mt-2 mb-6 text-2xl">
+      <p className="w-full text-center font-bold mt-2 mb-6 md:text-2xl text-lg">
         Sign up your account
       </p>
 
@@ -63,7 +63,7 @@ export default function SignUp() {
         <input
           name="email"
           placeholder="Email"
-          className={`w-full p-2 text-lg mt-2 mb-6 outline-none rounded-md`}
+          className={`w-full p-2 md:text-lg text-base mt-2 mb-6 outline-none rounded-md`}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -79,7 +79,7 @@ export default function SignUp() {
           <input
             name="password"
             placeholder="Password"
-            className={`w-full p-2 text-lg outline-none rounded-md mb-6 box-border ${denied ? "border-red-500 border border-solid" : ""
+            className={`w-full p-2 md:text-lg text-base outline-none rounded-md mb-6 box-border ${denied ? "border-red-500 border border-solid" : ""
               }`}
             type="text"
             onChange={(e) => setPassword(e.target.value)}
@@ -97,7 +97,7 @@ export default function SignUp() {
           <input
             name="password"
             placeholder="Password"
-            className={`w-full p-2 text-lg outline-none rounded-md box-border ${denied ? "border-red-500 border border-solid" : ""
+            className={`w-full p-2 md:text-lg text-base outline-none rounded-md box-border ${denied ? "border-red-500 border border-solid" : ""
               }`}
             type="text"
             onChange={(e) => setConfirmPass(e.target.value)}
