@@ -24,8 +24,6 @@ export default function SignUp() {
     const loginInfo = await signUp(email, password);
 
     if (loginInfo.status === "success") {
-      console.log("Signed In");
-
       setDenied(false);
 
       await verifyEmail(loginInfo.info.user);

@@ -3,17 +3,21 @@ import { SignIn, SignUp } from "./components";
 
 import { animated, useSpring } from "@react-spring/web";
 import { onAuthStateChanged } from "firebase/auth";
-import { $getAuth } from "../../backend/api";
+import { $getAuth, $signOut } from "../../backend/api";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [active, setActive] = useState<"Login" | "Sign Up">("Login");
   const navigate = useNavigate();
+  const [notVerified, setNotVerified] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged($getAuth(), (user) => {
       if (user) {
-        navigate(`/users/${user.uid}`);
+        if (!user.emailVerified) {
+          setNotVerified(false);
+          $signOut().catch((err) => console.log(err));
+        } else navigate(`/users/${user.uid}`);
       }
     });
   }, []);
@@ -48,7 +52,7 @@ export default function LoginPage() {
               className="w-28 mt-12"
             />
 
-            <Carousel active={active} />
+            <Carousel active={active} notVerified={notVerified} />
           </div>
         </div>
 
@@ -103,7 +107,13 @@ function NavBar({
   );
 }
 
-function Carousel({ active }: { active: "Login" | "Sign Up" }) {
+function Carousel({
+  active,
+  notVerified,
+}: {
+  active: "Login" | "Sign Up";
+  notVerified?: boolean;
+}) {
   const [springs, ctr] = useSpring(
     () => ({
       from: {
@@ -124,7 +134,7 @@ function Carousel({ active }: { active: "Login" | "Sign Up" }) {
   return (
     <div className="overflow-hidden w-full h-full">
       <animated.div className="flex relative" style={springs}>
-        <SignIn />
+        <SignIn notVerified={notVerified} />
         <SignUp />
       </animated.div>
     </div>

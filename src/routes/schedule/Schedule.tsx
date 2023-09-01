@@ -224,13 +224,16 @@ export default function Schedule({ user }: Props) {
 
   return (
     <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
-      <nav className="text-base w-full bg-c9 text-c1 shrink-0 flex justify-between items-center">
+      <nav className="md:text-base text-xs w-full bg-c9 text-c1 shrink-0 flex justify-between items-center">
         <FontAwesomeIcon
           icon={faHome}
           className="ml-2 cursor-pointer transition hover:text-c4"
           onClick={() => navigate("/")}
         />
-        <p>Fall 2023 JAC Mock Schedule Maker</p>
+        <p>
+          Fall 2023 JAC{" "}
+          <span className=" max-md:hidden">Mock Schedule Maker</span>
+        </p>
         <p
           onClick={() => void handleOnClick()}
           className="mr-2 cursor-pointer transition hover:text-c4"

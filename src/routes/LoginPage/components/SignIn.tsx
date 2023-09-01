@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 
 import { signIn } from "../../../backend/api";
 
-export default function SignIn() {
+type Props = {
+  notVerified?: boolean;
+};
+export default function SignIn({ notVerified }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPass, setShowPass] = useState(false);
@@ -73,6 +76,7 @@ export default function SignIn() {
       </label>
       <p className="mt-2 text-sm text-red-500">
         {denied ? "Email or password incorrect" : null}
+        {!notVerified && !denied ? "You have not verified your email" : null}
       </p>
 
       <label>
