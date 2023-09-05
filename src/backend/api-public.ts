@@ -20,11 +20,7 @@ import {
 } from "firebase/database";
 import { AuthType, Saved, UserType } from "../types";
 
-const firebaseConfig = {
-  // removed
-};
-
-const app = initializeApp(firebaseConfig);
+const app = initializeApp();
 
 /*
  *Authentication Api
