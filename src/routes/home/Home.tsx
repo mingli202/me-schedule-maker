@@ -1,33 +1,57 @@
-import { Link, useNavigate } from "react-router-dom";
-import { $getAuth, $signOut, detach } from "../../backend/api";
+import { useNavigate } from "react-router-dom";
+import { $getAuth, $signOut, listenForChange } from "../../backend/api";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { animated, useSpring } from "@react-spring/web";
+import { View } from "../schedule/components";
+import { Saved } from "../../types";
+import Select from "./components/Select";
+import Welcome from "./components/Welcome";
+// import Bg from "./components/Bg";
 
 export default function Home() {
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const auth = $getAuth();
+  const [userData, setUserData] = useState<{
+    uid: string;
+    schedules: Saved[];
+  } | null>(null);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged($getAuth(), (user) => {
       if (!user) {
         navigate("/");
       } else {
-        detach(user.uid, "schedules");
         setUserEmail(user.email ? user.email : "User");
+        listenForChange(
+          user.uid,
+          (snapshot) => {
+            setUserData({
+              uid: user.uid,
+              schedules: snapshot.val() as Saved[],
+            });
+          },
+          "schedules"
+        );
       }
     });
   }, []);
 
   return (
-    <section className="relative">
+    <section className="w-[100dvw] h-[100dvh] relative overflow-x-hidden flex flex-col">
       <Menu menuOpen={menuOpen} />
 
-      <nav className="flex justify-between box-border p-1 h-20">
-        <img src="/me-schedule-maker/images/jac-mock-schedule-maker-high-resolution-color-logo-2.png" />
+      <BottomTriangles />
+
+      {/* <Bg /> */}
+
+      <nav className="shrink-0 flex justify-between box-border p-1 h-20 w-full items-center bg-white">
+        <img
+          src="/me-schedule-maker/images/jac-mock-schedule-maker-high-resolution-color-logo-2.png"
+          className="h-full aspect-[4/3]"
+        />
         <div className="flex gap-4 items-center box-border pr-4">
           <p>{userEmail}</p>
           <MenuIcon
@@ -37,9 +61,22 @@ export default function Home() {
         </div>
       </nav>
 
-      <Link to="schedule" className="text-c5">
-        Schedule
-      </Link>
+      <Welcome />
+
+      <div className="shrink-0 flex justify-center box-border p-6 items-center">
+        <h1 className="font-bold text-4xl z-10 text-c1">My Schedules</h1>
+      </div>
+
+      <div
+        className="bg-c9 h-full box-border p-2 w-full grid grid-rows-6 grid-cols-10 gap-2 grow-0 absolute top-[100dvh]"
+        id="schedules"
+      >
+        <View viewData={userData?.schedules?.[index]?.vData ?? []} />
+        <Select setIndex={setIndex} viewData={userData?.schedules} />
+        <div className="text-c1">
+          {userData?.schedules?.[index].name ?? "Untitled"}
+        </div>
+      </div>
     </section>
   );
 }
@@ -48,22 +85,9 @@ type MenuProps = {
   menuOpen: boolean;
 };
 function Menu({ menuOpen }: MenuProps) {
-  const [springs, ctr] = useSpring(
-    () => ({
-      from: {
-        x: "0%",
-      },
-    }),
-    []
-  );
-
-  useEffect(() => {
-    ctr.start({
-      to: {
-        x: menuOpen ? "-100%" : "0%",
-      },
-    });
-  }, [menuOpen]);
+  const springs = useSpring({
+    x: menuOpen ? "-100%" : "0%",
+  });
 
   async function handleSignOut() {
     await $signOut();
@@ -89,10 +113,12 @@ type MenuIconProps = {
   menuOpen: boolean;
   handleOnClick: () => void;
 };
+// svg morph thing
 function MenuIcon({ menuOpen, handleOnClick }: MenuIconProps) {
   const width = 100;
   const height = 100;
 
+  // each index correspond to the d value in <path />
   const bars = [
     `M1 ${height * 0.2}L${width} ${height * 0.2}`,
     `M1 ${height * 0.5}L${width * 0.75} ${height * 0.5}`,
@@ -126,24 +152,65 @@ function MenuIcon({ menuOpen, handleOnClick }: MenuIconProps) {
       <animated.path
         d={path1.d}
         stroke="#33363F"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <animated.path
         d={path2.d}
         stroke="#33363F"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <animated.path
         d={path3.d}
         stroke="#33363F"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
+  );
+}
+
+function BottomTriangles() {
+  return (
+    <>
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col">
+        <div className="w-full h-10 bg-c1 order-1 relative bottom-0" />
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="relative block w-[calc(100%+1.3px)] h-32 order-2 top-0"
+        >
+          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c1" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col">
+        <div className="w-full h-5 bg-c5 order-1 relative bottom-0" />
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="relative block w-[calc(100%+1.3px)] h-32 order-2 top-0"
+        >
+          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c5" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="relative block w-[calc(100%+1.3px)] h-32"
+        >
+          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c9" />
+        </svg>
+      </div>
+    </>
   );
 }

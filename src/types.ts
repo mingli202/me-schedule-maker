@@ -70,4 +70,5 @@ export type Saved = {
 	id: number;
 	vData: ViewData[][];
 	data: Class[];
+	name?: string;
 };

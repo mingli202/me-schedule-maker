@@ -32,6 +32,13 @@ export default function SignUp() {
         email: email,
         password: password,
         uid: loginInfo.info.user.uid,
+        schedules: [
+          {
+            id: 0,
+            vData: [],
+            data: [],
+          },
+        ],
       });
 
       navigate("/email-verification-confirmation");
