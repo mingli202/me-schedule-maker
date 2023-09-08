@@ -5,8 +5,9 @@ import { ViewData } from "../../../types";
 
 type Props = {
   viewData: ViewData[][];
+  login?: boolean;
 };
-export default function View({ viewData }: Props) {
+export default function View({ viewData, login }: Props) {
   const [view, setView] = useState<ReactElement[]>([]);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function View({ viewData }: Props) {
       return viewData.map((i, index) => {
         return (
           <Fragment key={index}>
-            <ClassBlocks blocksToShow={i} />
+            <ClassBlocks blocksToShow={i} login={login} />
           </Fragment>
         );
       });
@@ -116,7 +117,13 @@ function Lines({ n, lineProperty }: LinesProps) {
   );
 }
 
-function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
+function ClassBlocks({
+  blocksToShow,
+  login,
+}: {
+  blocksToShow: ViewData[];
+  login?: boolean;
+}) {
   const transitions = useTransition(blocksToShow, {
     from: {
       y: -20,
@@ -140,7 +147,8 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
 
     return (
       <animated.div
-        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] cursor-pointer rounded-lg overflow-hidden`}
+        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${login ? "" : "cursor-pointer"
+          } rounded-lg overflow-hidden`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
@@ -150,6 +158,9 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
         }}
         key={i.code + i.section + t[0]}
         onClick={() => {
+          if (login) {
+            return;
+          }
           setChosenClasses(chosenClasses.filter((c) => c.code !== i.code));
         }}
       >

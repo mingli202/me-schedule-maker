@@ -13,7 +13,6 @@ export type AuthType =
 export type UserType = {
 	email: string;
 	uid: string;
-	password: string;
 	name?: string;
 	schedules?: Saved[];
 };

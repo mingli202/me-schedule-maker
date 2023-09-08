@@ -4,6 +4,7 @@ import { Home } from "./routes/home";
 import { Schedule } from "./routes/schedule";
 import { LoginPage } from "./routes/LoginPage";
 import ErrorPage from "./routes/ErrorPage";
+import Settings from "./routes/home/components/Settings";
 
 const routes = createHashRouter([
   {
@@ -25,6 +26,12 @@ const routes = createHashRouter([
     path: "/users/:uid",
     element: <Home />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/users/:uid/settings",
+        element: <Settings />,
+      },
+    ],
   },
   {
     path: "/email-verification-confirmation",

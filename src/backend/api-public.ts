@@ -8,6 +8,7 @@ import {
   sendEmailVerification,
   Auth,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import {
   getDatabase,
@@ -73,6 +74,12 @@ export async function $signOut() {
   return signOut(auth);
 }
 
+export async function resetPassEmail(email: string) {
+  return await sendPasswordResetEmail(auth, email)
+    .then(() => null)
+    .catch((err: AuthError) => err);
+}
+
 /*
  * Database api
  * */
@@ -98,6 +105,11 @@ export async function getUserData<T>(uid: string, child?: string) {
 export async function updateSaved(uid: string, saved: Saved[]) {
   const dbRef = ref(db, "/users" + uid + "/schedules");
   await set(dbRef, saved);
+}
+
+export async function updateName(uid: string, name: string, path: number) {
+  const dbRef = ref(db, `/users${uid}/schedules/${path}/name`);
+  await set(dbRef, name);
 }
 
 export function listenForChange(

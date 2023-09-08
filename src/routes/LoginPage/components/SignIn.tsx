@@ -74,10 +74,12 @@ export default function SignIn({ notVerified }: Props) {
           />
         </div>
       </label>
-      <p className="mt-2 text-sm text-red-500">
+      <div className="mt-2 text-sm text-red-500">
         {denied ? "Email or password incorrect" : null}
-        {!notVerified && !denied ? "You have not verified your email" : null}
-      </p>
+        {!denied && notVerified ? (
+          <p>You have not verified your email. </p>
+        ) : null}
+      </div>
 
       <label>
         <button

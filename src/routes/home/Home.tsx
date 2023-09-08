@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { $getAuth, $signOut, listenForChange } from "../../backend/api";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
@@ -7,10 +7,12 @@ import { View } from "../schedule/components";
 import { Saved } from "../../types";
 import Select from "./components/Select";
 import Welcome from "./components/Welcome";
-// import Bg from "./components/Bg";
+import Bg from "./components/Bg";
 
 export default function Home() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [userEmail, setUserEmail] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [userData, setUserData] = useState<{
@@ -41,17 +43,13 @@ export default function Home() {
 
   return (
     <section className="w-[100dvw] h-[100dvh] relative overflow-x-hidden flex flex-col">
-      <Menu menuOpen={menuOpen} />
-
-      <BottomTriangles />
-
-      {/* <Bg /> */}
-
       <nav className="shrink-0 flex justify-between box-border p-1 h-20 w-full items-center bg-white">
-        <img
-          src="/me-schedule-maker/images/jac-mock-schedule-maker-high-resolution-color-logo-2.png"
-          className="h-full aspect-[4/3]"
-        />
+        <Link to="/" className="h-20">
+          <img
+            src="/me-schedule-maker/images/jac-mock-schedule-maker-high-resolution-color-logo-2.png"
+            className="h-full aspect-[4/3] cursor-pointer"
+          />
+        </Link>
         <div className="flex gap-4 items-center box-border pr-4">
           <p>{userEmail}</p>
           <MenuIcon
@@ -60,23 +58,36 @@ export default function Home() {
           />
         </div>
       </nav>
+      <Menu menuOpen={menuOpen} />
 
-      <Welcome />
+      {location.pathname.includes("/settings") ? (
+        <Outlet />
+      ) : (
+        <>
+          {/* absolute */}
+          <BottomTriangles />
+          <Bg />
 
-      <div className="shrink-0 flex justify-center box-border p-6 items-center">
-        <h1 className="font-bold text-4xl z-10 text-c1">My Schedules</h1>
-      </div>
+          <Welcome />
 
-      <div
-        className="bg-c9 h-full box-border p-2 w-full grid grid-rows-6 grid-cols-10 gap-2 grow-0 absolute top-[100dvh]"
-        id="schedules"
-      >
-        <View viewData={userData?.schedules?.[index]?.vData ?? []} />
-        <Select setIndex={setIndex} viewData={userData?.schedules} />
-        <div className="text-c1">
-          {userData?.schedules?.[index].name ?? "Untitled"}
-        </div>
-      </div>
+          <div className="shrink-0 flex justify-center box-border p-6 items-center">
+            <h1 className="font-bold text-4xl z-10 text-c1">My Schedules</h1>
+          </div>
+
+          <div
+            className="bg-c9 h-full box-border p-2 w-full grid grid-rows-6 grid-cols-9 gap-2 grow-0 absolute top-[100dvh]"
+            id="schedules"
+          >
+            <View viewData={userData?.schedules?.[index]?.vData ?? []} login />
+            <Select
+              uid={userData?.uid}
+              setIndex={setIndex}
+              viewData={userData?.schedules}
+              currentIndex={index}
+            />
+          </div>
+        </>
+      )}
     </section>
   );
 }
@@ -98,7 +109,9 @@ function Menu({ menuOpen }: MenuProps) {
       className="absolute top-20 left-full bg-c1 z-10 p-2 w-28"
       style={springs}
     >
-      <p className="hover:underline cursor-pointer">Settings</p>
+      <Link to="settings">
+        <p className="hover:underline cursor-pointer">Settings</p>
+      </Link>
       <p
         onClick={() => void handleSignOut()}
         className="mt-2 hover:underline cursor-pointer"

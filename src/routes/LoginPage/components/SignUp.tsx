@@ -1,15 +1,13 @@
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { signUp, createUser, verifyEmail } from "../../../backend/api";
+import { signUp, createUser } from "../../../backend/api";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
-  const [denied, setDenied] = useState<
-    false | true | "alr-in-use" | "passWeak"
-  >(false);
+  const [denied, setDenied] = useState<boolean | string>(false);
 
   const navigate = useNavigate();
 
@@ -26,11 +24,8 @@ export default function SignUp() {
     if (loginInfo.status === "success") {
       setDenied(false);
 
-      await verifyEmail(loginInfo.info.user);
-
       await createUser({
         email: email,
-        password: password,
         uid: loginInfo.info.user.uid,
         schedules: [
           {
@@ -42,15 +37,8 @@ export default function SignUp() {
       });
 
       navigate("/email-verification-confirmation");
-    } else if (loginInfo.status === "error") {
-      if (loginInfo.info.code === "auth/email-already-in-use") {
-        setDenied("alr-in-use");
-      } else if (loginInfo.info.code === "auth/weak-password") {
-        setDenied("passWeak");
-      }
-      console.log("Denied");
     } else {
-      console.log("Something when wrong. Please try again later.");
+      setDenied(loginInfo.info.code.split("/")[1].split("-").join(" "));
     }
   }
 
@@ -114,12 +102,7 @@ export default function SignUp() {
 
       <p className="mt-2 text-sm text-red-500">
         {denied === true ? "The passwords don't match" : null}
-        {denied === "alr-in-use"
-          ? "The account already exists. Sign In with your email."
-          : null}
-        {denied === "passWeak"
-          ? "Your password should be at least 6 characters long"
-          : null}
+        {denied && denied !== true ? denied : null}
       </p>
 
       <label>

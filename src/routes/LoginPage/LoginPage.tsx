@@ -3,19 +3,20 @@ import { SignIn, SignUp } from "./components";
 
 import { animated, useSpring } from "@react-spring/web";
 import { onAuthStateChanged } from "firebase/auth";
-import { $getAuth, $signOut } from "../../backend/api";
+import { $getAuth, $signOut, verifyEmail } from "../../backend/api";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [active, setActive] = useState<"Login" | "Sign Up">("Login");
   const navigate = useNavigate();
-  const [notVerified, setNotVerified] = useState(true);
+  const [notVerified, setNotVerified] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged($getAuth(), (user) => {
       if (user) {
         if (!user.emailVerified) {
-          setNotVerified(false);
+          verifyEmail(user).catch((err) => console.log(err));
+          setNotVerified(true);
           $signOut().catch((err) => console.log(err));
         } else navigate(`/users/${user.uid}`);
       }
@@ -112,7 +113,7 @@ function Carousel({
   notVerified,
 }: {
   active: "Login" | "Sign Up";
-  notVerified?: boolean;
+  notVerified: boolean;
 }) {
   const [springs, ctr] = useSpring(
     () => ({
