@@ -111,7 +111,7 @@ function Title({ data, setIndex, index, uid, currentIndex }: TitleProps) {
       )}
 
       {index === 0 ? null : (
-        <div className="absolute mx-2 w-[calc(100%-1rem)] h-[1px] bg-c5 top-[-0.5px] left-0" />
+        <div className="absolute mx-1 w-[calc(100%-0.5rem)] h-[2px] bg-c5 -top-[1px] left-0" />
       )}
     </animated.div>
   );
