@@ -12,10 +12,10 @@ Completed:
 - Saving schedules into local storage (bottom section)
 - A mobile-friendly version (not recommended on mobile because the website may be slow)
 - An account creation feature
+- A home page
+- A forgot password feature (page is still being build)
 
 Todo:
 
-- A home page
-- A forgot password feature (page is still being build)
 - Some autocomplete features
 - A tutorial
