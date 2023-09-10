@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { signUp, createUser } from "../../../backend/api";
 
@@ -8,8 +8,6 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [denied, setDenied] = useState<boolean | string>(false);
-
-  const navigate = useNavigate();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -27,18 +25,9 @@ export default function SignUp() {
       await createUser({
         email: email,
         uid: loginInfo.info.user.uid,
-        schedules: [
-          {
-            id: 0,
-            vData: [],
-            data: [],
-          },
-        ],
       });
-
-      navigate("/email-verification-confirmation");
     } else {
-      setDenied(loginInfo.info.code.split("/")[1].split("-").join(" "));
+      setDenied(loginInfo.info.code.split("/")[1].replaceAll("-", " "));
     }
   }
 
@@ -56,7 +45,8 @@ export default function SignUp() {
         <input
           name="email"
           placeholder="Email"
-          className={`w-full p-2 md:text-lg text-base mt-2 mb-6 outline-none rounded-md`}
+          className={`w-full p-2 md:text-lg text-base mt-2 mb-6 outline-none rounded-md ${denied ? "border-red-500 border border-solid" : ""
+            }`}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           required

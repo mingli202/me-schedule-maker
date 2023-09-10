@@ -1,67 +1,66 @@
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { $getAuth, $signOut, listenForChange } from "../../backend/api";
-import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { $signOut, listenForChange } from "../../backend/api";
+import React, { useContext, useEffect, useState } from "react";
+import { User } from "firebase/auth";
 import { animated, useSpring } from "@react-spring/web";
 import { View } from "../schedule/components";
 import { Saved } from "../../types";
-import Select from "./components/Select";
-import Welcome from "./components/Welcome";
-import Bg from "./components/Bg";
+import { UserContext } from "../../userContext";
+import { Settings, Bg, Welcome, Select } from "./components";
 
 export default function Home() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [userEmail, setUserEmail] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [userData, setUserData] = useState<{
-    uid: string;
+    user: User;
     schedules: Saved[];
   } | null>(null);
   const [index, setIndex] = useState(0);
 
+  const { user } = useContext(UserContext);
+
   useEffect(() => {
-    onAuthStateChanged($getAuth(), (user) => {
-      if (!user) {
-        navigate("/");
-      } else {
-        setUserEmail(user.email ? user.email : "User");
-        listenForChange(
-          user.uid,
-          (snapshot) => {
-            setUserData({
-              uid: user.uid,
-              schedules: snapshot.val() as Saved[],
-            });
-          },
-          "schedules"
-        );
-      }
-    });
-  }, []);
+    if (!user) {
+      navigate("/");
+    } else {
+      setDisplayName(user.displayName ?? user.email ?? "User");
+      listenForChange(
+        user.uid,
+        (snapshot) => {
+          setUserData({
+            user: user,
+            schedules: snapshot.val() as Saved[],
+          });
+        },
+        "schedules"
+      );
+    }
+  }, [user]);
 
   return (
     <section className="w-[100dvw] h-[100dvh] relative overflow-x-hidden flex flex-col">
       <nav className="shrink-0 flex justify-between box-border p-1 h-20 w-full items-center bg-white">
-        <Link to="/" className="h-20">
+        <Link to="" className="h-20">
           <img
             src="/me-schedule-maker/images/jac-mock-schedule-maker-high-resolution-color-logo-2.png"
             className="h-full aspect-[4/3] cursor-pointer"
           />
         </Link>
         <div className="flex gap-4 items-center box-border pr-4">
-          <p>{userEmail}</p>
+          <p>{displayName}</p>
           <MenuIcon
             menuOpen={menuOpen}
             handleOnClick={() => setMenuOpen((m) => !m)}
           />
         </div>
       </nav>
-      <Menu menuOpen={menuOpen} />
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       {location.pathname.includes("/settings") ? (
-        <Outlet />
+        <Settings user={userData?.user} setDisplayName={setDisplayName} />
       ) : (
         <>
           {/* absolute */}
@@ -80,7 +79,7 @@ export default function Home() {
           >
             <View viewData={userData?.schedules?.[index]?.vData ?? []} login />
             <Select
-              uid={userData?.uid}
+              uid={userData?.user.uid}
               setIndex={setIndex}
               viewData={userData?.schedules}
               currentIndex={index}
@@ -94,14 +93,21 @@ export default function Home() {
 
 type MenuProps = {
   menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-function Menu({ menuOpen }: MenuProps) {
+function Menu({ menuOpen, setMenuOpen }: MenuProps) {
   const springs = useSpring({
     x: menuOpen ? "-100%" : "0%",
   });
 
+  const location = useLocation();
+
   async function handleSignOut() {
     await $signOut();
+  }
+
+  function handleClick() {
+    setMenuOpen(false);
   }
 
   return (
@@ -109,9 +115,19 @@ function Menu({ menuOpen }: MenuProps) {
       className="absolute top-20 left-full bg-c1 z-10 p-2 w-28"
       style={springs}
     >
-      <Link to="settings">
-        <p className="hover:underline cursor-pointer">Settings</p>
-      </Link>
+      {location.pathname.includes("settings") ? (
+        <Link to="">
+          <p onClick={handleClick} className="hover:underline cursor-pointer">
+            Back
+          </p>
+        </Link>
+      ) : (
+        <Link to="settings">
+          <p onClick={handleClick} className="hover:underline cursor-pointer">
+            Settings
+          </p>
+        </Link>
+      )}
       <p
         onClick={() => void handleSignOut()}
         className="mt-2 hover:underline cursor-pointer"
@@ -138,9 +154,9 @@ function MenuIcon({ menuOpen, handleOnClick }: MenuIconProps) {
     `M1 ${height * 0.8}L${width * 0.5} ${height * 0.8}`,
   ];
   const close = [
-    `M1 1L${width} ${height}`,
-    `M1 ${height}L${width} 1`,
-    `M1 ${height}L${width} 1`,
+    `M1 1L${width - 1} ${height - 1}`,
+    `M1 ${height - 1}L${width - 1} 1`,
+    `M1 ${height - 1}L${width - 1} 1`,
   ];
 
   const path1 = useSpring({

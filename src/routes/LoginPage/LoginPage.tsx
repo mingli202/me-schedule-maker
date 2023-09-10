@@ -1,27 +1,28 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { SignIn, SignUp } from "./components";
 
 import { animated, useSpring } from "@react-spring/web";
-import { onAuthStateChanged } from "firebase/auth";
-import { $getAuth, $signOut, verifyEmail } from "../../backend/api";
+import { $signOut, verifyEmail } from "../../backend/api";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../userContext";
 
 export default function LoginPage() {
   const [active, setActive] = useState<"Login" | "Sign Up">("Login");
   const navigate = useNavigate();
   const [notVerified, setNotVerified] = useState(false);
 
+  const { user } = useContext(UserContext);
+
   useEffect(() => {
-    onAuthStateChanged($getAuth(), (user) => {
-      if (user) {
-        if (!user.emailVerified) {
-          verifyEmail(user).catch((err) => console.log(err));
-          setNotVerified(true);
-          $signOut().catch((err) => console.log(err));
-        } else navigate(`/users/${user.uid}`);
-      }
-    });
-  }, []);
+    if (user) {
+      if (!user.emailVerified) {
+        navigate("/email-verification-confirmation");
+        verifyEmail(user).catch((err) => console.log(err));
+        setNotVerified(true);
+        $signOut().catch((err) => console.log(err));
+      } else navigate(`/users/${user.uid}`);
+    }
+  }, [user]);
 
   function handleClick(meth: string) {
     if (meth === "Login") {
@@ -58,8 +59,12 @@ export default function LoginPage() {
         </div>
 
         <div className="basis-7/12 bg-c1 text-xl p-4 md:block hidden">
-          The account creation feature is done! You can now create an account
-          and access it anywhere. The home page is still being build.
+          <p>
+            The app is in theory completed! Everything from the schedule making
+            to the account creation is done.
+          </p>
+          <p>It's in beta right now with extensive testing.</p>
+          <p>Also there's going to be some art here being made.</p>
         </div>
       </section>
     </>

@@ -1,13 +1,20 @@
 import { View } from "./components";
-import { Dispatch, createContext, useEffect, useMemo, useState } from "react";
+import {
+  Dispatch,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { Class, Saved, Time, ViewData } from "../../types";
 import { Search } from "./components/Search";
 
-import { $getAuth, $signOut, listenForChange } from "../../backend/api";
+import { $signOut, listenForChange } from "../../backend/api";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { UserContext } from "../../userContext";
 
 export const ClassContext = createContext<{
   chosenClasses: Class[];
@@ -18,9 +25,9 @@ export const ClassContext = createContext<{
 });
 
 type Props = {
-  user?: boolean;
+  login?: boolean;
 };
-export default function Schedule({ user }: Props) {
+export default function Schedule({ login }: Props) {
   const navigate = useNavigate();
 
   const [classes, setClasses] = useState<Class[]>([]);
@@ -36,6 +43,8 @@ export default function Schedule({ user }: Props) {
     [chosenClasses]
   );
 
+  const { user } = useContext(UserContext);
+
   useEffect(() => {
     if (checkForOverlap(viewData)) {
       setChosenClasses(chosenClasses.slice(0, -1));
@@ -45,23 +54,21 @@ export default function Schedule({ user }: Props) {
 
   useEffect(() => {
     // check if user is signed in
-    if (user) {
-      onAuthStateChanged($getAuth(), (currentUser) => {
-        if (!currentUser) {
-          navigate("/");
-        } else {
-          listenForChange(
-            currentUser.uid,
-            (snapshot) => {
-              setUserData({
-                uid: currentUser.uid,
-                schedules: snapshot.val() as Saved[],
-              });
-            },
-            "schedules"
-          );
-        }
-      });
+    if (login) {
+      if (!user) {
+        navigate("/");
+      } else {
+        listenForChange(
+          user.uid,
+          (snapshot) => {
+            setUserData({
+              uid: user.uid,
+              schedules: snapshot.val() as Saved[],
+            });
+          },
+          "schedules"
+        );
+      }
     }
 
     async function getData<T>(
@@ -83,7 +90,7 @@ export default function Schedule({ user }: Props) {
     getData<Class[]>("/me-schedule-maker/data/all.json", setClasses).catch(
       (err) => console.log(err)
     );
-  }, []);
+  }, [user, login]);
 
   function handleSetViewData(chosenClasses: Class[]) {
     const col = ["M", "T", "W", "R", "F"];

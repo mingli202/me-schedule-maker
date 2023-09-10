@@ -18,6 +18,7 @@ import {
   onValue,
   DataSnapshot,
   off,
+  remove,
 } from "firebase/database";
 import { AuthType, Saved, UserType } from "../types";
 
@@ -124,6 +125,10 @@ export function listenForChange(
 export function detach(uid: string, child?: string) {
   const path = `/users${uid}${child ? "/" + child : ""}`;
   off(ref(db, path));
+}
+
+export async function deleteUserData(uid: string) {
+  await remove(ref(db, `/users${uid}`));
 }
 
 /*

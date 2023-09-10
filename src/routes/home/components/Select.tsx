@@ -66,7 +66,7 @@ function Title({ data, setIndex, index, uid, currentIndex }: TitleProps) {
       setOldTitle(title);
     } else setTitle(oldTitle);
 
-    setEdit((e) => !e);
+    setEdit((edit) => !edit);
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -93,7 +93,7 @@ function Title({ data, setIndex, index, uid, currentIndex }: TitleProps) {
     >
       <FontAwesomeIcon
         icon={faPenToSquare}
-        className="pr-2 hover:text-c5 transition"
+        className="pr-2 hover:text-c5 transition cursor-pointer"
         onClick={handleClickEdit}
       />
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { resetPassEmail } from "../../../backend/api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSkull } from "@fortawesome/free-solid-svg-icons";
 
 export default function ForgotPage() {
   const [sent, setSent] = useState(false);
@@ -16,12 +18,15 @@ export default function ForgotPage() {
       return;
     }
 
-    setError(res.code.split("/")[1].split("-").join(" "));
+    setError(res.code.split("/")[1].replaceAll("-", " "));
   }
 
   return (
     <section className="gap-4 w-[100dvw] h-[100dvh] flex flex-col justify-center items-center">
-      <p className="font-bold text-2xl">I forgor</p>
+      <div className="font-bold text-2xl">
+        I forgor
+        <FontAwesomeIcon icon={faSkull} className="ml-2" />
+      </div>
       {!sent ? (
         <>
           <form className="flex gap-4" onSubmit={(e) => void handleSubmit(e)}>
@@ -33,7 +38,7 @@ export default function ForgotPage() {
             />
             <input type="submit" className="hidden" />
             <button className="p-2 rounded bg-c9 transition text-c1 hover:text-c9 hover:bg-c1">
-              Send
+              Send reset link
             </button>
           </form>
           {error && <p className="text-red-500">{error}</p>}
