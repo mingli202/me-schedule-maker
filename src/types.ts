@@ -71,3 +71,10 @@ export type Saved = {
 	data: Class[];
 	name?: string;
 };
+
+export type ImageType = {
+	url: string;
+	name: string;
+	width: number;
+	height: number;
+};

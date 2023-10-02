@@ -39,7 +39,7 @@ export default function ChosenCourses({ viewData, userData }: Props) {
     }
   });
 
-  // keep track of the id b counting so there can never be two same id
+  // keep track of the id counting so there can never be two same id
   const count = useRef(savedSchedule.length);
 
   const { chosenClasses } = useContext(ClassContext);
@@ -117,12 +117,13 @@ type SavedBlockProps = {
 function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
   const { setChosenClasses } = useContext(ClassContext);
 
-  // firebase doesn't register empty arrays
   // clone it to make sure no changes to the original array
   const block = structuredClone(i);
+  // firebase doesn't register empty arrays
   if (!block.data) block.data = [];
   if (!block.vData) block.vData = [];
 
+  // animations
   const [springs, api] = useSpring(
     () => ({
       from: {
@@ -140,6 +141,8 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
 
   function handleRemoved(e: MouseEvent<SVGSVGElement>) {
     e.stopPropagation();
+
+    // fade out animation
     api.start({
       from: { opacity: 1, scale: 1 },
       to: { opacity: 0, scale: 0 },

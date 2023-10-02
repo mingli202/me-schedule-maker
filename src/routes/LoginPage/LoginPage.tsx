@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { SignIn, SignUp } from "./components";
+import { LoginBg, SignIn, SignUp } from "./components";
 
 import { animated, useSpring } from "@react-spring/web";
 import { $signOut, verifyEmail } from "../../backend/api";
@@ -14,6 +14,7 @@ export default function LoginPage() {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
+    // Globals.assign({ frameLoop: "demand" });
     if (user) {
       if (!user.emailVerified) {
         navigate("/email-verification-confirmation");
@@ -58,13 +59,15 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="basis-7/12 bg-c1 text-xl p-4 md:block hidden">
-          <p>
-            The app is in theory completed! Everything from the schedule making
-            to the account creation is done.
-          </p>
-          <p>It's in beta right now with extensive testing.</p>
-          <p>Also there's going to be some art here being made.</p>
+        <div className="basis-7/12 bg-white text-xl md:block hidden">
+          <LoginBg />
+          {/* <h1 className="font-bold text-3xl">Announcemets</h1> */}
+          {/* <p> */}
+          {/*   The app is in theory completed! Everything from the schedule making */}
+          {/*   to the account creation is done. */}
+          {/* </p> */}
+          {/* <p>It's in beta right now with extensive testing.</p> */}
+          {/* <p>Also there's going to be some art here being made.</p> */}
         </div>
       </section>
     </>

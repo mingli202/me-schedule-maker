@@ -5,6 +5,7 @@ import { Rating } from "../../../../types";
 
 export default function ScoreInfo({ rating }: { rating: Rating }) {
   const [hover, setHover] = useState(false);
+  const avg = rating.avg;
 
   return (
     <>
@@ -25,17 +26,17 @@ export default function ScoreInfo({ rating }: { rating: Rating }) {
           </p>
           <ul className="pl-4 shrink-0">
             <li className="list-disc">
-              Rating: {rating.avg === 0 ? "N/A" : `${rating.avg}/5`}
+              Rating: {avg === 0 || !avg ? "N/A" : `${rating.avg}/5`}
             </li>
             <li className="list-disc">
-              Raters: {rating.avg === 0 ? "N/A" : rating.nRating}
+              Raters: {avg === 0 || !avg ? "N/A" : rating.nRating}
             </li>
             <li className="list-disc">
               Take Again:{" "}
-              {rating.avg === 0 ? "N/A" : `${rating.takeAgain.toFixed(1)}%`}
+              {avg === 0 || !avg ? "N/A" : `${rating.takeAgain.toFixed(1)}%`}
             </li>
             <li className="list-disc">
-              Difficulty: {rating.avg === 0 ? "N/A" : `${rating.difficulty}/5`}
+              Difficulty: {avg === 0 || !avg ? "N/A" : `${rating.difficulty}/5`}
             </li>
           </ul>
         </div>

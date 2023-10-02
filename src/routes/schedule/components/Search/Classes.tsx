@@ -2,12 +2,15 @@ import { Class } from "../../../../types";
 import { Dispatch, useContext, useEffect } from "react";
 import { ClassContext } from "../../Schedule";
 import { ScoreInfo } from ".";
+import { handleSetViewData, checkForOverlap } from "../../functions";
 
 type ClassesProps = {
   input: string;
   classes: Class[];
   setLoading: Dispatch<React.SetStateAction<boolean>>;
 };
+
+// TODO: make an option where you can filter out all classes that doesnt fit
 
 export default function Classes({ input, classes, setLoading }: ClassesProps) {
   useEffect(() => {
@@ -36,8 +39,32 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
     const regexStr = regexArr.slice(0, keyword.length).join("");
     const regex = new RegExp(regexStr);
 
-    //* check if keyword is a rating
-    if (
+    // check if keyword is "@"
+    // filter out unavailable classes
+    if (keyword === "@") {
+      return searches.filter((c) => {
+        if (
+          chosenClasses.some(
+            (i: Class) => c.code === i.code && c.section === i.section
+          )
+        ) {
+          return false;
+        }
+
+        if (chosenClasses.some((i: Class) => c.code === i.code)) {
+          return false;
+        }
+
+        const isValid = !checkForOverlap(
+          handleSetViewData([...chosenClasses, c], true)
+        );
+
+        return isValid;
+      });
+    }
+
+    // * check if keyword is a rating
+    else if (
       ["r>", "r<", "r="].includes(keyword.slice(0, 2)) &&
       keyword.length > 2
     ) {
@@ -187,7 +214,9 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
           <div className="ml-4 relative">
             {i.lecture.prof}{" "}
             <span className="font-bold">
-              {i.lecture.rating.score === 0 ? "N/A" : i.lecture.rating.score}
+              {i.lecture.rating.score === 0 || !i.lecture.rating.score
+                ? "N/A"
+                : i.lecture.rating.score}
             </span>{" "}
             {<ScoreInfo rating={i.lecture.rating} />}
           </div>
@@ -205,7 +234,9 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
               <div className="ml-4 relative">
                 <u>Lab</u>: {i.lab.prof}{" "}
                 <span className="font-bold">
-                  {i.lab.rating.score === 0 ? "N/A" : i.lab.rating.score}
+                  {i.lab.rating.score === 0 || !i.lab.rating.score
+                    ? "N/A"
+                    : i.lab.rating.score}
                 </span>{" "}
                 {<ScoreInfo rating={i.lab.rating} />}
               </div>

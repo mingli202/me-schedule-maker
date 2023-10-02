@@ -1,13 +1,19 @@
-import { useState, useDeferredValue, Dispatch, useEffect } from "react";
+import {
+  useState,
+  useDeferredValue,
+  Dispatch,
+  useEffect,
+  Suspense,
+  lazy,
+} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { Class, Saved, ViewData } from "../../../../types";
-import ClassesLoader from "./ClassesLoader";
-import ChosenCourses from "./ChosenCourses";
 import { useSpring, animated } from "@react-spring/web";
-import Filter from "./Filter";
-import Classes from "./Classes";
+import { ClassesLoader, ChosenCourses, Filter } from ".";
+
+const Classes = lazy(() => import("./Classes"));
 
 type Props = {
   classes: Class[];
@@ -48,47 +54,50 @@ export default function Search({
               onMouseOut={() => setSearchInfo(false)}
             />
             {searchInfo && (
-              <div className="absolute z-20 top-0 right-0 md:translate-x-full -translate-x-10 bg-[white] p-2 rounded-lg md:max-w-xs w-[70dvw]">
+              <div className="absolute z-20 top-0 right-0 md:translate-x-full -translate-x-10 bg-[white] p-2 rounded-lg md:max-w-sm w-[70dvw]">
                 <p>
-                  You can search any keyword for the class you are looking for.
+                  Search by keywords, separate them by a comma. Use the filter
+                  tab to make your life easier.
                 </p>
-                <br />
-                <p>
-                  Separate your keywords with commas. E.g. "Biology, 101" will
-                  search for all biology 101-NYA-05 and biology 101-DCN-05
-                  classes.
-                </p>
-                <br />
-                Examples: <br />
-                <ul className="pl-4">
-                  <li className="list-disc">
-                    <span className="font-bold">r{">"}4.5</span> (teachers with
-                    +4.5/5 rating. Symbol can be {"<"} , {">"} or {"="} )
-                  </li>
-                  <li className="list-disc">
-                    <span className="font-bold">s{">"}80</span> (teachers with
-                    +80/100 score. Symbol can be {"<"} , {">"} or {"="} )
-                  </li>
-                  <li className="list-disc">
-                    <span className="font-bold">Linear Al, W, F</span> (Linear
-                    Algebra I/II/III that has classes on Wednesday and Friday.
-                    DAYS must be in ALL CAPS)
-                  </li>
-                  <li className="list-disc">
-                    <span className="font-bold">honours</span> (honours classes.
-                    Special keywords include "honours" and "blended")
-                  </li>
-                  <li className="list-disc">
-                    <span className="font-bold">p=Steven Randall, blended</span>{" "}
-                    (blended classes by teacher who has "Steven Randall" in
-                    their name. Teachers must have "p=" before)
-                  </li>
-                  <li className="list-disc">
-                    <span className="font-bold">ENGLISH, haunted house</span>{" "}
-                    (all English class that has "haunted house" in their name.
-                    COURSE NAME must be in ALL CAPS)
-                  </li>
-                </ul>
+                <div>
+                  <span className="font-bold">Available options:</span>
+                  <ul className="pl-4 [&>li]:list-disc [&>li>span]:font-bold">
+                    <li>
+                      <span>@</span>: only show available classes.
+                    </li>
+                    <li>
+                      <span>r{">"}n</span>: Teachers with +n/5 rating on
+                      ratemyprofessor. Symbol can be {"<"}, {">"} or = (e.g. r
+                      {"="}5)
+                    </li>
+                    <li>
+                      <span>s{">"}n</span>: Teachers with +n/100 score. Symbol
+                      can be {"<"}, {">"} or =. (e.g. s=100)
+                    </li>
+                    <li>
+                      <span>honours/blended</span>: special keywords.
+                    </li>
+                    <li>
+                      <span>p=professor</span>: classes taught by{" "}
+                      <i>professor</i> (e.g. p=patrik searches classes taught by
+                      professors with patrik in their names)
+                    </li>
+                    <li>
+                      <span>COURSE_NAME</span>: searches classes that belongs in
+                      COURSE_NAME (e.g. ENGLISH searches for english classes)
+                    </li>
+                    <li>
+                      <span>XXX-XXX-XXX</span>: course code.
+                    </li>
+                    <li>
+                      <span>M/T/W/R/F</span>: has class on that day.
+                    </li>
+                    <li>
+                      <span>class_name</span>: if its none of the abovementioned
+                      keywords, it will treat the keyword as the class name.
+                    </li>
+                  </ul>
+                </div>
               </div>
             )}
             <input
@@ -99,15 +108,17 @@ export default function Search({
             />
           </label>
           <div className="w-full h-full box-border rounded-lg overflow-y-auto md:px-4 px-2 md:mt-4 mt-2">
-            {deferredInput === input ? (
-              <Classes
-                input={deferredInput}
-                classes={classes}
-                setLoading={setLoading}
-              />
-            ) : (
-              <ClassesLoader />
-            )}
+            <Suspense fallback={<ClassesLoader />}>
+              {deferredInput === input ? (
+                <Classes
+                  input={deferredInput}
+                  classes={classes}
+                  setLoading={setLoading}
+                />
+              ) : (
+                <ClassesLoader />
+              )}
+            </Suspense>
           </div>
         </>
       ) : (

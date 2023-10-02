@@ -1,24 +1,30 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
+import { Suspense, lazy, useEffect, useState } from "react";
+
+const Home = lazy(() => import("./routes/home/Home"));
+const Schedule = lazy(() => import("./routes/schedule/Schedule"));
+const LoginPage = lazy(() => import("./routes/LoginPage/LoginPage"));
+
 import { ForgotPage, EmailVerification } from "./routes/LoginPage/components";
-import { Home } from "./routes/home";
-import { Schedule } from "./routes/schedule";
-import { LoginPage } from "./routes/LoginPage";
 import ErrorPage from "./routes/ErrorPage";
+
 import { User, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
 import { $getAuth } from "./backend/api";
 import { UserContext } from "./userContext";
+import Loading from "./Loading";
+import { Globals } from "@react-spring/shared";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
 
-  // TODO: refactor code and put user to all components
+  Globals.assign({ frameLoop: "always" });
+
   useEffect(() => {
     onAuthStateChanged($getAuth(), (user) => {
       if (user) setUser(user);
       else setUser(null);
     });
-  });
+  }, []);
 
   const routes = createHashRouter([
     {
@@ -62,7 +68,9 @@ function App() {
   return (
     <section className="w-[100dvd] h-[100dvh] flex flex-col">
       <UserContext.Provider value={{ user, setUser }}>
-        <RouterProvider router={routes} />
+        <Suspense fallback={<Loading />}>
+          <RouterProvider router={routes} />
+        </Suspense>
       </UserContext.Provider>
     </section>
   );

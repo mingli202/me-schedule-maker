@@ -7,6 +7,8 @@ type Props = {
   setCurrent: Dispatch<React.SetStateAction<"filter" | "search" | "saved">>;
 };
 
+// TODO: make an option where you can filter out all classes that doesnt fit
+
 export default function Filter({ setInput, setCurrent }: Props) {
   const [hover, setHover] = useState(false);
 
@@ -59,10 +61,11 @@ export default function Filter({ setInput, setCurrent }: Props) {
       "friday",
       "honours",
       "blended",
+      "available",
     ]
       .map((d) => getEl(d).checked)
       .map((d, i) =>
-        d ? ["M", "T", "W", "R", "F", "honours", "blended"].at(i) : ""
+        d ? ["M", "T", "W", "R", "F", "honours", "blended", "@"].at(i) : ""
       );
 
     const input = [
@@ -73,9 +76,8 @@ export default function Filter({ setInput, setCurrent }: Props) {
       ...score,
       ...checkbox,
     ];
-    console.log(input);
 
-    setInput(input.filter((k) => k !== "").join(","));
+    setInput(input.filter((k) => k !== "").join(", "));
     setCurrent("search");
   }
 
@@ -206,6 +208,13 @@ export default function Filter({ setInput, setCurrent }: Props) {
               <input type="checkbox" name="blended" /> Blended
             </p>
           </div>
+        </label>
+        <label>
+          <p className="font-semibold">Options</p>
+          <p className="pl-4">
+            <input type="checkbox" name="available" /> Only show available
+            classes
+          </p>
         </label>
 
         <div className="flex justify-end gap-2">

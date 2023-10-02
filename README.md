@@ -13,9 +13,10 @@ Completed:
 - A mobile-friendly version (not recommended on mobile because the website may be slow)
 - An account creation feature
 - A home page
-- A forgot password feature (page is still being build)
+- A forgot password feature
 
 Todo:
 
 - Some autocomplete features
 - A tutorial
+- Some arts

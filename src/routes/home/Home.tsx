@@ -7,8 +7,10 @@ import { View } from "../schedule/components";
 import { Saved } from "../../types";
 import { UserContext } from "../../userContext";
 import { Settings, Bg, Welcome, Select } from "./components";
+// import { Globals } from "@react-spring/shared";
 
 export default function Home() {
+  // Globals.assign({ frameLoop: "always" });
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,10 +20,10 @@ export default function Home() {
     user: User;
     schedules: Saved[];
   } | null>(null);
+
   const [index, setIndex] = useState(0);
 
   const { user } = useContext(UserContext);
-
   useEffect(() => {
     if (!user) {
       navigate("/");

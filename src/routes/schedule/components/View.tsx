@@ -32,6 +32,7 @@ export default function View({ viewData, login }: Props) {
               key={i}
               className="translate-y-1/2 box-border md:pr-4 md:text-xs text-[0.5rem] flex items-center justify-end pr-2"
             >
+              {/* a math function to display the 30 minutes for each even numbers */}
               {Math.floor(i / 2) + 8}:{i % 2 === 0 ? "00" : "30"}
             </span>
           );
@@ -63,6 +64,7 @@ export default function View({ viewData, login }: Props) {
         </div>
 
         {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((i) => {
+          // trim the words to their fist three letters if viewport is too small
           const d = window.innerWidth >= 1100 ? i : i.slice(0, 3);
 
           return (
@@ -88,7 +90,10 @@ type LinesProps = {
   lineProperty: string;
 };
 
+// function to draw the lines on the grid
+// has to be a component so that I can put animations in it
 function Lines({ n, lineProperty }: LinesProps) {
+  // animation
   const springs = useSpring({
     from: {
       [lineProperty]: "0%",
@@ -106,8 +111,9 @@ function Lines({ n, lineProperty }: LinesProps) {
 
   return (
     <animated.div
-      className={`${lineProperty === "height" ? "w-full py-2" : "h-full px-2"
-        } box-border`}
+      className={`${
+        lineProperty === "height" ? "w-full py-2" : "h-full px-2"
+      } box-border`}
       style={springs}
     >
       <div
@@ -124,6 +130,7 @@ function ClassBlocks({
   blocksToShow: ViewData[];
   login?: boolean;
 }) {
+  // use transition to put stagger effect with trail property
   const transitions = useTransition(blocksToShow, {
     from: {
       y: -20,
@@ -147,8 +154,9 @@ function ClassBlocks({
 
     return (
       <animated.div
-        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${login ? "" : "cursor-pointer"
-          } rounded-lg overflow-hidden`}
+        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${
+          login ? "" : "cursor-pointer"
+        } rounded-lg overflow-hidden`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
