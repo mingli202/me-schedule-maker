@@ -10,8 +10,6 @@ type ClassesProps = {
   setLoading: Dispatch<React.SetStateAction<boolean>>;
 };
 
-// TODO: make an option where you can filter out all classes that doesnt fit
-
 export default function Classes({ input, classes, setLoading }: ClassesProps) {
   useEffect(() => {
     setLoading(true);
@@ -139,9 +137,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
     }
 
     // * check if special keyword
-    else if (
-      ["honours", "blended"].some((i) => i.startsWith(keyword.toLowerCase()))
-    ) {
+    else if (["honours", "blended"].some((i) => i === keyword.toLowerCase())) {
       const special = keyword.toLowerCase();
 
       if ("honours".startsWith(special)) {
