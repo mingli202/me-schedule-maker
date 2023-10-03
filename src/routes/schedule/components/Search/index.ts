@@ -4,5 +4,14 @@ import ClassesLoader from "./ClassesLoader";
 import ChosenCourses from "./ChosenCourses";
 import ScoreInfo from "./ScoreInfo";
 import Filter from "./Filter";
+import CurrentClasses from "./CurrentClassses";
 
-export { Search, Classes, ClassesLoader, ChosenCourses, ScoreInfo, Filter };
+export {
+  Search,
+  Classes,
+  ClassesLoader,
+  ChosenCourses,
+  ScoreInfo,
+  Filter,
+  CurrentClasses,
+};

@@ -69,24 +69,30 @@ export default function ChosenCourses({ viewData, userData }: Props) {
   }, [savedSchedule]);
 
   return (
-    <section className="bg-c1 rounded-lg box-border flex w-full flex-wrap gap-2 p-2">
-      <div
-        className="bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer h-20"
-        onClick={() => handleSaved(viewData)}
-      >
-        <FontAwesomeIcon icon={faPlusCircle} className="md:text-4xl text-xl" />
-      </div>
-      {savedSchedule.map((i) => {
-        return (
-          <SavedBlock
-            i={i}
-            savedSchedule={savedSchedule}
-            setSavedSchedule={setSavedSchedule}
-            key={i.id}
+    <div className="basis-1/3 shrink-0 overflow-auto">
+      <section className="bg-c1 rounded-lg box-border flex w-full flex-wrap gap-2 p-2">
+        <div
+          className="bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer h-20"
+          onClick={() => handleSaved(viewData)}
+        >
+          <FontAwesomeIcon
+            icon={faPlusCircle}
+            className="md:text-4xl text-xl"
           />
-        );
-      })}
-    </section>
+        </div>
+        {savedSchedule.map((i, index) => {
+          return (
+            <SavedBlock
+              i={i}
+              savedSchedule={savedSchedule}
+              setSavedSchedule={setSavedSchedule}
+              key={i.id}
+              index={index}
+            />
+          );
+        })}
+      </section>
+    </div>
   );
 }
 
@@ -112,9 +118,15 @@ type SavedBlockProps = {
   i: Saved;
   savedSchedule: Saved[];
   setSavedSchedule: Dispatch<React.SetStateAction<Saved[]>>;
+  index: number;
 };
 
-function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
+function SavedBlock({
+  i,
+  savedSchedule,
+  setSavedSchedule,
+  index,
+}: SavedBlockProps) {
   const { setChosenClasses } = useContext(ClassContext);
 
   // clone it to make sure no changes to the original array
@@ -135,6 +147,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
         opacity: 1,
         y: 0,
       },
+      delay: index * 70,
     }),
     []
   );
@@ -168,7 +181,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
       })}
       <FontAwesomeIcon
         icon={faTrash}
-        className="absolute opacity-10 m-1 bottom-0 right-0 hover:opacity-50 cursor-pointer"
+        className="absolute opacity-10 m-1 bottom-0 right-0 hover:opacity-50 cursor-pointer z-10"
         onClick={handleRemoved}
       />
     </animated.div>

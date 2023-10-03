@@ -81,6 +81,9 @@ export function handleSetViewData(
     "hsl(30,97%,85%)",
     "hsl(350,97%,85%)",
     "hsl(190,97%,85%)",
+    "#CCC",
+    "#FFF",
+    "#999",
   ];
   const toReturn = chosenClasses.map((classToShow, index) => {
     // to make sure the origial object doesn't change

@@ -11,7 +11,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { Class, Saved, ViewData } from "../../../../types";
 import { useSpring, animated } from "@react-spring/web";
-import { ClassesLoader, ChosenCourses, Filter } from ".";
+import { ClassesLoader, ChosenCourses, Filter, CurrentClasses } from ".";
 
 const Classes = lazy(() => import("./Classes"));
 
@@ -37,7 +37,7 @@ export default function Search({
   const [searchInfo, setSearchInfo] = useState(false);
 
   return (
-    <section className="md:col-span-5 md:row-span-6 bg-c1 rounded-lg box-border flex flex-col max-md:order-2">
+    <section className="md:col-span-5 md:row-span-6 bg-c1 rounded-lg box-border flex flex-col max-md:order-2 overflow-hidden">
       <nav className="flex justify-between w-full p-2 box-border">
         <NavElement current={current} setCurrent={setCurrent} text="search" />
         <NavElement current={current} setCurrent={setCurrent} text="filter" />
@@ -128,7 +128,10 @@ export default function Search({
         <Filter setInput={setInput} setCurrent={setCurrent} />
       )}
       {current === "saved" && (
-        <ChosenCourses viewData={viewData} userData={userData} />
+        <div className="flex flex-col h-full overflow-hidden">
+          <ChosenCourses viewData={viewData} userData={userData} />
+          <CurrentClasses viewData={viewData} />
+        </div>
       )}
     </section>
   );
