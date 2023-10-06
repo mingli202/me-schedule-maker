@@ -80,14 +80,13 @@ export default function ChosenCourses({ viewData, userData }: Props) {
             className="md:text-4xl text-xl"
           />
         </div>
-        {savedSchedule.map((i, index) => {
+        {savedSchedule.map((i) => {
           return (
             <SavedBlock
               i={i}
               savedSchedule={savedSchedule}
               setSavedSchedule={setSavedSchedule}
               key={i.id}
-              index={index}
             />
           );
         })}
@@ -118,15 +117,9 @@ type SavedBlockProps = {
   i: Saved;
   savedSchedule: Saved[];
   setSavedSchedule: Dispatch<React.SetStateAction<Saved[]>>;
-  index: number;
 };
 
-function SavedBlock({
-  i,
-  savedSchedule,
-  setSavedSchedule,
-  index,
-}: SavedBlockProps) {
+function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
   const { setChosenClasses } = useContext(ClassContext);
 
   // clone it to make sure no changes to the original array
@@ -147,7 +140,6 @@ function SavedBlock({
         opacity: 1,
         y: 0,
       },
-      delay: index * 70,
     }),
     []
   );

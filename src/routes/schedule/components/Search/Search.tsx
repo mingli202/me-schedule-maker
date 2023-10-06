@@ -20,12 +20,14 @@ type Props = {
   setLoading: Dispatch<React.SetStateAction<boolean>>;
   viewData: ViewData[][];
   userData: { uid: string; schedules: Saved[] } | null;
+  aucmpData: object;
 };
 export default function Search({
   classes,
   setLoading,
   viewData,
   userData,
+  aucmpData,
 }: Props) {
   const [input, setInput] = useState<string>("");
   const deferredInput = useDeferredValue(input);
@@ -37,7 +39,7 @@ export default function Search({
   const [searchInfo, setSearchInfo] = useState(false);
 
   return (
-    <section className="md:col-span-5 md:row-span-6 bg-c1 rounded-lg box-border flex flex-col max-md:order-2 overflow-hidden">
+    <section className="md:col-span-5 md:row-span-6 bg-c1 rounded-lg box-border flex flex-col max-md:order-2 overflow-hidde">
       <nav className="flex justify-between w-full p-2 box-border">
         <NavElement current={current} setCurrent={setCurrent} text="search" />
         <NavElement current={current} setCurrent={setCurrent} text="filter" />
@@ -125,7 +127,11 @@ export default function Search({
         current === "search" && <ClassesLoader />
       )}
       {current === "filter" && (
-        <Filter setInput={setInput} setCurrent={setCurrent} />
+        <Filter
+          setInput={setInput}
+          setCurrent={setCurrent}
+          aucmpData={aucmpData}
+        />
       )}
       {current === "saved" && (
         <div className="flex flex-col h-full overflow-hidden">

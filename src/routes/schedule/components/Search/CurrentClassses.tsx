@@ -1,8 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { ClassContext } from "../../Schedule";
 import { ViewData } from "../../../../types";
-import { useSpring } from "@react-spring/three";
-import { animated } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 type Props = {
   viewData: ViewData[][];
@@ -13,11 +12,11 @@ export default function CurrentClasses({ viewData }: Props) {
 
   return (
     <section className="basis-2/3 flex flex-col box-border px-1 pb-1 gap-1 shrink-0 overflow-x-hidden">
-      <div className="sticky top-0 left-0 z-10 bg-c1 pt-1">
+      <div className="sticky top-0 left-0 z-20 bg-c1 pt-1">
         Course Count: {differentClasses.length}
       </div>
       {differentClasses.map((dc, index) => (
-        <ClassBanner viewData={dc} index={index} />
+        <ClassBanner viewData={dc} index={index} key={index} />
       ))}
     </section>
   );

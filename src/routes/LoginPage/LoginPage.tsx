@@ -36,7 +36,7 @@ export default function LoginPage() {
   return (
     <>
       <section className="w-[100dvw] h-[100dvh] bg-white flex">
-        <div className="md:basis-5/12 w-full bg-white flex flex-col items-center justify-center box-border p-6">
+        <div className="md:basis-5/12 w-full bg-white flex flex-col items-center justify-center box-border p-6 shrink-0">
           {/* Login form */}
           <div className="bg-c1 w-full h-full flex flex-col items-center rounded-lg overflow-hidden">
             <nav className="flex w-full shrink-0">

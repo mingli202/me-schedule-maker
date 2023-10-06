@@ -2,6 +2,7 @@ import { animated, useSpring, useTransition } from "@react-spring/web";
 import { Fragment, ReactElement, useContext, useEffect, useState } from "react";
 import { ClassContext } from "../Schedule";
 import { ViewData } from "../../../types";
+import { handleSetViewData } from "../functions";
 
 type Props = {
   viewData: ViewData[][];
@@ -9,6 +10,7 @@ type Props = {
 };
 export default function View({ viewData, login }: Props) {
   const [view, setView] = useState<ReactElement[]>([]);
+  const { hoveredClass } = useContext(ClassContext);
 
   useEffect(() => {
     setView(() => {
@@ -80,6 +82,16 @@ export default function View({ viewData, login }: Props) {
         <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 bg-[white] row-span-full col-span-full row-start-2 rounded-lg md:shadow-lg shadow-md">
           {view}
         </div>
+
+        {hoveredClass && (
+          <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 row-span-full col-span-full row-start-2 absolute opacity-50 z-10 h-full w-full">
+            {handleSetViewData([hoveredClass]).map((data, index) => (
+              <Fragment key={index}>
+                <ClassBlocks blocksToShow={data} hover />
+              </Fragment>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -111,9 +123,8 @@ function Lines({ n, lineProperty }: LinesProps) {
 
   return (
     <animated.div
-      className={`${
-        lineProperty === "height" ? "w-full py-2" : "h-full px-2"
-      } box-border`}
+      className={`${lineProperty === "height" ? "w-full py-2" : "h-full px-2"
+        } box-border`}
       style={springs}
     >
       <div
@@ -126,9 +137,11 @@ function Lines({ n, lineProperty }: LinesProps) {
 function ClassBlocks({
   blocksToShow,
   login,
+  hover,
 }: {
   blocksToShow: ViewData[];
   login?: boolean;
+  hover?: boolean;
 }) {
   // use transition to put stagger effect with trail property
   const transitions = useTransition(blocksToShow, {
@@ -144,7 +157,10 @@ function ClassBlocks({
       y: -20,
       scale: 0,
     },
-    trail: 50,
+    trail: hover ? 0 : 50,
+    config: {
+      duration: hover ? 0 : undefined,
+    },
   });
 
   const { chosenClasses, setChosenClasses } = useContext(ClassContext);
@@ -154,14 +170,13 @@ function ClassBlocks({
 
     return (
       <animated.div
-        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${
-          login ? "" : "cursor-pointer"
-        } rounded-lg overflow-hidden`}
+        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${login ? "" : "cursor-pointer"
+          } rounded-lg overflow-hidden`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
           gridRowEnd: t[1][1],
-          backgroundColor: i.color,
+          backgroundColor: hover ? "#FFF" : i.color,
           ...style,
         }}
         key={i.code + i.section + t[0]}

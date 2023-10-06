@@ -12,12 +12,9 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { $getAuth } from "./backend/api";
 import { UserContext } from "./userContext";
 import Loading from "./Loading";
-import { Globals } from "@react-spring/shared";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
-
-  Globals.assign({ frameLoop: "always" });
 
   useEffect(() => {
     onAuthStateChanged($getAuth(), (user) => {

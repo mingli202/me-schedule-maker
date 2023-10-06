@@ -1,40 +1,33 @@
-export const images = {
-  loginBg: {
-    view: {
-      url: "/me-schedule-maker/images/view.png",
+import { ImageType } from "../types";
+
+type I = {
+  loginBg: ImageType[];
+};
+export const images: I = {
+  loginBg: [
+    {
+      url: "/me-schedule-maker/images/loginbg/view.png",
       name: "view",
-      width: 1474,
-      height: 953,
+      width: 2224,
+      height: 1546,
     },
-    search: {
-      url: "/me-schedule-maker/images/search.png",
+    {
+      url: "/me-schedule-maker/images/loginbg/search.png",
       name: "search",
-      width: 797,
-      height: 937,
+      width: 1190,
+      height: 1516,
     },
-    schedules: {
-      url: "/me-schedule-maker/images/schedules.png",
-      name: "schedules",
-      width: 1896,
-      height: 953,
-    },
-    saved: {
-      url: "/me-schedule-maker/images/saved.png",
+    {
+      url: "/me-schedule-maker/images/loginbg/saved.png",
       name: "saved",
-      width: 421,
-      height: 305,
+      width: 1190,
+      height: 1516,
     },
-    savedInEditor: {
-      url: "/me-schedule-maker/images/saved In Editor.png",
-      name: "savedInEditor",
-      width: 1474,
-      height: 953,
-    },
-    fitler: {
-      url: "/me-schedule-maker/images/filter.png",
+    {
+      url: "/me-schedule-maker/images/loginbg/filter.png",
       name: "filter",
-      width: 1474,
-      height: 953,
+      width: 1190,
+      height: 1516,
     },
-  },
+  ],
 };

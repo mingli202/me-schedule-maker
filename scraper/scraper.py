@@ -1,18 +1,19 @@
 import json
 import re
 
-with open("SCHEDULE_OF_CLASSES_FALL_2023_June_1.txt", "rb") as file:
-    lines = file.read()
-
 
 def writeToA():
+
+    with open("winter-schedule-2023.txt", "rb") as file:
+        lines = file.read()
+
     a = lines.decode("UTF-16")
     b = a.split("\n")
 
     def fn(s: str):
         if (
             s.strip() == ""
-            or s.strip() == "SCHEDULE OF CLASSES - FALL 2023"
+            or s.strip() == "SCHEDULE OF CLASSES - WINTER 2023"
             or re.match("^John Abbott College", s)
             or re.match("^SECTION", s)
         ):
@@ -21,12 +22,12 @@ def writeToA():
 
     raw = list(filter(fn, b))
 
-    with open("a.json", "w") as file:
+    with open("winter-a.json", "w") as file:
         file.write(json.dumps(raw, indent=2))
 
 
 def writeToOut():
-    with open("a.json", "r") as file:
+    with open("winter-a.json", "r") as file:
         raw = json.loads(file.read())
 
     program = ""
@@ -71,7 +72,7 @@ def writeToOut():
     count = 0
 
     for index, i in enumerate(raw):
-        # print(index)
+        print(index)
 
         space = len(i) - len(i.lstrip())
         text = i.strip().replace("\u0000", "")
@@ -102,6 +103,33 @@ def writeToOut():
                 course = ""
 
             program = text
+
+        # section line
+        elif re.match(sectionFormat, text):
+            if text != a[0]:
+                handleSectionChange(
+                    section,
+                    disc,
+                    lecture,
+                    lab,
+                    more,
+                    code,
+                    program,
+                    course,
+                    codeHeader,
+                    count,
+                )
+                section = ""
+                disc = ""
+                lecture = {}
+                lab = {}
+                more = ""
+                code = ""
+                count += 1
+
+            section, disc, code, *title, day, time = a
+            lecture = {"title": " ".join(title), day.replace(
+                "\u0000", ""): time.replace("\u0000", "")}
 
         # course
         elif text.isupper() and space == 0:
@@ -160,35 +188,8 @@ def writeToOut():
         else:
             codeHeader2nLine = False
 
-        # section line
-        if re.match(sectionFormat, text):
-            if text != a[0]:
-                handleSectionChange(
-                    section,
-                    disc,
-                    lecture,
-                    lab,
-                    more,
-                    code,
-                    program,
-                    course,
-                    codeHeader,
-                    count,
-                )
-                section = ""
-                disc = ""
-                lecture = {}
-                lab = {}
-                more = ""
-                code = ""
-                count += 1
-
-            section, disc, code, *title, day, time = a
-            lecture = {"title": " ".join(title), day.replace(
-                "\u0000", ""): time.replace("\u0000", "")}
-
         # lect line
-        elif re.match("^Lecture", text):
+        if re.match("^Lecture", text):
             if any([re.match(timeFormat, j) for j in a]):
                 l, *prof, day, time = a
 
@@ -212,7 +213,8 @@ def writeToOut():
         else:
             if any([re.match(timeFormat, j) for j in a]):
                 *l, day, time = a
-                lecture.update({day.replace("\u0000", "")                               : time.replace("\u0000", "")})
+                lecture.update({day.replace("\u0000", "")
+                               : time.replace("\u0000", "")})
             elif space in [25, 26]:
                 if re.match("^ADDITIONAL", text):
                     more += f"{text}\n"
@@ -230,7 +232,7 @@ def writeToOut():
 
     filtered = list(filter(cond, Sections))
 
-    with open("out.json", "w") as file:
+    with open("winter-out.json", "w") as file:
         file.write(json.dumps(filtered, indent=2))
 
     data = {}
@@ -252,10 +254,19 @@ def writeToOut():
             "more": i["more"],
         }
 
-    with open("data.json", "w") as file:
+    with open("winter-data.json", "w") as file:
         file.write(json.dumps(data, indent=2))
 
 
+def modify():
+
+    with open("winter-a.json", "w") as file:
+        lines = json.loads(file.read())
+
+        pass
+
+
 if __name__ == "__main__":
-    # // writeToA()
+    # writeToA()
     writeToOut()
+    # modify()

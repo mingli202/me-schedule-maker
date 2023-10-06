@@ -18,7 +18,8 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
   let keywords: string[] = input.split(","); //* Gives an array of keywords
   keywords = keywords.map((keyword) => keyword.trim()); //* removes spaces around keyword
 
-  const { chosenClasses, setChosenClasses } = useContext(ClassContext);
+  const { chosenClasses, setChosenClasses, setHoveredClass } =
+    useContext(ClassContext);
 
   // * keyword filter
   function condition(keyword: string, searches: Class[]) {
@@ -115,7 +116,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
 
     // * check if course code
     else if (regex.test(keyword)) {
-      return searches.filter((i) => i.code.startsWith(keyword));
+      return searches.filter((i) => i.code.includes(keyword));
     }
 
     // * check if day
@@ -133,7 +134,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
 
     // * check if course name
     else if (keyword.toUpperCase() === keyword) {
-      return searches.filter((i) => i.course.startsWith(keyword));
+      return searches.filter((i) => i.course.includes(keyword));
     }
 
     // * check if special keyword
@@ -150,7 +151,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
     // * if no pattern matches, search for name
     else {
       return searches.filter((i) =>
-        i.lecture.title.toLowerCase().startsWith(keyword.toLowerCase())
+        i.lecture.title.toLowerCase().includes(keyword.toLowerCase())
       );
     }
 
@@ -200,13 +201,17 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
           className="bg-c2 p-2 box-border md:mb-3 mb-2 rounded-lg md:shadow-lg shadow-md hover:bg-c3 transition cursor-pointer md:text-base text-xs"
           key={`i.code + ${index}`}
           onClick={() => toggleClass(i)}
+          onPointerOver={() => setHoveredClass(i)}
+          onPointerOut={() => setHoveredClass(undefined)}
         >
           <p className="font-light">
             {i.program}: {i.course} {i.code}
           </p>
+
           <p className="md:text-xl font-bold text-base">
             {i.section} {i.lecture.title}
           </p>
+
           <div className="ml-4 relative">
             {i.lecture.prof}{" "}
             <span className="font-bold">
@@ -216,6 +221,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
             </span>{" "}
             {<ScoreInfo rating={i.lecture.rating} />}
           </div>
+
           {Object.entries(i.lecture)
             .filter((i) => !["title", "prof", "rating"].includes(i[0]))
             .map((j, index) => {
@@ -225,6 +231,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
                 </p>
               );
             })}
+
           {"prof" in i.lab && (
             <>
               <div className="ml-4 relative">
@@ -236,6 +243,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
                 </span>{" "}
                 {<ScoreInfo rating={i.lab.rating} />}
               </div>
+
               {Object.entries(i.lab)
                 .filter((i) => !["title", "prof", "rating"].includes(i[0]))
                 .map((j, index) => {
@@ -248,6 +256,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
                 })}
             </>
           )}
+
           {i.more !== "" && (
             <>
               <p className="text-c6">{i.more}</p>

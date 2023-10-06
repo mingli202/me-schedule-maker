@@ -1,5 +1,5 @@
 import { View } from "./components";
-import {
+import React, {
   Dispatch,
   createContext,
   useContext,
@@ -14,27 +14,38 @@ import { checkForOverlap, handleSetViewData } from "./functions";
 import { $signOut, listenForChange } from "../../backend/api";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faHome } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../../userContext";
-import { Globals } from "@react-spring/shared";
+// import { Globals } from "@react-spring/shared";
+import { animated, useSpring } from "@react-spring/web";
 
 export const ClassContext = createContext<{
   chosenClasses: Class[];
   setChosenClasses: Dispatch<React.SetStateAction<Class[]>>;
+  hoveredClass?: Class | undefined;
+  setHoveredClass: Dispatch<React.SetStateAction<Class | undefined>>;
 }>({
   chosenClasses: [],
   setChosenClasses: () => { },
+  setHoveredClass: () => { },
 });
 
 type Props = {
   login?: boolean;
 };
 export default function Schedule({ login }: Props) {
-  Globals.assign({ frameLoop: "always" });
+  // Globals.assign({ frameLoop: "always" });
 
   const navigate = useNavigate();
 
+  const [show, setShow] = useState(false);
+  const [current, setCurrent] = useState<"fall" | "winter">("winter");
+
   const [classes, setClasses] = useState<Class[]>([]);
+  const [autocompleteData, setAutocompleteData] = useState({});
+
+  const [hoveredClass, setHoveredClass] = useState<Class>();
+
   const [loading, setLoading] = useState(false);
   const [chosenClasses, setChosenClasses] = useState<Class[]>([]);
   const [userData, setUserData] = useState<{
@@ -48,6 +59,22 @@ export default function Schedule({ login }: Props) {
   );
 
   const { user } = useContext(UserContext);
+
+  async function getData<T>(
+    url: string,
+    set: Dispatch<React.SetStateAction<T>>
+  ) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = (await response.json()) as T;
+      set(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     if (checkForOverlap(viewData)) {
@@ -74,44 +101,46 @@ export default function Schedule({ login }: Props) {
         );
       }
     }
-
-    async function getData<T>(
-      url: string,
-      set: Dispatch<React.SetStateAction<T>>
-    ) {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = (await response.json()) as T;
-        set(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    getData<Class[]>("/me-schedule-maker/data/all.json", setClasses).catch(
-      (err) => console.log(err)
-    );
   }, [user, login]);
+
+  useEffect(() => {
+    const name = current === "fall" ? "" : "winter-";
+
+    getData<Class[]>(
+      `/me-schedule-maker/data/${name}all.json`,
+      setClasses
+    ).catch((err) => console.log(err));
+
+    getData<typeof autocompleteData>(
+      `/me-schedule-maker/data/${name}data.json`,
+      setAutocompleteData
+    ).catch((err) => console.log(err));
+  }, [current]);
 
   async function handleOnClick() {
     await $signOut();
   }
 
   return (
-    <ClassContext.Provider value={{ chosenClasses, setChosenClasses }}>
+    <ClassContext.Provider
+      value={{ chosenClasses, setChosenClasses, hoveredClass, setHoveredClass }}
+    >
       <nav className="md:text-base text-xs w-full bg-c9 text-c1 shrink-0 flex justify-between items-center">
         <FontAwesomeIcon
           icon={faHome}
           className="ml-2 cursor-pointer transition hover:text-c4"
           onClick={() => navigate("/")}
         />
-        <p>
-          Fall 2023 JAC{" "}
+        <div className="flex gap-2">
+          {current === "fall" ? "Fall" : "Winter"} 2023 JAC{" "}
           <span className=" max-md:hidden">Mock Schedule Maker</span>
-        </p>
+          <DropDownMenu
+            show={show}
+            handleClick={() => setShow((s) => !s)}
+            current={current}
+            setCurrent={setCurrent}
+          />
+        </div>
         <p
           onClick={() => void handleOnClick()}
           className="mr-2 cursor-pointer transition hover:text-c4"
@@ -125,6 +154,7 @@ export default function Schedule({ login }: Props) {
           setLoading={setLoading}
           viewData={viewData}
           userData={userData}
+          aucmpData={autocompleteData}
         />
         {loading && classes.length !== 0 && (
           <>
@@ -133,5 +163,57 @@ export default function Schedule({ login }: Props) {
         )}
       </section>
     </ClassContext.Provider>
+  );
+}
+
+type DropDownMenuProps = {
+  show: boolean;
+  handleClick: () => void;
+  current: "fall" | "winter";
+  setCurrent: React.Dispatch<React.SetStateAction<"fall" | "winter">>;
+};
+function DropDownMenu({
+  show,
+  handleClick,
+  current,
+  setCurrent,
+}: DropDownMenuProps) {
+  const springs = useSpring({
+    rotate: show ? 180 : 0,
+    y: show ? "0%" : "-200%",
+  });
+
+  return (
+    <>
+      <animated.div style={{ rotate: springs.rotate }}>
+        <FontAwesomeIcon icon={faAngleDown} onClick={handleClick} />
+      </animated.div>
+      <animated.div
+        style={{ y: springs.y }}
+        className="absolute top-6 z-10 text-c1 bg-c9 [&>p]:p-1 [&>p]:cursor-pointer"
+      >
+        <p
+          className={`${current === "fall" ? "bg-c8" : ""
+            } hover:font-bold transition`}
+          onClick={() => {
+            setCurrent("fall");
+            handleClick();
+          }}
+        >
+          Fall 2023
+        </p>
+
+        <p
+          className={`${current === "winter" ? "bg-c8" : ""
+            } hover:font-bold transition`}
+          onClick={() => {
+            setCurrent("winter");
+            handleClick();
+          }}
+        >
+          Winter 2023
+        </p>
+      </animated.div>
+    </>
   );
 }

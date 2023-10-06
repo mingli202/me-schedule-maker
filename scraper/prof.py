@@ -2,21 +2,29 @@ import json
 from bs4 import BeautifulSoup
 import requests
 
-with open("out.json", "r") as file:
+
+with open("winter-out.json", "r") as file:
     arr = json.loads(file.read())
 
 professors = set()
 
 
-for i in arr:
-    professors.add(i["lecture"]["prof"].replace("\u00e9", "e").replace("\u00e8", "e"))
+for index, i in enumerate(arr):
+    print(index)
+    try:
+        professors.add(i["lecture"]["prof"].replace(
+            "\u00e9", "e").replace("\u00e8", "e"))
 
-    if "prof" in i["lab"]:
-        professors.add(i["lab"]["prof"].replace("\u00e9", "e").replace("\u00e8", "e"))
+        if "prof" in i["lab"]:
+            professors.add(i["lab"]["prof"].replace(
+                "\u00e9", "e").replace("\u00e8", "e"))
+    except:
+        print(i["lecture"])
+        exit()
 
 professors.remove("")
 
-with open("professors.json", "w") as file:
+with open("winter-professors.json", "w") as file:
     file.write(json.dumps(list(professors)))
 
 ratings = []
@@ -58,7 +66,6 @@ for i in professors:
     name = ""
     status = ""
 
-
     # try for every combinasion of their names
     for comb in pArr:
         p = "%20".join(comb.replace(",", "").split(" "))
@@ -81,7 +88,8 @@ for i in professors:
             if not '"school":{"__ref":"U2Nob29sLTEyMDUw"}' in text:
                 raise
 
-            name = list(filter(lambda i: "firstName" in i or "lastName" in i, text))
+            name = list(
+                filter(lambda i: "firstName" in i or "lastName" in i, text))
 
             firstName = name[0].split(":")[1].replace('"', "")
             lastName = name[1].split(":")[1].replace('"', "")
@@ -91,9 +99,11 @@ for i in professors:
             if firstName not in i or lastName not in i:
                 raise
 
-            avg = float(list(filter(lambda i: "avgRating" in i, text))[0].split(":")[1])
+            avg = float(list(filter(lambda i: "avgRating" in i, text))[
+                        0].split(":")[1])
             nRating = float(
-                list(filter(lambda i: "numRatings" in i, text))[0].split(":")[1]
+                list(filter(lambda i: "numRatings" in i, text))[
+                    0].split(":")[1]
             )
             takeAgain = float(
                 list(filter(lambda i: "wouldTakeAgainPercent" in i, text))[0].split(
@@ -101,7 +111,8 @@ for i in professors:
                 )[1]
             )
             difficulty = float(
-                list(filter(lambda i: "avgDifficulty" in i, text))[0].split(":")[1]
+                list(filter(lambda i: "avgDifficulty" in i, text))[
+                    0].split(":")[1]
             )
 
             status = "found"
@@ -112,13 +123,15 @@ for i in professors:
             # continue to next iteration (variant of the name)
             status = "foundn't"
 
+        print(status)
+
     # score only for those that exist on the website
     if avg != 0 and nRating != 0:
         '''
         Calculated to take into account the number of raters.
         You add one 5/5 and one 0/5 to the rating to obtain the score.
         If there are more raters, the 0/5 will have a lesser impact.
-        
+
         e.g. 
           Gregory, Muclair has 5/5 rating but only 2 raters. His score is 75.0
           Kazuo Takei, Luiz has 4.6/5 rating with 11 raters. His score is 85.5
@@ -142,5 +155,5 @@ for i in professors:
     print(score)
 
 
-with open("ratings.json", "w") as file:
+with open("winter-ratings.json", "w") as file:
     file.write(json.dumps(ratings, indent=2))

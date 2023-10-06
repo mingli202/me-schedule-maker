@@ -1,12 +1,12 @@
 import json
 
-with open("out.json", "r") as file:
+with open("winter-out.json", "r") as file:
     courses = json.loads(file.read())
 
-with open("ratings.json", "r") as file:
+with open("winter-ratings.json", "r") as file:
     ratings = json.loads(file.read())
 
-with open("professors.json", "r") as file:
+with open("winter-professors.json", "r") as file:
     professors = json.loads(file.read())
 
 all = []
@@ -44,5 +44,5 @@ for course in courses:
     all.append(new)
 
 
-with open("all.json", "w") as file:
+with open("winter-all.json", "w") as file:
     file.write(json.dumps(all, indent=2))
