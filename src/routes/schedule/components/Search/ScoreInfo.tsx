@@ -13,8 +13,8 @@ export default function ScoreInfo({ rating }: { rating: Rating }) {
         <FontAwesomeIcon
           icon={faQuestionCircle}
           className="cursor-pointer"
-          onMouseOver={() => setHover(true)}
-          onMouseOut={() => setHover(false)}
+          onPointerOver={() => setHover(true)}
+          onPointerOut={() => setHover(false)}
         />
       }
       {hover && (

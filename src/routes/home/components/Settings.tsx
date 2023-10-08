@@ -11,8 +11,8 @@ export default function Settings({ user, setDisplayName }: Props) {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="basis-full p-4 box-border flex w-full gap-4">
-      <nav className="basis-3/12 h-full shadow shadow-c9 rounded-l-xl rounded-r box-border p-2 gap-2 flex flex-col">
+    <div className="basis-full md:p-4 p-2 box-border flex max-md:flex-col w-full md:gap-4 gap-2 md:text-base text-sm">
+      <nav className="md:basis-3/12 md:h-full shadow shadow-c9 md:rounded-l-xl rounded-t-xl md:rounded-r rounded-b box-border p-2 gap-2 flex md:flex-col">
         {["Account", "Other"].map((name, index) => (
           <NavItem
             active={active}
@@ -24,10 +24,10 @@ export default function Settings({ user, setDisplayName }: Props) {
         ))}
       </nav>
 
-      <div className="basis-9/12 h-full shadow shadow-c9 rounded-r-xl rounded-l box-border p-2 relative overflow-hidden">
+      <div className="md:basis-9/12 h-full shadow shadow-c9 md:rounded-r-xl rounded-t md:rounded-l rounded-b-xl box-border p-2 relative overflow-hidden">
         <Content active={active} index={0}>
           <>
-            <h1 className="font-bold text-3xl">Account Settings</h1>
+            <h1 className="font-bold md:text-3xl text-xl">Account Settings</h1>
             <hr />
 
             <div className="flex flex-col w-full gap-4 mt-4">
@@ -40,7 +40,7 @@ export default function Settings({ user, setDisplayName }: Props) {
 
         <Content active={active} index={1}>
           <div className="w-full h-full flex flex-col">
-            <h1 className="font-bold text-3xl shrink-0">Other</h1>
+            <h1 className="font-bold md:text-3xl text-xl shrink-0">Other</h1>
             <hr />
 
             <div className="flex flex-col w-full gap-4 mt-4 basis-full">
@@ -70,7 +70,7 @@ function NavItem({ active, index, name, setActive }: NavItmeProps) {
 
   return (
     <animated.div
-      className="box-border cursor-pointer p-4 rounded-lg relative hover:font-bold"
+      className="box-border cursor-pointer md:p-4 p-2 rounded-lg relative hover:font-bold"
       onClick={() => setActive(index)}
       style={springs}
     >

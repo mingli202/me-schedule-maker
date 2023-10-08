@@ -14,7 +14,7 @@ export default function PasswordBox({ email }: Props) {
 
   return (
     <div className="rounded-xl border border-c9 border-solid p-4 transition hover:bg-green-800 hover:text-green-200 group">
-      <h2 className="font-semibold text-xl">Password</h2>
+      <h2 className="font-semibold md:text-xl text-base">Password</h2>
       <p>The password to your account</p>
 
       <div className="mt-4 flex items-center">

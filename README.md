@@ -14,9 +14,8 @@ Completed:
 - An account creation feature
 - A home page
 - A forgot password feature
+- Some autocomplete features
 
 Todo:
 
-- Some autocomplete features
 - A tutorial
-- Some arts

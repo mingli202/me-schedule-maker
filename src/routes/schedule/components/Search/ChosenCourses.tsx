@@ -69,7 +69,7 @@ export default function ChosenCourses({ viewData, userData }: Props) {
   }, [savedSchedule]);
 
   return (
-    <div className="basis-1/3 shrink-0 overflow-auto">
+    <div className="md:basis-1/3 shrink-0 overflow-auto max-md:max-h-48">
       <section className="bg-c1 rounded-lg box-border flex w-full flex-wrap gap-2 p-2">
         <div
           className="bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer h-20"

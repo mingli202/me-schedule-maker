@@ -45,7 +45,7 @@ export default function Delete({ user }: Props) {
   return (
     <>
       <div className="rounded-xl border border-c9 border-solid p-4 transition hover:bg-red-800 hover:text-red-200 group">
-        <h2 className="font-semibold text-xl">Delete Account</h2>
+        <h2 className="font-semibold md:text-xl text-base">Delete Account</h2>
         <p>This action can't be undone</p>
 
         <div className="mt-4 flex items-center">

@@ -46,13 +46,13 @@ export default function DisplayName({ user, setNavDisplayName }: Props) {
 
   return (
     <div className="rounded-xl border border-c9 border-solid p-4 transition hover:bg-c8 hover:text-c2">
-      <h2 className="font-semibold text-xl">Display Name</h2>
+      <h2 className="font-semibold md:text-xl text-base">Display Name</h2>
       <p>This name will be displayed instead of your email at the top</p>
 
       <div className="mt-4 flex items-center">
         <FontAwesomeIcon
           icon={faPenToSquare}
-          className="pr-2 hover:text-c5 transition cursor-pointer"
+          className="md:pr-2 pr-1 hover:text-c5 transition cursor-pointer"
           onClick={handleClickEdit}
         />
         {!edit ? (
@@ -60,7 +60,7 @@ export default function DisplayName({ user, setNavDisplayName }: Props) {
         ) : (
           <form className="w-full" onSubmit={(e) => void handleSubmit(e)}>
             <input
-              className="outline-none rounded p-2 w-full text-c9"
+              className="outline-none rounded md:p-2 p-1 w-full text-c9"
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
             />

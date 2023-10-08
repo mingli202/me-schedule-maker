@@ -25,7 +25,7 @@ export default function View({ viewData, login }: Props) {
   }, [viewData]);
 
   return (
-    <section className="rounded-lg md:col-span-7 md:row-span-6 max-md:min-h-[60%] col-span-full bg-c1 md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-1">
+    <section className="rounded-lg md:col-span-7 md:row-span-6 max-md:h-[60%] col-span-full bg-c1 md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-1">
       {/* Hours */}
       <div className="col-span-1 row-span-full grid grid-cols-1 grid-rows-[repeat(21,minmax(0,1fr))]">
         {[...Array(21).keys()].map((i) => {

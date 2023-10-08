@@ -72,11 +72,13 @@ export default function Home() {
           <Welcome />
 
           <div className="shrink-0 flex justify-center box-border p-6 items-center">
-            <h1 className="font-bold text-4xl z-10 text-c1">My Schedules</h1>
+            <h1 className="font-bold md:text-4xl text-xl z-10 text-c1">
+              My Schedules
+            </h1>
           </div>
 
           <div
-            className="bg-c9 h-full box-border p-2 w-full grid grid-rows-6 grid-cols-9 gap-2 grow-0 absolute top-[100dvh]"
+            className="bg-c9 h-full box-border p-2 w-full md:grid flex flex-col md:grid-rows-6 md:grid-cols-9 gap-2 grow-0 absolute top-[100dvh]"
             id="schedules"
           >
             <View viewData={userData?.schedules?.[index]?.vData ?? []} login />

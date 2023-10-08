@@ -20,8 +20,8 @@ export default function Select({
   currentIndex,
 }: Props) {
   return (
-    <section className="flex flex-col justify-between relative row-span-full col-start-8 col-span-2 rounded-lg overflow-hidden">
-      <div className="relative max-h-full rounded-lg box-border bg-c1 p-2 flex flex-col overflow-auto">
+    <section className="flex flex-col justify-between relative md:row-span-full md:col-start-8 md:col-span-2 col-span-full rounded-lg overflow-hidden max-md:order-2 md:text-base text-xs">
+      <div className="relative max-h-full rounded-lg box-border bg-c1 md:p-2 p-1 flex flex-col overflow-auto">
         {viewData
           ? viewData.map((data, index) => {
             return (
@@ -88,12 +88,12 @@ function Title({ data, setIndex, index, uid, currentIndex }: TitleProps) {
     <animated.div
       key={data.id}
       onClick={() => !edit && setIndex(index)}
-      className={`relative cursor-pointer w-full px-2 py-4 rounded hover:font-bold flex items-center`}
+      className={`relative cursor-pointer w-full md:px-2 px-1 md:py-4 py-2 rounded hover:font-bold flex items-center`}
       style={springs}
     >
       <FontAwesomeIcon
         icon={faPenToSquare}
-        className="pr-2 hover:text-c5 transition cursor-pointer"
+        className="md:pr-2 pr-1 hover:text-c5 transition cursor-pointer"
         onClick={handleClickEdit}
       />
 
@@ -102,7 +102,7 @@ function Title({ data, setIndex, index, uid, currentIndex }: TitleProps) {
       ) : (
         <form onSubmit={(e) => void handleSubmit(e)} className="w-full">
           <input
-            className="outline-none rounded p-2 w-full text-c9"
+            className="outline-none rounded md:p-2 p-1 w-full text-c9"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />

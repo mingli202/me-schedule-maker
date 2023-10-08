@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
   return (
     <div className="basis-full box-border flex flex-col items-center justify-center gap-2">
-      <h1 className="text-7xl font-bold text-c9">Welcome!</h1>
-      <p className="font-bold text-xl">Ready to make your dream schedule?</p>
+      <h1 className="md:text-7xl text-4xl font-bold text-c9">Welcome!</h1>
+      <p className="font-bold text-base">Ready to make your dream schedule?</p>
 
-      <div className="flex gap-2 mt-4">
+      <div className="flex gap-2 mt-4 md:text-base text-sm">
         <button
           onClick={() =>
             document.getElementById("schedules")?.scrollIntoView({

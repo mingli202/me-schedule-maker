@@ -134,7 +134,7 @@ export default function Search({
         />
       )}
       {current === "saved" && (
-        <div className="flex flex-col h-full overflow-hidden">
+        <div className="md:flex md:flex-col h-full overflow-hidden">
           <ChosenCourses viewData={viewData} userData={userData} />
           <CurrentClasses viewData={viewData} />
         </div>

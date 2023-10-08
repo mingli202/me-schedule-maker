@@ -37,7 +37,9 @@ export default function Chat({ userEmail, displayName }: Props) {
 
   return (
     <div className="rounded-xl border border-c9 border-solid p-4 transition hover:bg-c8 hover:text-c2 group h-full flex flex-col">
-      <h2 className="font-semibold text-xl shrink-0">Chat with the Dev</h2>
+      <h2 className="font-semibold md:text-xl text-base shrink-0">
+        Chat with the Dev
+      </h2>
       <p className="mb-4 shrink-0">
         Unsatisfied with the app? Missing feature you want to add? Baffled by
         how good the editor looks? Bugs? Tell me what you want!
