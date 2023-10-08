@@ -18,16 +18,22 @@ export const images: I = {
       height: 1516,
     },
     {
+      url: "/me-schedule-maker/images/loginbg/filter.png",
+      name: "filter",
+      width: 1190,
+      height: 1514,
+    },
+    {
       url: "/me-schedule-maker/images/loginbg/saved.png",
       name: "saved",
       width: 1190,
       height: 1516,
     },
     {
-      url: "/me-schedule-maker/images/loginbg/filter.png",
-      name: "filter",
-      width: 1190,
-      height: 1516,
+      url: "/me-schedule-maker/images/loginbg/view.png",
+      name: "view",
+      width: 2224,
+      height: 1546,
     },
   ],
 };
