@@ -81,11 +81,11 @@ export default function Search({
                     </li>
                     <li>
                       <span>p=professor</span>: classes taught by{" "}
-                      <i>professor</i> (e.g. p=patrik searches classes taught by
-                      professors with patrik in their names)
+                      <i>professor</i> (e.g. p=patrik searches for classes
+                      taught by professors with patrik in their names)
                     </li>
                     <li>
-                      <span>COURSE_NAME</span>: searches classes that belongs in
+                      <span>COURSE_NAME</span>: searches classes that belong in
                       COURSE_NAME (e.g. ENGLISH searches for english classes)
                     </li>
                     <li>
@@ -95,8 +95,9 @@ export default function Search({
                       <span>M/T/W/R/F</span>: has class on that day.
                     </li>
                     <li>
-                      <span>class_name</span>: if its none of the abovementioned
-                      keywords, it will treat the keyword as the class name.
+                      <span>class_name</span>: if it's none of the
+                      abovementioned keywords, it will treat the keyword as part
+                      of the class name.
                     </li>
                   </ul>
                 </div>

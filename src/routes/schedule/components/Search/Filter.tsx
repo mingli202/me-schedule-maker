@@ -176,7 +176,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             className="outline-none focus:bg-c2 w-full rounded-lg p-1"
             name="courseName"
             list="course"
-            autoComplete="false"
+            autoComplete="off"
             onChange={(e) => setCourseName(e.target.value)}
           />
           <datalist id="course">
@@ -193,7 +193,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             className="outline-none focus:bg-c2 w-full rounded-lg p-1"
             name="code"
             list="code"
-            autoComplete="false"
+            autoComplete="off"
             onChange={(e) => setCode(e.target.value)}
           />
           <datalist id="code">
@@ -211,6 +211,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             name="className"
             onChange={(e) => setClassName(e.target.value)}
             list="classNames"
+            autoComplete="off"
           />
           <datalist id="classNames">
             {classNames.map((k) => (
@@ -226,6 +227,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             className="outline-none focus:bg-c2 w-full rounded-lg p-1"
             name="teacherName"
             list="teachers"
+            autoComplete="off"
           />
           <datalist id="teachers">
             {teacherNames.map((k) => (
@@ -243,6 +245,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
                   className="outline-none focus:bg-c2 w-full rounded-lg p-1"
                   placeholder="0"
                   name="ratingMin"
+                  autoComplete="off"
                 />
               </div>
               <p className="flex items-center">to</p>
@@ -251,6 +254,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
                   className="outline-none focus:bg-c2 w-full rounded-lg p-1"
                   placeholder="5"
                   name="ratingMax"
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -283,6 +287,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
                   className="outline-none focus:bg-c2 w-full rounded-lg p-1"
                   placeholder="0"
                   name="scoreMin"
+                  autoComplete="off"
                 />
               </div>
               <p className="flex items-center">to</p>
@@ -291,50 +296,67 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
                   className="outline-none focus:bg-c2 w-full rounded-lg p-1"
                   placeholder="100"
                   name="scoreMax"
+                  autoComplete="off"
                 />
               </div>
             </div>
           </label>
         </div>
 
-        <label className="flex gap-4">
+        <div className="flex gap-4">
           <div className="basis-1/2">
             <p className="font-semibold">Days</p>
             <p className="pl-4">
-              <input type="checkbox" name="monday" /> Monday
+              <label>
+                <input type="checkbox" name="monday" /> Monday
+              </label>
             </p>
             <p className="pl-4">
-              <input type="checkbox" name="tuesday" /> Tuesday
+              <label>
+                <input type="checkbox" name="tuesday" /> Tuesday
+              </label>
             </p>
             <p className="pl-4">
-              <input type="checkbox" name="wednesday" /> Wednesday
+              <label>
+                <input type="checkbox" name="wednesday" /> Wednesday
+              </label>
             </p>
             <p className="pl-4">
-              <input type="checkbox" name="thursday" /> Thursday
+              <label>
+                <input type="checkbox" name="thursday" /> Thursday
+              </label>
             </p>
             <p className="pl-4">
-              <input type="checkbox" name="friday" /> Friday
+              <label>
+                <input type="checkbox" name="friday" /> Friday
+              </label>
             </p>
           </div>
 
           <div className="basis-1/2">
             <p className="font-semibold">Special</p>
             <p className="pl-4">
-              <input type="checkbox" name="honours" /> Honours
+              <label>
+                <input type="checkbox" name="honours" /> Honours
+              </label>
             </p>
 
             <p className="pl-4">
-              <input type="checkbox" name="blended" /> Blended
+              <label>
+                <input type="checkbox" name="blended" /> Blended
+              </label>
             </p>
           </div>
-        </label>
-        <label>
+        </div>
+        <div>
           <p className="font-semibold">Options</p>
           <p className="pl-4">
-            <input type="checkbox" name="available" /> Only show available
-            classes
+            <label>
+              <input type="checkbox" name="available" /> Only show available
+              classes
+            </label>
           </p>
-        </label>
+        </div>
 
         <div className="flex justify-end gap-2">
           <button
