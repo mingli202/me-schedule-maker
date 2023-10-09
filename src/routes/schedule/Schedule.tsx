@@ -190,7 +190,7 @@ function DropDownMenu({
       </animated.div>
       <animated.div
         style={{ y: springs.y }}
-        className="absolute top-6 z-10 text-c1 bg-c9 [&>p]:p-1 [&>p]:cursor-pointer"
+        className="absolute md:top-6 top-4 z-10 text-c1 bg-c9 [&>p]:p-1 [&>p]:cursor-pointer"
       >
         <p
           className={`${current === "fall" ? "bg-c8" : ""
