@@ -190,6 +190,14 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       alert("You already have a class from this course");
       return;
     } else {
+      if (
+        checkForOverlap(
+          handleSetViewData([...chosenClasses, selectedClass], true)
+        )
+      ) {
+        alert("The chosen class overlaps with another!");
+        return;
+      }
       setChosenClasses([...chosenClasses, selectedClass]);
     }
   }

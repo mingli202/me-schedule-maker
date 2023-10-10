@@ -9,14 +9,14 @@ import React, {
 } from "react";
 import { Class, Saved, ViewData } from "../../types";
 import { Search } from "./components/Search";
-import { checkForOverlap, handleSetViewData } from "./functions";
+import { handleSetViewData } from "./functions";
 
 import { $signOut, listenForChange } from "../../backend/api";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faHome } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../../userContext";
-// import { Globals } from "@react-spring/shared";
+
 import { animated, useSpring } from "@react-spring/web";
 
 export const ClassContext = createContext<{
@@ -75,13 +75,6 @@ export default function Schedule({ login }: Props) {
       console.log(error);
     }
   }
-
-  useEffect(() => {
-    if (checkForOverlap(viewData)) {
-      setChosenClasses(chosenClasses.slice(0, -1));
-      alert("The chosen class overlaps with another!");
-    }
-  }, [viewData]);
 
   useEffect(() => {
     // check if user is signed in

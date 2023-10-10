@@ -120,8 +120,14 @@ export function handleSetViewData(
 
       // for each day, add an object to viewData containing the info to display the block
       return day.flatMap((j) => {
-        const rowStart = row.findIndex((r) => Number(r) === Number(start)) + 1;
-        const rowEnd = row.findIndex((r) => Number(r) === Number(end)) + 1;
+        const rowStart =
+          Number(start) < 800
+            ? 1
+            : row.findIndex((r) => Number(r) === Number(start)) + 1;
+        const rowEnd =
+          Number(end) > 1800
+            ? 21
+            : row.findIndex((r) => Number(r) === Number(end)) + 1;
         const colStart = col.findIndex((c) => c === j) + 1;
 
         return {
