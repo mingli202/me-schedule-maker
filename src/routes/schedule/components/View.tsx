@@ -85,7 +85,7 @@ export default function View({ viewData, login }: Props) {
 
         {hoveredClass && (
           <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 row-span-full col-span-full row-start-2 absolute opacity-50 z-10 h-full w-full">
-            {handleSetViewData([hoveredClass]).map((data, index) => (
+            {handleSetViewData([hoveredClass], true).map((data, index) => (
               <Fragment key={index}>
                 <ClassBlocks blocksToShow={data} hover />
               </Fragment>
