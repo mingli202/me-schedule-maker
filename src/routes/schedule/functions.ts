@@ -105,8 +105,10 @@ export function handleSetViewData(
       // day is an array of the days for a given time. e.g. ["M", "W"]
       const day = i[0].split("").filter((q) => {
         // the schedule doesn't show saterday classes
-        if (q === "S" && !disableSaterdayAlert) {
-          alert("There is class on Saturday as well");
+        if (q === "S") {
+          if (!disableSaterdayAlert) {
+            alert("There is class on Saturday as well");
+          }
           return false;
         }
         return true;
