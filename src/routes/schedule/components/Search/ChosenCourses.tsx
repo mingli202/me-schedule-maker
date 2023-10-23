@@ -6,19 +6,18 @@ import {
   useContext,
   useEffect,
 } from "react";
-import { Saved, ViewData } from "../../../../types";
+import { Class, Saved } from "../../../../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { animated, useSpring } from "@react-spring/web";
-import { ClassContext } from "../../Schedule";
 import { updateSaved } from "../../../../backend/api";
+import { ClassContext } from "../../classContext";
 
 type Props = {
-  viewData: ViewData[][];
   userData: { uid: string; schedules: Saved[] } | null;
 };
 
-export default function ChosenCourses({ viewData, userData }: Props) {
+export default function ChosenCourses({ userData }: Props) {
   // for local storage if they don't sign in
   const key = "jac-mock-schedule-maker";
 
@@ -44,7 +43,7 @@ export default function ChosenCourses({ viewData, userData }: Props) {
 
   const { chosenClasses } = useContext(ClassContext);
 
-  function handleSaved(viewData: ViewData[][]) {
+  function handleSaved() {
     // to ensure that the count does not repeat (no same id)
     do {
       count.current += 1;
@@ -54,7 +53,6 @@ export default function ChosenCourses({ viewData, userData }: Props) {
       ...savedSchedule,
       {
         id: count.current,
-        vData: viewData,
         data: chosenClasses,
       },
     ]);
@@ -73,13 +71,14 @@ export default function ChosenCourses({ viewData, userData }: Props) {
       <section className="bg-c1 rounded-lg box-border flex w-full flex-wrap gap-2 p-2">
         <div
           className="bg-c2 hover:bg-c3 active:bg-c4 transition rounded-md flex items-center justify-center md:p-4 p-2 cursor-pointer h-20"
-          onClick={() => handleSaved(viewData)}
+          onClick={() => handleSaved()}
         >
           <FontAwesomeIcon
             icon={faPlusCircle}
             className="md:text-4xl text-xl"
           />
         </div>
+
         {savedSchedule.map((i) => {
           return (
             <SavedBlock
@@ -95,9 +94,31 @@ export default function ChosenCourses({ viewData, userData }: Props) {
   );
 }
 
-function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
-  return blocksToShow.map((i) => {
-    const t = Object.entries(i.time).flat();
+function ClassBlocks({
+  blocksToShow,
+  index,
+}: {
+  blocksToShow: Class;
+  index: number;
+}) {
+  const colors = [
+    "hsl(150,97%,85%)",
+    "hsl(230,97%,85%)",
+    "hsl(110,97%,85%)",
+    "hsl(270,97%,85%)",
+    "hsl(70,97%,85%)",
+    "hsl(310,97%,85%)",
+    "hsl(30,97%,85%)",
+    "hsl(350,97%,85%)",
+    "hsl(190,97%,85%)",
+    "#CCC",
+    "#999",
+    "#FFF",
+  ];
+
+  return blocksToShow.viewData.map((i) => {
+    const t = Object.entries(i).flat();
+
     return (
       <div
         className={`z-10 border border-[black] box-border rounded-sm`}
@@ -105,9 +126,9 @@ function ClassBlocks({ blocksToShow }: { blocksToShow: ViewData[] }) {
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
           gridRowEnd: t[1][1],
-          backgroundColor: i.color,
+          backgroundColor: colors.at(index),
         }}
-        key={i.code + i.section + t[0]}
+        key={blocksToShow.code + blocksToShow.section + t[0]}
       ></div>
     );
   });
@@ -126,7 +147,6 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
   const block = structuredClone(i);
   // firebase doesn't register empty arrays
   if (!block.data) block.data = [];
-  if (!block.vData) block.vData = [];
 
   // animations
   const [springs, api] = useSpring(
@@ -168,8 +188,8 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
       style={springs}
       onClick={handleClick}
     >
-      {block.vData.map((j, index) => {
-        return <ClassBlocks blocksToShow={j} key={index} />;
+      {block.data.map((j, index) => {
+        return <ClassBlocks blocksToShow={j} key={index} index={index} />;
       })}
       <FontAwesomeIcon
         icon={faTrash}

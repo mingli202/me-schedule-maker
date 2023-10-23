@@ -17,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-spring/parallax": "^9.7.3",
     "@react-spring/shared": "^9.7.3",
     "@react-spring/three": "^9.7.3",
     "@react-spring/web": "^9.7.3",

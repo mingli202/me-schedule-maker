@@ -88,13 +88,13 @@ const db = getDatabase(app);
 
 export async function createUser(user: UserType) {
   const uid = user.uid;
-  await set(ref(db, "/users" + uid), {
+  await set(ref(db, "/users/" + uid), {
     ...user,
   });
 }
 
 export async function getUserData<T>(uid: string, child?: string) {
-  const path = `/users${uid}${child ? "/" + child : ""}`;
+  const path = `/users/${uid}/${child ?? ""}`;
   const snapshot = await get(ref(db, path));
   if (snapshot.exists()) {
     return snapshot.val() as T;
@@ -104,12 +104,12 @@ export async function getUserData<T>(uid: string, child?: string) {
 }
 
 export async function updateSaved(uid: string, saved: Saved[]) {
-  const dbRef = ref(db, "/users" + uid + "/schedules");
+  const dbRef = ref(db, "/users/" + uid + "/schedules");
   await set(dbRef, saved);
 }
 
 export async function updateName(uid: string, name: string, path: number) {
-  const dbRef = ref(db, `/users${uid}/schedules/${path}/name`);
+  const dbRef = ref(db, `/users/${uid}/schedules/${path}/name`);
   await set(dbRef, name);
 }
 
@@ -118,17 +118,17 @@ export function listenForChange(
   callback: (snapshot: DataSnapshot) => unknown,
   child?: string
 ) {
-  const path = `/users${uid}${child ? "/" + child : ""}`;
+  const path = `/users/${uid}/${child ?? ""}`;
   onValue(ref(db, path), callback);
 }
 
 export function detach(uid: string, child?: string) {
-  const path = `/users${uid}${child ? "/" + child : ""}`;
+  const path = `/users/${uid}/${child ?? ""}`;
   off(ref(db, path));
 }
 
 export async function deleteUserData(uid: string) {
-  await remove(ref(db, `/users${uid}`));
+  await remove(ref(db, `/users/${uid}`));
 }
 
 /*

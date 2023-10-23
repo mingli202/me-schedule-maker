@@ -1,34 +1,16 @@
 import { View } from "./components";
-import React, {
-  Dispatch,
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import { Class, Saved, ViewData } from "../../types";
+import React, { Dispatch, useContext, useEffect, useState } from "react";
+import { Class, Saved } from "../../types";
 import { Search } from "./components/Search";
-import { handleSetViewData } from "./functions";
 
 import { $signOut, listenForChange } from "../../backend/api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faHome } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../../userContext";
 
 import { animated, useSpring } from "@react-spring/web";
-
-export const ClassContext = createContext<{
-  chosenClasses: Class[];
-  setChosenClasses: Dispatch<React.SetStateAction<Class[]>>;
-  hoveredClass?: Class | undefined;
-  setHoveredClass: Dispatch<React.SetStateAction<Class | undefined>>;
-}>({
-  chosenClasses: [],
-  setChosenClasses: () => { },
-  setHoveredClass: () => { },
-});
+import { ClassContext } from "./classContext";
 
 type Props = {
   login?: boolean;
@@ -52,11 +34,6 @@ export default function Schedule({ login }: Props) {
     uid: string;
     schedules: Saved[];
   } | null>(null);
-
-  const viewData = useMemo<ViewData[][]>(
-    () => handleSetViewData(chosenClasses),
-    [chosenClasses]
-  );
 
   const { user } = useContext(UserContext);
 
@@ -94,7 +71,7 @@ export default function Schedule({ login }: Props) {
         );
       }
     }
-  }, [user, login]);
+  }, [user, login, navigate]);
 
   useEffect(() => {
     const name = current === "fall" ? "" : "winter-";
@@ -119,11 +96,12 @@ export default function Schedule({ login }: Props) {
       value={{ chosenClasses, setChosenClasses, hoveredClass, setHoveredClass }}
     >
       <nav className="md:text-base text-xs w-full bg-c9 text-c1 shrink-0 flex justify-between items-center">
-        <FontAwesomeIcon
-          icon={faHome}
-          className="ml-2 cursor-pointer transition hover:text-c4"
-          onClick={() => navigate("/")}
-        />
+        <Link to={user ? `../users/${user.uid}` : "/"}>
+          <FontAwesomeIcon
+            icon={faHome}
+            className="ml-2 cursor-pointer transition hover:text-c4"
+          />
+        </Link>
         <div className="flex gap-2">
           {current === "fall" ? "Fall" : "Winter"} 2023 JAC{" "}
           <span className=" max-md:hidden">Mock Schedule Maker</span>
@@ -141,17 +119,17 @@ export default function Schedule({ login }: Props) {
           {userData ? "Sign Out" : ""}
         </p>
       </nav>
+
       <section className="w-full basis-full bg-c9 md:grid md:grid-cols-12 md:grid-rows-6 box-border gap-2 px-2 pb-2 text-c9 flex flex-col md:text-base text-xs overflow-auto">
         <Search
           classes={classes}
           setLoading={setLoading}
-          viewData={viewData}
           userData={userData}
           aucmpData={autocompleteData}
         />
         {loading && classes.length !== 0 && (
           <>
-            <View viewData={viewData} />
+            <View />
           </>
         )}
       </section>
@@ -179,7 +157,11 @@ function DropDownMenu({
   return (
     <>
       <animated.div style={{ rotate: springs.rotate }}>
-        <FontAwesomeIcon icon={faAngleDown} onClick={handleClick} />
+        <FontAwesomeIcon
+          icon={faAngleDown}
+          onClick={handleClick}
+          className="cursor-pointer"
+        />
       </animated.div>
       <animated.div
         style={{ y: springs.y }}

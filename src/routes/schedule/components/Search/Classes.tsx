@@ -1,8 +1,8 @@
 import { Class } from "../../../../types";
 import { Dispatch, useContext, useEffect } from "react";
-import { ClassContext } from "../../Schedule";
 import { ScoreInfo } from ".";
-import { handleSetViewData, checkForOverlap } from "../../functions";
+import { checkForOverlap } from "../../functions";
+import { ClassContext } from "../../classContext";
 
 type ClassesProps = {
   input: string;
@@ -54,9 +54,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
           return false;
         }
 
-        const isValid = !checkForOverlap(
-          handleSetViewData([...chosenClasses, c], true)
-        );
+        const isValid = !checkForOverlap([...chosenClasses, c]);
 
         return isValid;
       });
@@ -190,11 +188,7 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
       alert("You already have a class from this course");
       return;
     } else {
-      if (
-        checkForOverlap(
-          handleSetViewData([...chosenClasses, selectedClass], true)
-        )
-      ) {
+      if (checkForOverlap([...chosenClasses, selectedClass])) {
         alert("The chosen class overlaps with another!");
         return;
       }

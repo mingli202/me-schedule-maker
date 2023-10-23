@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { $signOut, listenForChange } from "../../backend/api";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { User } from "firebase/auth";
 import { animated, useSpring } from "@react-spring/web";
 import { View } from "../schedule/components";
@@ -24,6 +24,22 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   const { user } = useContext(UserContext);
+
+  const sectionRef = useRef<HTMLElement>(null!);
+  const [scroll, setScroll] = useState(0);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+
+    function handleScroll() {
+      setScroll(element.scrollTop);
+    }
+
+    element.addEventListener("scroll", handleScroll);
+
+    return () => element.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     if (!user) {
       navigate("/");
@@ -43,7 +59,10 @@ export default function Home() {
   }, [user]);
 
   return (
-    <section className="w-[100dvw] h-[100dvh] relative overflow-x-hidden flex flex-col">
+    <section
+      className="w-[100dvw] h-[100dvh] relative overflow-x-hidden flex flex-col"
+      ref={sectionRef}
+    >
       <nav className="shrink-0 flex justify-between box-border p-1 h-20 w-full items-center bg-white">
         <Link to="" className="h-20">
           <img
@@ -66,10 +85,10 @@ export default function Home() {
       ) : (
         <>
           {/* absolute */}
-          <BottomTriangles />
+          <BottomTriangles scroll={scroll} />
           <Bg />
 
-          <Welcome />
+          <Welcome scroll={scroll} />
 
           <div className="shrink-0 flex justify-center box-border p-6 items-center">
             <h1 className="font-bold md:text-4xl text-xl z-10 text-c1">
@@ -81,7 +100,8 @@ export default function Home() {
             className="bg-c9 h-full box-border p-2 w-full md:grid flex flex-col md:grid-rows-6 md:grid-cols-9 gap-2 grow-0 absolute top-[100dvh]"
             id="schedules"
           >
-            <View viewData={userData?.schedules?.[index]?.vData ?? []} login />
+            {/* TODO: Refactor database to match new view data format */}
+            <View loginData={userData?.schedules?.[index].data} />
             <Select
               uid={userData?.user.uid}
               setIndex={setIndex}
@@ -207,10 +227,20 @@ function MenuIcon({ menuOpen, handleOnClick }: MenuIconProps) {
   );
 }
 
-function BottomTriangles() {
+type BottomTrianglesProps = {
+  scroll: number;
+};
+function BottomTriangles({ scroll }: BottomTrianglesProps) {
+  const spring1 = useSpring({
+    height: `${(scroll / window.innerHeight) * 100 + 100}%`,
+  });
+
   return (
     <>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col">
+      <animated.div
+        className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col z-[-10]"
+        style={spring1}
+      >
         <div className="w-full h-10 bg-c1 order-1 relative bottom-0" />
         <svg
           viewBox="0 0 1200 120"
@@ -220,9 +250,9 @@ function BottomTriangles() {
         >
           <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c1" />
         </svg>
-      </div>
+      </animated.div>
 
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col z-[-10]">
         <div className="w-full h-5 bg-c5 order-1 relative bottom-0" />
         <svg
           viewBox="0 0 1200 120"
@@ -234,7 +264,7 @@ function BottomTriangles() {
         </svg>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 z-[-10]">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"

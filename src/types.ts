@@ -36,6 +36,7 @@ export type Class = {
 		rating: Rating;
 	};
 	more: string;
+	viewData: Time[];
 };
 
 export type Rating = {
@@ -67,7 +68,6 @@ export type Time = {
 
 export type Saved = {
 	id: number;
-	vData: ViewData[][];
 	data: Class[];
 	name?: string;
 };

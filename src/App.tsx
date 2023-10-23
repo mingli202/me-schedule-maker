@@ -60,6 +60,10 @@ function App() {
       element: <Schedule login />,
       errorElement: <ErrorPage />,
     },
+    {
+      path: "/loading",
+      element: <Loading />,
+    },
   ]);
 
   return (

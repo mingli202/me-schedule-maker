@@ -1,8 +1,8 @@
-import { ViewData, Time, Class } from "../../types";
+import { Time, Class } from "../../types";
 
-export function checkForOverlap(viewData: ViewData[][]): boolean {
+export function checkForOverlap(viewData: Class[]): boolean {
   // get all the times for all the classes
-  const times: Time[] = viewData.flat().map((i) => i.time);
+  const times: Time[] = viewData.flatMap((v) => v.viewData);
 
   const monday: string[] = times
     .filter((i) => i[1])
@@ -60,88 +60,4 @@ export function checkForOverlap(viewData: ViewData[][]): boolean {
   }
 
   return false;
-}
-
-export function handleSetViewData(
-  chosenClasses: Class[],
-  disableSaterdayAlert?: boolean
-) {
-  const col = ["M", "T", "W", "R", "F"];
-  const row = [...Array(21).keys()].map((i) =>
-    // [830, 900, 930, 1000, 1030, ...]
-    (i % 2 === 0 ? i * 50 + 800 : Math.floor(i / 2) * 2 * 50 + 830).toFixed(0)
-  );
-  const colors = [
-    "hsl(150,97%,85%)",
-    "hsl(230,97%,85%)",
-    "hsl(110,97%,85%)",
-    "hsl(270,97%,85%)",
-    "hsl(70,97%,85%)",
-    "hsl(310,97%,85%)",
-    "hsl(30,97%,85%)",
-    "hsl(350,97%,85%)",
-    "hsl(190,97%,85%)",
-    "#CCC",
-    "#FFF",
-    "#999",
-  ];
-  const toReturn = chosenClasses.map((classToShow, index) => {
-    // to make sure the origial object doesn't change
-    const lecture = structuredClone(Object.entries(classToShow.lecture));
-    const lab = structuredClone(
-      Object.entries(classToShow.lab ? classToShow.lab : {})
-    );
-
-    // get all the days for a class
-    // removes all non-day entries
-    const days = lecture
-      .filter((i) => !["title", "prof", "rating"].includes(i[0]))
-      .concat(lab.filter((i) => !["title", "prof", "rating"].includes(i[0])));
-
-    // iterate through all the different times
-    return days.flatMap((i) => {
-      // i: [day, time] e.g. ["MW", "1230-1430"]
-
-      // day is an array of the days for a given time. e.g. ["M", "W"]
-      const day = i[0].split("").filter((q) => {
-        // the schedule doesn't show saterday classes
-        if (q === "S") {
-          if (!disableSaterdayAlert) {
-            alert("There is class on Saturday as well");
-          }
-          return false;
-        }
-        return true;
-      });
-
-      const time = i[1] as string;
-      const start = time.split("-")[0];
-      const end = time.split("-")[1];
-
-      // for each day, add an object to viewData containing the info to display the block
-      return day.flatMap((j) => {
-        const rowStart =
-          Number(start) < 800
-            ? 1
-            : row.findIndex((r) => Number(r) === Number(start)) + 1;
-        const rowEnd =
-          Number(end) > 1800
-            ? 21
-            : row.findIndex((r) => Number(r) === Number(end)) + 1;
-        const colStart = col.findIndex((c) => c === j) + 1;
-
-        return {
-          code: classToShow.code,
-          section: classToShow.section,
-          time: {
-            [`${colStart}`]: [rowStart, rowEnd],
-          },
-          color: colors[index],
-          teacher: classToShow.lecture.prof,
-          title: classToShow.lecture.title,
-        };
-      });
-    });
-  });
-  return toReturn;
 }

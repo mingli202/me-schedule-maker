@@ -1,28 +1,16 @@
 import { animated, useSpring, useTransition } from "@react-spring/web";
-import { Fragment, ReactElement, useContext, useEffect, useState } from "react";
-import { ClassContext } from "../Schedule";
-import { ViewData } from "../../../types";
-import { handleSetViewData } from "../functions";
+import { useContext } from "react";
+import { ClassContext } from "../classContext";
+import { Class } from "../../../types";
 
 type Props = {
-  viewData: ViewData[][];
   login?: boolean;
+  loginData?: Class[];
 };
-export default function View({ viewData, login }: Props) {
-  const [view, setView] = useState<ReactElement[]>([]);
-  const { hoveredClass } = useContext(ClassContext);
+export default function View({ login, loginData }: Props) {
+  const { hoveredClass, chosenClasses } = useContext(ClassContext);
 
-  useEffect(() => {
-    setView(() => {
-      return viewData.map((i, index) => {
-        return (
-          <Fragment key={index}>
-            <ClassBlocks blocksToShow={i} login={login} />
-          </Fragment>
-        );
-      });
-    });
-  }, [viewData]);
+  const data = loginData ?? chosenClasses;
 
   return (
     <section className="rounded-lg md:col-span-7 md:row-span-6 max-md:h-[60%] col-span-full bg-c1 md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-1">
@@ -80,16 +68,19 @@ export default function View({ viewData, login }: Props) {
         })}
 
         <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 bg-[white] row-span-full col-span-full row-start-2 rounded-lg md:shadow-lg shadow-md">
-          {view}
+          {data.map((targetClass, index) => (
+            <ClassBlocks
+              key={index}
+              blocksToShow={targetClass}
+              index={index}
+              login={login}
+            />
+          ))}
         </div>
 
         {hoveredClass && (
           <div className="grid grid-rows-[repeat(20,minmax(0,1fr))] grid-cols-5 row-span-full col-span-full row-start-2 absolute opacity-50 z-10 h-full w-full">
-            {handleSetViewData([hoveredClass], true).map((data, index) => (
-              <Fragment key={index}>
-                <ClassBlocks blocksToShow={data} hover />
-              </Fragment>
-            ))}
+            <ClassBlocks blocksToShow={hoveredClass} index={-1} hover />
           </div>
         )}
       </div>
@@ -138,13 +129,15 @@ function ClassBlocks({
   blocksToShow,
   login,
   hover,
+  index,
 }: {
-  blocksToShow: ViewData[];
+  blocksToShow: Class;
   login?: boolean;
   hover?: boolean;
+  index: number;
 }) {
   // use transition to put stagger effect with trail property
-  const transitions = useTransition(blocksToShow, {
+  const transitions = useTransition(blocksToShow.viewData, {
     from: {
       y: -20,
       scale: 0,
@@ -165,8 +158,23 @@ function ClassBlocks({
 
   const { chosenClasses, setChosenClasses } = useContext(ClassContext);
 
+  const colors = [
+    "hsl(150,97%,85%)",
+    "hsl(230,97%,85%)",
+    "hsl(110,97%,85%)",
+    "hsl(270,97%,85%)",
+    "hsl(70,97%,85%)",
+    "hsl(310,97%,85%)",
+    "hsl(30,97%,85%)",
+    "hsl(350,97%,85%)",
+    "hsl(190,97%,85%)",
+    "#CCC",
+    "#999",
+    "#FFF",
+  ];
+
   return transitions((style, i) => {
-    const t = Object.entries(i.time).flat();
+    const t = Object.entries(i).flat();
 
     return (
       <animated.div
@@ -176,21 +184,25 @@ function ClassBlocks({
           gridColumnStart: t[0],
           gridRowStart: t[1][0],
           gridRowEnd: t[1][1],
-          backgroundColor: hover ? "#FFF" : i.color,
+          backgroundColor: colors.at(index),
           ...style,
         }}
-        key={i.code + i.section + t[0]}
+        key={blocksToShow.section + blocksToShow.code + t[0]}
         onClick={() => {
           if (login) {
             return;
           }
-          setChosenClasses(chosenClasses.filter((c) => c.code !== i.code));
+          setChosenClasses(
+            chosenClasses.filter((c) => c.code !== blocksToShow.code)
+          );
         }}
       >
-        <p className="line-clamp-2 font-semibold">{i.title}</p>
-        <p className="line-clamp-1 font-light mt-1">{i.code}</p>
-        <p className="font-light">{i.section}</p>
-        <p className="line-clamp-2 mt-1">{i.teacher}</p>
+        <p className="line-clamp-2 font-semibold">
+          {blocksToShow.lecture.title}
+        </p>
+        <p className="line-clamp-1 font-light mt-1">{blocksToShow.code}</p>
+        <p className="font-light">{blocksToShow.section}</p>
+        <p className="line-clamp-2 mt-1">{blocksToShow.lecture.prof}</p>
       </animated.div>
     );
   });

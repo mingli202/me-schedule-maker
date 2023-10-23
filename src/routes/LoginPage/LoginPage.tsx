@@ -14,7 +14,6 @@ export default function LoginPage() {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
-    // Globals.assign({ frameLoop: "demand" });
     if (user) {
       if (!user.emailVerified) {
         navigate("/email-verification-confirmation");
@@ -39,7 +38,7 @@ export default function LoginPage() {
         <div className="md:basis-5/12 w-full bg-white flex flex-col items-center justify-center box-border p-6 shrink-0">
           {/* Login form */}
           <div className="bg-c1 w-full h-full flex flex-col items-center rounded-lg overflow-hidden">
-            <nav className="flex w-full shrink-0">
+            <nav className="flex w-full shrink-0 rounded-t-lg">
               {["Login", "Sign Up"].map((i) => (
                 <NavBar
                   meth={i}
@@ -61,13 +60,6 @@ export default function LoginPage() {
 
         <div className="basis-7/12 bg-white text-xl md:block hidden">
           <LoginBg />
-          {/* <h1 className="font-bold text-3xl">Announcemets</h1> */}
-          {/* <p> */}
-          {/*   The app is in theory completed! Everything from the schedule making */}
-          {/*   to the account creation is done. */}
-          {/* </p> */}
-          {/* <p>It's in beta right now with extensive testing.</p> */}
-          {/* <p>Also there's going to be some art here being made.</p> */}
         </div>
       </section>
     </>
@@ -141,7 +133,7 @@ function Carousel({
   }, [active]);
 
   return (
-    <div className="overflow-hidden w-full h-full">
+    <div className="overflow-auto w-full h-full">
       <animated.div className="flex relative" style={springs}>
         <SignIn notVerified={notVerified} />
         <SignUp />

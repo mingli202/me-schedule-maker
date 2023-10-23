@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
-import { Class, Saved, ViewData } from "../../../../types";
+import { Class, Saved } from "../../../../types";
 import { useSpring, animated } from "@react-spring/web";
 import { ClassesLoader, ChosenCourses, Filter, CurrentClasses } from ".";
 
@@ -18,14 +18,12 @@ const Classes = lazy(() => import("./Classes"));
 type Props = {
   classes: Class[];
   setLoading: Dispatch<React.SetStateAction<boolean>>;
-  viewData: ViewData[][];
   userData: { uid: string; schedules: Saved[] } | null;
   aucmpData: object;
 };
 export default function Search({
   classes,
   setLoading,
-  viewData,
   userData,
   aucmpData,
 }: Props) {
@@ -136,8 +134,8 @@ export default function Search({
       )}
       {current === "saved" && (
         <div className="md:flex md:flex-col h-full overflow-hidden">
-          <ChosenCourses viewData={viewData} userData={userData} />
-          <CurrentClasses viewData={viewData} />
+          <ChosenCourses userData={userData} />
+          <CurrentClasses />
         </div>
       )}
     </section>
