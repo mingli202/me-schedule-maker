@@ -5,6 +5,7 @@ import {
   useEffect,
   Suspense,
   lazy,
+  useContext,
 } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +13,7 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { Class, Saved } from "../../../../types";
 import { useSpring, animated } from "@react-spring/web";
 import { ClassesLoader, ChosenCourses, Filter, CurrentClasses } from ".";
+import { ClassContext } from "../../classContext";
 
 const Classes = lazy(() => import("./Classes"));
 
@@ -35,6 +37,8 @@ export default function Search({
   const deferredCurrent = useDeferredValue(current);
 
   const [searchInfo, setSearchInfo] = useState(false);
+
+  const { setHoveredClass } = useContext(ClassContext);
 
   return (
     <section className="md:col-span-5 md:row-span-6 bg-c1 rounded-lg box-border flex flex-col max-md:order-2 overflow-hidde">
@@ -108,7 +112,12 @@ export default function Search({
               onChange={(e) => setInput(e.target.value)}
             />
           </label>
-          <div className="w-full h-full box-border rounded-lg overflow-y-auto md:px-4 px-2 md:mt-4 mt-2">
+          <div
+            className="w-full h-full box-border rounded-lg overflow-y-auto md:px-4 px-2 md:mt-4 mt-2"
+            onPointerOver={() => {
+              setHoveredClass(undefined);
+            }}
+          >
             <Suspense fallback={<ClassesLoader />}>
               {deferredInput === input ? (
                 <Classes

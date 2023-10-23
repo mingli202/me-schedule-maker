@@ -39,9 +39,15 @@ function ClassBanner({ targetClass, index }: ClassBannerProps) {
     "hsl(310,97%,85%)",
     "hsl(30,97%,85%)",
     "hsl(350,97%,85%)",
-    "hsl(190,97%,85%)",
-    "#CCC",
-    "#999",
+
+    "hsl(150,97%,15%)",
+    "hsl(230,97%,15%)",
+    "hsl(110,97%,15%)",
+    "hsl(270,97%,15%)",
+    "hsl(70,97%,15%)",
+    "hsl(310,97%,15%)",
+    "hsl(30,97%,15%)",
+    "hsl(350,97%,15%)",
     "#FFF",
   ];
 
@@ -63,6 +69,7 @@ function ClassBanner({ targetClass, index }: ClassBannerProps) {
     <animated.div
       style={{
         backgroundColor: colors.at(index),
+        color: index > 7 ? "white" : "black",
         ...springs,
       }}
       className="relative box-border p-1 text-sm cursor-pointer rounded-lg hover:shadow-xl hover:z-10"

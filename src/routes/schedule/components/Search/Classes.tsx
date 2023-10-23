@@ -203,8 +203,14 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
           className="bg-c2 p-2 box-border md:mb-3 mb-2 rounded-lg md:shadow-lg shadow-md hover:bg-c3 transition cursor-pointer md:text-base text-xs"
           key={`i.code + ${index}`}
           onClick={() => toggleClass(i)}
-          onPointerOver={() => setHoveredClass(i)}
-          onPointerOut={() => setHoveredClass(undefined)}
+          onPointerOver={(e) => {
+            e.stopPropagation();
+            setHoveredClass(i);
+          }}
+        // onPointerOut={(e) => {
+        //   e.stopPropagation();
+        //   setHoveredClass(undefined);
+        // }}
         >
           <p className="font-light">
             {i.program}: {i.course} {i.code}
