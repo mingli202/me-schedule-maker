@@ -100,8 +100,7 @@ export default function Home() {
             className="bg-c9 h-full box-border p-2 w-full md:grid flex flex-col md:grid-rows-6 md:grid-cols-9 gap-2 grow-0 absolute top-[100dvh]"
             id="schedules"
           >
-            {/* TODO: Refactor database to match new view data format */}
-            <View loginData={userData?.schedules?.[index].data} />
+            <View loginData={userData?.schedules?.[index].data} login />
             <Select
               uid={userData?.user.uid}
               setIndex={setIndex}
