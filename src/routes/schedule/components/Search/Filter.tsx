@@ -223,7 +223,7 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
         <label>
           <p className="font-semibold">Teacher Name</p>
           <input
-            placeholder="Patrik Burger"
+            placeholder="Patrick Burger"
             className="outline-none focus:bg-c2 w-full rounded-lg p-1"
             name="teacherName"
             list="teachers"

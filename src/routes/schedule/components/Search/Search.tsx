@@ -83,8 +83,8 @@ export default function Search({
                     </li>
                     <li>
                       <span>p=professor</span>: classes taught by{" "}
-                      <i>professor</i> (e.g. p=patrik searches for classes
-                      taught by professors with patrik in their names)
+                      <i>professor</i> (e.g. p=patrick searches for classes
+                      taught by professors with patrick in their names)
                     </li>
                     <li>
                       <span>COURSE_NAME</span>: searches classes that belong in
