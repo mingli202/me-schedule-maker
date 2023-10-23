@@ -207,10 +207,9 @@ export default function Classes({ input, classes, setLoading }: ClassesProps) {
             e.stopPropagation();
             setHoveredClass(i);
           }}
-        // onPointerOut={(e) => {
-        //   e.stopPropagation();
-        //   setHoveredClass(undefined);
-        // }}
+          onPointerOut={() => {
+            setHoveredClass(undefined);
+          }}
         >
           <p className="font-light">
             {i.program}: {i.course} {i.code}
