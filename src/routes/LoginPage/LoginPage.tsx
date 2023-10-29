@@ -133,7 +133,7 @@ function Carousel({
   }, [active]);
 
   return (
-    <div className="overflow-auto w-full h-full">
+    <div className="overflow-x-hidden overflow-y-auto w-full h-full">
       <animated.div className="flex relative" style={springs}>
         <SignIn notVerified={notVerified} />
         <SignUp />

@@ -114,8 +114,9 @@ function Lines({ n, lineProperty }: LinesProps) {
 
   return (
     <animated.div
-      className={`${lineProperty === "height" ? "w-full py-2" : "h-full px-2"
-        } box-border`}
+      className={`${
+        lineProperty === "height" ? "w-full py-2" : "h-full px-2"
+      } box-border`}
       style={springs}
     >
       <div
@@ -184,8 +185,9 @@ function ClassBlocks({
 
     return (
       <animated.div
-        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${login ? "" : "cursor-pointer"
-          } rounded-lg overflow-hidden`}
+        className={`md:text-[14px] md:leading-[14px] text-[8px] leading-[10px] z-10 p-1 border border-[black] outline outline-1 outline-[black] text-[black] ${
+          login ? "" : "cursor-pointer"
+        } rounded-lg overflow-hidden`}
         style={{
           gridColumnStart: t[0],
           gridRowStart: t[1][0],

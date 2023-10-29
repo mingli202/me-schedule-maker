@@ -6,7 +6,7 @@ import { animated, useSpring } from "@react-spring/web";
 import { View } from "../schedule/components";
 import { Saved } from "../../types";
 import { UserContext } from "../../userContext";
-import { Settings, Bg, Welcome, Select } from "./components";
+import { Settings, Bg, Welcome, Select, BottomTriangles } from "./components";
 // import { Globals } from "@react-spring/shared";
 
 export default function Home() {
@@ -62,6 +62,9 @@ export default function Home() {
     <section
       className="w-[100dvw] h-[100dvh] relative overflow-x-hidden flex flex-col"
       ref={sectionRef}
+      style={{
+        perspective: "100px",
+      }}
     >
       <nav className="shrink-0 flex justify-between box-border p-1 h-20 w-full items-center bg-white">
         <Link to="" className="h-20">
@@ -223,56 +226,5 @@ function MenuIcon({ menuOpen, handleOnClick }: MenuIconProps) {
         strokeLinejoin="round"
       />
     </svg>
-  );
-}
-
-type BottomTrianglesProps = {
-  scroll: number;
-};
-function BottomTriangles({ scroll }: BottomTrianglesProps) {
-  const spring1 = useSpring({
-    height: `${(scroll / window.innerHeight) * 100 + 100}%`,
-  });
-
-  return (
-    <>
-      <animated.div
-        className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col z-[-10]"
-        style={spring1}
-      >
-        <div className="w-full h-10 bg-c1 order-1 relative bottom-0" />
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative block w-[calc(100%+1.3px)] h-32 order-2 top-0"
-        >
-          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c1" />
-        </svg>
-      </animated.div>
-
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 flex flex-col z-[-10]">
-        <div className="w-full h-5 bg-c5 order-1 relative bottom-0" />
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative block w-[calc(100%+1.3px)] h-32 order-2 top-0"
-        >
-          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c5" />
-        </svg>
-      </div>
-
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180 z-[-10]">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative block w-[calc(100%+1.3px)] h-32"
-        >
-          <path d="M1200 0L0 0 598.97 114.72 1200 0z" className="fill-c9" />
-        </svg>
-      </div>
-    </>
   );
 }

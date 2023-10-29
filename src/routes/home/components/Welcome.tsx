@@ -1,20 +1,20 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { animated } from "@react-spring/web";
 import { Link } from "react-router-dom";
-import { animated, useSpring } from "@react-spring/web";
 
 type Props = {
   scroll: number;
 };
 export default function Welcome({ scroll }: Props) {
-  const springs = useSpring({
-    scale: 1 - scroll / window.innerHeight,
-  });
-
   return (
     <animated.div
       className="basis-full box-border flex flex-col items-center justify-center gap-2"
-      style={springs}
+      style={{
+        zIndex: scroll < window.innerHeight / 10 ? 0 : -5,
+        z: -50,
+        scale: 1.5,
+      }}
     >
       <h1 className="md:text-7xl text-4xl font-bold text-c9">Welcome!</h1>
       <p className="font-bold text-base">Ready to make your dream schedule?</p>
