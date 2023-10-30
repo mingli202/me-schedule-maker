@@ -13,7 +13,12 @@ export default function View({ login, loginData }: Props) {
   const data = loginData ?? chosenClasses;
 
   return (
-    <section className="rounded-lg md:col-span-7 md:row-span-6 max-md:h-[60%] col-span-full bg-c1 md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-1">
+    <section
+      className="rounded-lg md:col-span-7 md:row-span-6 max-md:h-[60%] col-span-full bg-c1 md:p-4 p-2 box-border grid grid-cols-[1fr_repeat(5,minmax(0,2fr))] grid-rows-[repeat(21,minmax(0,1fr))] max-md:order-1"
+      style={{
+        perspective: 100,
+      }}
+    >
       {/* Hours */}
       <div className="col-span-1 row-span-full grid grid-cols-1 grid-rows-[repeat(21,minmax(0,1fr))]">
         {[...Array(21).keys()].map((i) => {
@@ -29,7 +34,12 @@ export default function View({ login, loginData }: Props) {
         })}
       </div>
 
-      <div className="col-span-5 row-span-full grid grid-cols-5 grid-rows-[repeat(21,minmax(0,1fr))] border-collapse relative">
+      <div
+        className="col-span-5 row-span-full grid grid-cols-5 grid-rows-[repeat(21,minmax(0,1fr))] border-collapse relative"
+        style={{
+          perspective: 100,
+        }}
+      >
         {/* Horizontal lines */}
         <div className="absolute w-full h-full grid grid-rows-[repeat(20,minmax(0,1fr))] row-start-2">
           {[...Array(19).keys()].map((i) => {
@@ -140,18 +150,15 @@ function ClassBlocks({
   // use transition to put stagger effect with trail property
   const transitions = useTransition(blocksToShow.viewData, {
     from: {
-      y: -20,
+      opacity: 0,
       scale: 0,
     },
     enter: {
-      y: 0,
+      opacity: 1,
       scale: 1,
     },
-    leave: {
-      y: -20,
-      scale: 0,
-    },
-    trail: hover ? 0 : 50,
+    trail: hover ? 0 : 25,
+    delay: hover ? 0 : 25 * index,
     config: {
       duration: hover ? 0 : undefined,
     },
