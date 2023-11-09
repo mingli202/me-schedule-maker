@@ -149,8 +149,8 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
       );
 
     const input = [
-      courseName,
-      code,
+      courseName.toUpperCase(),
+      code.toUpperCase(),
       className,
       ...teacherName,
       ...rating,
