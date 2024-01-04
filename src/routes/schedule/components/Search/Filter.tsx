@@ -180,8 +180,8 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             onChange={(e) => setCourseName(e.target.value)}
           />
           <datalist id="course">
-            {courseNames.map((k) => (
-              <option value={k} key={k} />
+            {courseNames.map((k, i) => (
+              <option value={k} key={`${k}${i}`} />
             ))}
           </datalist>
         </label>
@@ -197,8 +197,8 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             onChange={(e) => setCode(e.target.value)}
           />
           <datalist id="code">
-            {codes.map((k) => (
-              <option value={k} key={k} />
+            {codes.map((k, i) => (
+              <option value={k} key={`${k}${i}`} />
             ))}
           </datalist>
         </label>
@@ -214,8 +214,8 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             autoComplete="off"
           />
           <datalist id="classNames">
-            {classNames.map((k) => (
-              <option value={k} key={k} />
+            {classNames.map((k, i) => (
+              <option value={k} key={`${k}${i}`} />
             ))}
           </datalist>
         </label>
@@ -230,9 +230,9 @@ export default function Filter({ setInput, setCurrent, aucmpData }: Props) {
             autoComplete="off"
           />
           <datalist id="teachers">
-            {teacherNames.map((k) => (
-              <option value={k} key={k} />
-            ))}
+            {teacherNames.map((k, i) => {
+              return <option value={k} key={`${k}${i}`} />;
+            })}
           </datalist>
         </label>
 

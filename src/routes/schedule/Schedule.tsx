@@ -103,7 +103,7 @@ export default function Schedule({ login }: Props) {
           />
         </Link>
         <div className="flex gap-2">
-          {current === "fall" ? "Fall" : "Winter"} 2023 JAC{" "}
+          {current === "fall" ? "Fall 2023" : "Winter 2024"} JAC{" "}
           <span className=" max-md:hidden">Mock Schedule Maker</span>
           <DropDownMenu
             show={show}
@@ -168,8 +168,9 @@ function DropDownMenu({
         className="absolute md:top-6 top-4 z-10 text-c1 bg-c9 [&>p]:p-1 [&>p]:cursor-pointer"
       >
         <p
-          className={`${current === "fall" ? "bg-c8" : ""
-            } hover:font-bold transition`}
+          className={`${
+            current === "fall" ? "bg-c8" : ""
+          } hover:font-bold transition`}
           onClick={() => {
             setCurrent("fall");
             handleClick();
@@ -179,14 +180,15 @@ function DropDownMenu({
         </p>
 
         <p
-          className={`${current === "winter" ? "bg-c8" : ""
-            } hover:font-bold transition`}
+          className={`${
+            current === "winter" ? "bg-c8" : ""
+          } hover:font-bold transition`}
           onClick={() => {
             setCurrent("winter");
             handleClick();
           }}
         >
-          Winter 2023
+          Winter 2024
         </p>
       </animated.div>
     </>
