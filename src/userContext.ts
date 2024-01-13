@@ -6,5 +6,5 @@ export const UserContext = createContext<{
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
 }>({
   user: null,
-  setUser: () => { },
+  setUser: () => {},
 });

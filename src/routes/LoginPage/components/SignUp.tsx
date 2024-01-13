@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { signUp, createUser } from "../../../backend/api";
+import { signUp } from "../../../backend/api";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -21,11 +21,6 @@ export default function SignUp() {
 
     if (loginInfo.status === "success") {
       setDenied(false);
-
-      await createUser({
-        email: email,
-        uid: loginInfo.info.user.uid,
-      });
     } else {
       setDenied(loginInfo.info.code.split("/")[1].replaceAll("-", " "));
     }
@@ -45,8 +40,9 @@ export default function SignUp() {
         <input
           name="email"
           placeholder="Email"
-          className={`w-full p-2 md:text-lg text-base mt-2 mb-6 outline-none rounded-md ${denied ? "border-red-500 border border-solid" : ""
-            }`}
+          className={`w-full p-2 md:text-lg text-base mt-2 mb-6 outline-none rounded-md ${
+            denied ? "border-red-500 border border-solid" : ""
+          }`}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -62,8 +58,9 @@ export default function SignUp() {
           <input
             name="password"
             placeholder="Password"
-            className={`w-full p-2 md:text-lg text-base outline-none rounded-md mb-6 box-border ${denied ? "border-red-500 border border-solid" : ""
-              }`}
+            className={`w-full p-2 md:text-lg text-base outline-none rounded-md mb-6 box-border ${
+              denied ? "border-red-500 border border-solid" : ""
+            }`}
             type="text"
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -80,8 +77,9 @@ export default function SignUp() {
           <input
             name="password"
             placeholder="Password"
-            className={`w-full p-2 md:text-lg text-base outline-none rounded-md box-border ${denied ? "border-red-500 border border-solid" : ""
-              }`}
+            className={`w-full p-2 md:text-lg text-base outline-none rounded-md box-border ${
+              denied ? "border-red-500 border border-solid" : ""
+            }`}
             type="text"
             onChange={(e) => setConfirmPass(e.target.value)}
             required

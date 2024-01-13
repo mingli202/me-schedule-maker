@@ -1,5 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { $signOut, listenForChange } from "../../backend/api";
+import {
+  $signOut,
+  createUser,
+  db,
+  getUserData,
+  listenForChange,
+} from "../../backend/api";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { User } from "firebase/auth";
 import { animated, useSpring } from "@react-spring/web";
@@ -7,10 +13,9 @@ import { View } from "../schedule/components";
 import { Saved } from "../../types";
 import { UserContext } from "../../userContext";
 import { Settings, Bg, Welcome, Select, BottomTriangles } from "./components";
-// import { Globals } from "@react-spring/shared";
+import { ref, set } from "firebase/database";
 
 export default function Home() {
-  // Globals.assign({ frameLoop: "always" });
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -45,6 +50,24 @@ export default function Home() {
       navigate("/");
     } else {
       setDisplayName(user.displayName ?? user.email ?? "User");
+
+      const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
+      set(dbRef, new Date().toString()).catch((err) => console.log(err));
+
+      getUserData(user.uid, "public")
+        .then(async (res) => {
+          if (!res) {
+            if (!user.email) return;
+
+            await createUser({
+              email: user.email,
+              uid: user.uid,
+              name: "User",
+            });
+          }
+        })
+        .catch((err) => console.log(err));
+
       listenForChange(
         user.uid,
         (snapshot) => {
