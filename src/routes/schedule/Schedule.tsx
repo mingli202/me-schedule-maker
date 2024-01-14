@@ -138,7 +138,7 @@ export default function Schedule({ login }: Props) {
       {open && (
         <div className="absolute w-screen h-screen z-30 flex flex-col items-center justify-center bg-white/40 backdrop-filter backdrop-blur-lg">
           <p>
-            An updated version with autobuild and export to excel is available
+            An improved version with autobuild and export to excel is available
             at:
           </p>
           <a href="https://dream-builder-hazel.vercel.app/editor/search">
