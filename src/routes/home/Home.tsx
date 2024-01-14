@@ -52,7 +52,6 @@ export default function Home() {
 
       get(ref(db, "/public/users/" + user.uid))
         .then(async (res) => {
-          console.log(res);
           if (!res.exists()) {
             await createUser({
               email: user.email ?? "user email",
