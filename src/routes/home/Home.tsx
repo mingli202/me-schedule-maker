@@ -1,11 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {
-  $signOut,
-  createUser,
-  db,
-  getUserData,
-  listenForChange,
-} from "../../backend/api";
+import { $signOut, createUser, db, listenForChange } from "../../backend/api";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { User } from "firebase/auth";
 import { animated, useSpring } from "@react-spring/web";
@@ -13,7 +7,7 @@ import { View } from "../schedule/components";
 import { Saved } from "../../types";
 import { UserContext } from "../../userContext";
 import { Settings, Bg, Welcome, Select, BottomTriangles } from "./components";
-import { ref, set } from "firebase/database";
+import { get, ref, set } from "firebase/database";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -52,17 +46,18 @@ export default function Home() {
       setDisplayName(user.displayName ?? user.email ?? "User");
 
       const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
-      set(dbRef, new Date().toString()).catch((err) => console.log(err));
+      set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
+        console.log(err)
+      );
 
-      getUserData(user.uid, "public")
+      get(ref(db, "/public/users/" + user.uid))
         .then(async (res) => {
-          if (!res) {
-            if (!user.email) return;
-
+          console.log(res);
+          if (!res.exists()) {
             await createUser({
-              email: user.email,
+              email: user.email ?? "user email",
               uid: user.uid,
-              name: "User",
+              name: user.displayName ?? "User",
             });
           }
         })
@@ -79,7 +74,7 @@ export default function Home() {
         "schedules"
       );
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <section
