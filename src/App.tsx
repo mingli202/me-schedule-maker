@@ -9,7 +9,7 @@ import { ForgotPage, EmailVerification } from "./routes/LoginPage/components";
 import ErrorPage from "./routes/ErrorPage";
 
 import { User, onAuthStateChanged } from "firebase/auth";
-import { $getAuth, db } from "./backend/api";
+import { $getAuth, createUser, db } from "./backend/api";
 import { UserContext } from "./userContext";
 import Loading from "./Loading";
 import { ref, set } from "firebase/database";
@@ -26,7 +26,15 @@ function App() {
         set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
           console.log(err)
         );
-      } else setUser(null);
+
+        createUser({
+          email: user.email ?? "User email",
+          uid: user.uid,
+          name: user.displayName ?? "User",
+        }).catch(() => console.log("Error"));
+      } else {
+        setUser(null);
+      }
     });
   }, []);
 
