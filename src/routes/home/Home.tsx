@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { $signOut, createUser, db, listenForChange } from "../../backend/api";
+import { $signOut, listenForChange } from "../../backend/api";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { User } from "firebase/auth";
 import { animated, useSpring } from "@react-spring/web";
@@ -7,7 +7,6 @@ import { View } from "../schedule/components";
 import { Saved } from "../../types";
 import { UserContext } from "../../userContext";
 import { Settings, Bg, Welcome, Select, BottomTriangles } from "./components";
-import { get, ref, set } from "firebase/database";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -45,22 +44,22 @@ export default function Home() {
     } else {
       setDisplayName(user.displayName ?? user.email ?? "User");
 
-      const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
-      set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
-        console.log(err)
-      );
+      // const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
+      // set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
+      //   console.log(err)
+      // );
 
-      get(ref(db, "/public/users/" + user.uid))
-        .then(async (res) => {
-          if (!res.exists()) {
-            await createUser({
-              email: user.email ?? "user email",
-              uid: user.uid,
-              name: user.displayName ?? "User",
-            });
-          }
-        })
-        .catch((err) => console.log(err));
+      // get(ref(db, "/public/users/" + user.uid))
+      //   .then(async (res) => {
+      //     if (!res.exists()) {
+      //       await createUser({
+      //         email: user.email ?? "user email",
+      //         uid: user.uid,
+      //         name: user.displayName ?? "User",
+      //       });
+      //     }
+      //   })
+      //   .catch((err) => console.log(err));
 
       listenForChange(
         user.uid,

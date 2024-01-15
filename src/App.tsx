@@ -9,17 +9,24 @@ import { ForgotPage, EmailVerification } from "./routes/LoginPage/components";
 import ErrorPage from "./routes/ErrorPage";
 
 import { User, onAuthStateChanged } from "firebase/auth";
-import { $getAuth } from "./backend/api";
+import { $getAuth, db } from "./backend/api";
 import { UserContext } from "./userContext";
 import Loading from "./Loading";
+import { ref, set } from "firebase/database";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     onAuthStateChanged($getAuth(), (user) => {
-      if (user) setUser(user);
-      else setUser(null);
+      if (user) {
+        setUser(user);
+
+        const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
+        set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
+          console.log(err)
+        );
+      } else setUser(null);
     });
   }, []);
 
