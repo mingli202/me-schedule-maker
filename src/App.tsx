@@ -13,6 +13,7 @@ import { $getAuth, createUser, db } from "./backend/api";
 import { UserContext } from "./userContext";
 import Loading from "./Loading";
 import { ref, set } from "firebase/database";
+import Msg from "./Msg";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -24,7 +25,7 @@ function App() {
 
         const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
         set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
-          console.log(err)
+          console.log(err),
         );
 
         createUser({
@@ -81,13 +82,18 @@ function App() {
     },
   ]);
 
+  const archived = true;
   return (
     <section className="w-[100dvd] h-[100dvh] flex flex-col">
-      <UserContext.Provider value={{ user, setUser }}>
-        <Suspense fallback={<Loading />}>
-          <RouterProvider router={routes} />
-        </Suspense>
-      </UserContext.Provider>
+      {!archived ? (
+        <UserContext.Provider value={{ user, setUser }}>
+          <Suspense fallback={<Loading />}>
+            <RouterProvider router={routes} />
+          </Suspense>
+        </UserContext.Provider>
+      ) : (
+        <Msg />
+      )}
     </section>
   );
 }

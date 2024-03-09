@@ -16,8 +16,6 @@ type Props = {
   login?: boolean;
 };
 export default function Schedule({ login }: Props) {
-  // Globals.assign({ frameLoop: "always" });
-
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -39,7 +37,7 @@ export default function Schedule({ login }: Props) {
 
   async function getData<T>(
     url: string,
-    set: Dispatch<React.SetStateAction<T>>
+    set: Dispatch<React.SetStateAction<T>>,
   ) {
     try {
       const response = await fetch(url);
@@ -67,7 +65,7 @@ export default function Schedule({ login }: Props) {
               schedules: snapshot.val() as Saved[],
             });
           },
-          "schedules"
+          "schedules",
         );
       }
     }
@@ -76,14 +74,16 @@ export default function Schedule({ login }: Props) {
   useEffect(() => {
     const name = current === "fall" ? "" : "winter-";
 
-    getData<Class[]>(
-      `/me-schedule-maker/data/${name}all.json`,
-      setClasses
-    ).catch((err) => console.log(err));
+    fetch(
+      "https://raw.githubusercontent.com/Nanoscience202/next-schedule-maker/main/public/json/allClasses.json",
+    )
+      .then((res) => res.json())
+      .then((r: Record<string, Class>) => setClasses(Object.values(r)))
+      .catch((err) => console.log(err));
 
     getData<typeof autocompleteData>(
       `/me-schedule-maker/data/${name}data.json`,
-      setAutocompleteData
+      setAutocompleteData,
     ).catch((err) => console.log(err));
   }, [current]);
 

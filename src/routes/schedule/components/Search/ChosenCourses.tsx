@@ -64,7 +64,7 @@ export default function ChosenCourses({ userData }: Props) {
     } else {
       window.localStorage.setItem(key, JSON.stringify(savedSchedule));
     }
-  }, [savedSchedule]);
+  }, [savedSchedule, userData]);
 
   return (
     <div className="md:basis-1/3 shrink-0 overflow-auto max-md:max-h-48">
@@ -168,7 +168,7 @@ function SavedBlock({ i, savedSchedule, setSavedSchedule }: SavedBlockProps) {
         y: 0,
       },
     }),
-    []
+    [],
   );
 
   function handleRemoved(e: MouseEvent<SVGSVGElement>) {

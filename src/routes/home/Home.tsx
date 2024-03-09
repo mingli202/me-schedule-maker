@@ -44,23 +44,6 @@ export default function Home() {
     } else {
       setDisplayName(user.displayName ?? user.email ?? "User");
 
-      // const dbRef = ref(db, `/users/${user.uid}/lastSignedIn`);
-      // set(dbRef, new Date().toString() + " on Schedule Maker").catch((err) =>
-      //   console.log(err)
-      // );
-
-      // get(ref(db, "/public/users/" + user.uid))
-      //   .then(async (res) => {
-      //     if (!res.exists()) {
-      //       await createUser({
-      //         email: user.email ?? "user email",
-      //         uid: user.uid,
-      //         name: user.displayName ?? "User",
-      //       });
-      //     }
-      //   })
-      //   .catch((err) => console.log(err));
-
       listenForChange(
         user.uid,
         (snapshot) => {
@@ -69,7 +52,7 @@ export default function Home() {
             schedules: snapshot.val() as Saved[],
           });
         },
-        "schedules"
+        "schedules",
       );
     }
   }, [user, navigate]);
