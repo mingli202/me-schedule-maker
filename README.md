@@ -1,6 +1,6 @@
-# John Abbott College mock schedule maker
+# John Abbott College mock schedule maker (deprecated)
 
-Inspired by [William Li](https://github.com/Trollermaner)'s John Abbott College mock [schedule maker](https://github.com/Trollermaner/schedule-maker), I decided to make my own to learn about pdf parsing and web scraping, as well as refresh my skills with Python.
+Inspired by [William Li](https://github.com/willi-li-am)'s John Abbott College mock [schedule maker](https://github.com/willi-li-am/jac-schedule), I decided to make my own to learn about pdf parsing and web scraping, as well as refresh my skills with Python.
 
 Completed:
 
