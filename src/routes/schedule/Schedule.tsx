@@ -75,7 +75,7 @@ export default function Schedule({ login }: Props) {
     const name = current === "fall" ? "" : "winter-";
 
     fetch(
-      "https://raw.githubusercontent.com/Nanoscience202/next-schedule-maker/main/public/json/allClasses.json",
+      "https://raw.githubusercontent.com/mingli202/next-schedule-maker/main/public/json/allClasses.json",
     )
       .then((res) => res.json())
       .then((r: Record<string, Class>) => setClasses(Object.values(r)))
